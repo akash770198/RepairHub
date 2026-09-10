@@ -1,0 +1,2000 @@
+{
+  "RepairHub": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Topbar": "RepairHubTopbar1",
+          "Header": "RepairHubHeader1",
+          "Footer": "RepairHubFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Banner",
+                "component": "RepairHubBanner1"
+              },
+              {
+                "key": "Features",
+                "component": "RepairHubFeatures1"
+              },
+              {
+                "key": "About",
+                "component": "RepairHubAbout1"
+              },
+              {
+                "key": "Services",
+                "component": "RepairHubServices1"
+              },
+              {
+                "key": "Brands",
+                "component": "RepairHubBrands1"
+              },
+              {
+                "key": "Testimonials",
+                "component": "RepairHubTestimonials1"
+              },
+              {
+                "key": "Blog",
+                "component": "RepairHubBlog1"
+              }
+            ]
+          },
+          "about": [
+            {
+              "section": "Header",
+              "variant": "RepairHubHeader1"
+            },
+            {
+              "section": "PageBanner",
+              "variant": "AboutUsBanner"
+            },
+            {
+              "section": "About",
+              "variant": "RepairHubAbout1"
+            },
+            {
+              "section": "FeatureCards",
+              "variant": "FeatureCards1"
+            },
+            {
+              "section": "WhyChooseUs",
+              "variant": "WhyChooseUs1"
+            },
+            {
+              "section": "Footer",
+              "variant": "RepairHubFooter1"
+            }
+          ],
+          "why-choose-us": [
+            {
+              "section": "Header",
+              "variant": "RepairHubHeader1"
+            },
+            {
+              "section": "PageBanner",
+              "variant": "WhyChooseUsBanner"
+            },
+            {
+              "section": "WhyChooseUs",
+              "variant": "WhyChooseUs1"
+            },
+            {
+              "section": "FeatureCards",
+              "variant": "FeatureCards1"
+            },
+            {
+              "section": "Footer",
+              "variant": "RepairHubFooter1"
+            }
+          ],
+          "teams": [
+            {
+              "section": "Header",
+              "variant": "RepairHubHeader1"
+            },
+            {
+              "section": "PageBanner",
+              "variant": "TeamsBanner"
+            },
+            {
+              "section": "Team",
+              "variant": "RepairHubTeamGrid"
+            },
+            {
+              "section": "Stats",
+              "variant": "RepairHubStatsInline"
+            },
+            {
+              "section": "Footer",
+              "variant": "RepairHubFooter1"
+            }
+          ],
+          "services": [
+            {
+              "section": "Header",
+              "variant": "RepairHubHeader1"
+            },
+            {
+              "section": "PageBanner",
+              "variant": "RepairServiceBanner"
+            },
+            {
+              "section": "Services",
+              "variant": "RepairHubServicesGrid"
+            },
+            {
+              "section": "Footer",
+              "variant": "RepairHubFooter1"
+            }
+          ],
+          "service": [
+            {
+              "section": "Header",
+              "variant": "RepairHubHeader1"
+            },
+            {
+              "section": "PageBanner",
+              "variant": "RepairServiceBanner"
+            },
+            {
+              "section": "Services",
+              "variant": "RepairHubServicesGrid"
+            },
+            {
+              "section": "Footer",
+              "variant": "RepairHubFooter1"
+            }
+          ]
+        }
+      }
+    },
+    "sections": {
+      "Topbar": {
+        "variants": {
+          "RepairHubTopbar1": {
+            "email": "support@repairhub.com",
+            "emailIcon": "envelope",
+            "openHoursPrefix": "Open Hours :",
+            "openHoursValue": "09:00 am – 06:00 pm",
+            "openHoursIcon": "clock",
+            "socialLinks": [
+              {
+                "label": "facebook",
+                "href": "https://facebook.com",
+                "icon": "facebook"
+              },
+              {
+                "label": "twitter",
+                "href": "https://twitter.com",
+                "icon": "twitter"
+              },
+              {
+                "label": "instagram",
+                "href": "https://instagram.com",
+                "icon": "instagram"
+              },
+              {
+                "label": "linkedin",
+                "href": "https://linkedin.com",
+                "icon": "linkedin"
+              }
+            ]
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "RepairHubHeader1": {
+            "logo": {
+              "src": "/RepairHub_Logo_Light.png",
+              "alt": "RepairHub",
+              "width": 320,
+              "height": 104,
+              "href": "/"
+            },
+            "menu": [
+              {
+                "label": "HOME",
+                "href": "/",
+                "active": true
+              },
+              {
+                "label": "ABOUT",
+                "href": "/about"
+              },
+              {
+                "label": "SERVICE",
+                "href": "/service",
+                "hasDropdown": true
+              },
+              {
+                "label": "OUR GALLERY",
+                "href": "/gallery"
+              },
+              {
+                "label": "OUR BLOGS",
+                "href": "/blogs"
+              },
+              {
+                "label": "FAQS",
+                "href": "/faqs"
+              },
+              {
+                "label": "CONTACT US",
+                "href": "/contact"
+              }
+            ],
+            "buttons": [
+              {
+                "label": "BOOK A REPAIR",
+                "href": "#book-repair",
+                "icon": "calendar"
+              }
+            ]
+          }
+        }
+      },
+      "Banner": {
+        "variants": {
+          "RepairHubBanner1": {
+            "tagline": {
+              "icon": "tools",
+              "text": "FAST • RELIABLE • AFFORDABLE"
+            },
+            "heading": {
+              "line1": "EXPERT",
+              "line2": "MOBILE REPAIR",
+              "line3": "SOLUTIONS"
+            },
+            "description": {
+              "text": "Screen Replacement, Battery Fix, Software Issue or Any Damage – ",
+              "highlight": "We've Got You Covered."
+            },
+            "ctaButton": {
+              "label": "BOOK A REPAIR NOW",
+              "href": "#book-repair",
+              "iconLeft": "calendar-badge",
+              "iconRight": "arrow-right"
+            },
+            "heroImage": {
+              "src": "/Hero_Banner.png",
+              "alt": "Expert Mobile Repair Solutions Technician Working On Smartphone",
+              "width": 920,
+              "height": 680
+            }
+          }
+        }
+      },
+      "Features": {
+        "variants": {
+          "RepairHubFeatures1": {
+            "features": [
+              {
+                "id": "quality-service",
+                "titleLine1": "Quality",
+                "titleLine2": "Repair Service",
+                "icon": "smartphone-repair",
+                "accentColor": "#f59e0b"
+              },
+              {
+                "id": "expert-technicians",
+                "titleLine1": "Expert",
+                "titleLine2": "Technicians",
+                "icon": "expert-technician",
+                "accentColor": "#f59e0b"
+              },
+              {
+                "id": "affordable-pricing",
+                "titleLine1": "Affordable",
+                "titleLine2": "Pricing",
+                "icon": "price-tag",
+                "accentColor": "#f59e0b"
+              },
+              {
+                "id": "repair-warranty",
+                "titleLine1": "Repair",
+                "titleLine2": "Warranty",
+                "icon": "shield-check",
+                "accentColor": "#f59e0b"
+              },
+              {
+                "id": "genuine-parts",
+                "titleLine1": "Genuine",
+                "titleLine2": "Parts",
+                "icon": "genuine-gear",
+                "accentColor": "#f59e0b"
+              },
+              {
+                "id": "satisfaction",
+                "titleLine1": "100%",
+                "titleLine2": "Satisfaction",
+                "icon": "five-star-satisfaction",
+                "accentColor": "#f59e0b"
+              }
+            ]
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "RepairHubAbout1": {
+            "eyebrow": "ABOUT US",
+            "heading": {
+              "line1": "We Fix Devices,",
+              "line2": "You Stay ",
+              "line2Highlight": "Connected"
+            },
+            "description": "At RepairHub, we provide professional and reliable mobile repair services for all brands and models. Our expert technicians use advanced tools and genuine parts to deliver fast, safe and high-quality repairs you can count on.",
+            "media": {
+              "primaryImage": {
+                "src": "/AboutUs/phone_repair_main.jpg",
+                "alt": "RepairHub technician replacing a smartphone component at the workbench",
+                "width": 1200,
+                "height": 896
+              },
+              "secondaryImage": {
+                "src": "/AboutUs/phone_repair_secondary.jpg",
+                "alt": "Close-up of a phone logic board being repaired under a magnifier",
+                "width": 848,
+                "height": 1264
+              },
+              "badgeIcon": "gear-house"
+            },
+            "highlights": [
+              {
+                "id": "expert-technicians",
+                "title": "Expert Technicians",
+                "description": "Skilled professionals with years of repair experience.",
+                "icon": "expert-technician"
+              },
+              {
+                "id": "genuine-parts",
+                "title": "Genuine Parts",
+                "description": "We use 100% genuine and high-quality parts.",
+                "icon": "microchip"
+              },
+              {
+                "id": "fast-reliable-service",
+                "title": "Fast & Reliable Service",
+                "description": "Quick turnaround time without compromising on quality.",
+                "icon": "fast-clock"
+              },
+              {
+                "id": "customer-satisfaction",
+                "title": "Customer Satisfaction",
+                "description": "Your satisfaction is our top priority.",
+                "icon": "shield-check"
+              }
+            ],
+            "ctaButton": {
+              "label": "Learn More",
+              "href": "/about",
+              "icon": "arrow-right"
+            }
+          }
+        }
+      },
+      "Services": {
+        "variants": {
+          "RepairHubServices1": {
+            "eyebrow": "REPAIRHUB REPAIR COMPANY",
+            "heading": {
+              "line1": "Services We ",
+              "highlight": "Provide"
+            },
+            "description": "Professional repair solutions for all your devices.\nFast, reliable and affordable services.",
+            "services": [
+              {
+                "id": "ipad-tablets",
+                "image": {
+                  "src": "/OurService/ipad_repair.jpeg",
+                  "alt": "iPad & Tablets Repair"
+                },
+                "title": "iPad & Tablets Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/ipad-tablets"
+                }
+              },
+              {
+                "id": "pc-imac",
+                "image": {
+                  "src": "/OurService/laptop_repair.jpg",
+                  "alt": "PC & iMac Repair"
+                },
+                "title": "PC & iMac Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/pc-imac"
+                }
+              },
+              {
+                "id": "mobile-phone",
+                "image": {
+                  "src": "/OurService/mobile_repair.jpg",
+                  "alt": "Mobile Phone Repair"
+                },
+                "title": "Mobile Phone Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/mobile-phone"
+                }
+              },
+              {
+                "id": "smartwatch",
+                "image": {
+                  "src": "/OurService/smart_Watch.jpeg",
+                  "alt": "Smartwatch Repair"
+                },
+                "title": "Smartwatch Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/smartwatch"
+                }
+              },
+              {
+                "id": "game-console",
+                "image": {
+                  "src": "/OurService/gameConsole_repair.jpg",
+                  "alt": "Game Console Repair"
+                },
+                "title": "Game Console Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/game-console"
+                }
+              },
+              {
+                "id": "drone",
+                "image": {
+                  "src": "/OurService/drone_repair.jpeg",
+                  "alt": "Drone Repair"
+                },
+                "title": "Drone Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/drone"
+                }
+              },
+              {
+                "id": "data-recovery",
+                "image": {
+                  "src": "/OurService/data_recovery.jpg",
+                  "alt": "Data Recovery Services"
+                },
+                "title": "Data Recovery Services",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/data-recovery"
+                }
+              },
+              {
+                "id": "audio-device",
+                "image": {
+                  "src": "/OurService/audio_repair.jpeg",
+                  "alt": "Audio Device Repair"
+                },
+                "title": "Audio Device Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/audio-device"
+                }
+              }
+            ]
+          },
+          "RepairHubServicesGrid": {
+            "layoutType": "grid",
+            "eyebrow": "REPAIRHUB REPAIR COMPANY",
+            "heading": {
+              "line1": "Services We ",
+              "highlight": "Provide"
+            },
+            "description": "Professional repair solutions for all your devices.\nFast, reliable and affordable services.",
+            "services": [
+              {
+                "id": "ipad-tablets",
+                "image": {
+                  "src": "/OurService/ipad_repair.jpeg",
+                  "alt": "iPad & Tablets Repair"
+                },
+                "title": "iPad & Tablets Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/ipad-tablets"
+                }
+              },
+              {
+                "id": "pc-imac",
+                "image": {
+                  "src": "/OurService/laptop_repair.jpg",
+                  "alt": "PC & iMac Repair"
+                },
+                "title": "PC & iMac Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/pc-imac"
+                }
+              },
+              {
+                "id": "mobile-phone",
+                "image": {
+                  "src": "/OurService/mobile_repair.jpg",
+                  "alt": "Mobile Phone Repair"
+                },
+                "title": "Mobile Phone Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/mobile-phone"
+                }
+              },
+              {
+                "id": "smartwatch",
+                "image": {
+                  "src": "/OurService/smart_Watch.jpeg",
+                  "alt": "Smartwatch Repair"
+                },
+                "title": "Smartwatch Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/smartwatch"
+                }
+              },
+              {
+                "id": "game-console",
+                "image": {
+                  "src": "/OurService/gameConsole_repair.jpg",
+                  "alt": "Game Console Repair"
+                },
+                "title": "Game Console Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/game-console"
+                }
+              },
+              {
+                "id": "drone",
+                "image": {
+                  "src": "/OurService/drone_repair.jpeg",
+                  "alt": "Drone Repair"
+                },
+                "title": "Drone Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/drone"
+                }
+              },
+              {
+                "id": "data-recovery",
+                "image": {
+                  "src": "/OurService/data_recovery.jpg",
+                  "alt": "Data Recovery Services"
+                },
+                "title": "Data Recovery Services",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/data-recovery"
+                }
+              },
+              {
+                "id": "audio-device",
+                "image": {
+                  "src": "/OurService/audio_repair.jpeg",
+                  "alt": "Audio Device Repair"
+                },
+                "title": "Audio Device Repair",
+                "link": {
+                  "label": "READ MORE",
+                  "href": "/services/audio-device"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Testimonials": {
+        "variants": {
+          "RepairHubTestimonials1": {
+            "eyebrow": "TESTIMONIALS",
+            "heading": {
+              "line1": "What Our ",
+              "highlight": "Customers Say"
+            },
+            "description": "Real feedback from real customers who trust us\nwith their devices.",
+            "testimonials": [
+              {
+                "id": "t1",
+                "name": "Rohit Sharma",
+                "location": "Delhi, India",
+                "text": "Mera OnePlus 11 ka display toot gaya tha. RepairHub ne bahut quick service di. Original display lagaya aur phone bilkul naya jaisa chal raha hai. Staff bhi bahut polite hai aur service cost bhi reasonable hai.",
+                "repaired": "OnePlus 11 - Display Replacement",
+                "rating": 5,
+                "avatar": "/Testimonials/testimonial_1_1788943345723.jpg"
+              },
+              {
+                "id": "t2",
+                "name": "Priya Verma",
+                "location": "Mumbai, India",
+                "text": "Mere iPhone 13 me charging issue aa raha tha. RepairHub ne properly diagnose karke charging port replace kiya. Ab phone perfectly charge ho raha hai. Very professional service!",
+                "repaired": "iPhone 13 - Charging Port Replacement",
+                "rating": 5,
+                "avatar": "/Testimonials/testimonial_2_1788943371035.jpg"
+              },
+              {
+                "id": "t3",
+                "name": "Amit Patel",
+                "location": "Ahmedabad, India",
+                "text": "Battery was draining too fast on my Samsung Galaxy S22. Got the battery replaced here. Excellent service and very transparent pricing. Highly recommended!",
+                "repaired": "Samsung Galaxy S22 - Battery Replacement",
+                "rating": 5,
+                "avatar": "/Testimonials/testimonial_3_1788943392909.jpg"
+              },
+              {
+                "id": "t4",
+                "name": "Neha Gupta",
+                "location": "Bangalore, India",
+                "text": "I dropped my MacBook and the screen got cracked. RepairHub fixed it within 24 hours. The new screen works flawlessly and the repair cost was much lower than Apple Store.",
+                "repaired": "MacBook Air M1 - Screen Replacement",
+                "rating": 5,
+                "avatar": "/Testimonials/testimonial_4_1788943405983.jpg"
+              },
+              {
+                "id": "t5",
+                "name": "Rajesh Kumar",
+                "location": "Pune, India",
+                "text": "Water damaged my iPad Pro. I thought it was completely dead, but these guys managed to recover it and save all my important data. Lifesavers!",
+                "repaired": "iPad Pro - Water Damage Repair",
+                "rating": 5,
+                "avatar": "/Testimonials/testimonial_5_1788943424057.jpg"
+              },
+              {
+                "id": "t6",
+                "name": "Sneha Reddy",
+                "location": "Hyderabad, India",
+                "text": "The camera lens on my Google Pixel was scratched. They replaced the lens cover in just 30 minutes while I waited. Great experience overall.",
+                "repaired": "Google Pixel 7 - Camera Lens Replacement",
+                "rating": 5,
+                "avatar": "/Testimonials/testimonial_6_1788943439312.jpg"
+              }
+            ]
+          }
+        }
+      },
+      "Brands": {
+        "variants": {
+          "RepairHubBrands1": {
+            "videoBanner": {
+              "image": {
+                "src": "/Brands_weRepair.mp4",
+                "alt": "Technician repairing mobile"
+              },
+              "title": "Most Trusted Mobile Repair",
+              "button": {
+                "label": "Discover More",
+                "href": "#discover"
+              }
+            },
+            "brandsInfo": {
+              "eyebrow": "BRANDS WE REPAIR",
+              "heading": {
+                "line1": "We Repair All Major ",
+                "highlight": "Brands & Models"
+              },
+              "description": "From latest smartphones to all popular brands,\nwe fix them all with care and expertise.",
+              "button": {
+                "label": "View All Brands",
+                "href": "/brands"
+              }
+            },
+            "brands": [
+              {
+                "id": "apple",
+                "name": "Apple",
+                "logo": "/Partner_Logos/apple-seeklogo.png"
+              },
+              {
+                "id": "samsung",
+                "name": "Samsung",
+                "logo": "/Partner_Logos/samsung-seeklogo.png"
+              },
+              {
+                "id": "xiaomi",
+                "name": "Xiaomi",
+                "logo": "/Partner_Logos/mi-xiaomi-seeklogo.png"
+              },
+              {
+                "id": "oneplus",
+                "name": "OnePlus",
+                "logo": "/Partner_Logos/oneplus-seeklogo.png"
+              },
+              {
+                "id": "vivo",
+                "name": "Vivo",
+                "logo": "/Partner_Logos/vivo-seeklogo.png"
+              },
+              {
+                "id": "oppo",
+                "name": "Oppo",
+                "logo": "/Partner_Logos/oppo-seeklogo.png"
+              },
+              {
+                "id": "realme",
+                "name": "Realme",
+                "logo": "/Partner_Logos/realme-seeklogo.png"
+              },
+              {
+                "id": "honor",
+                "name": "Honor",
+                "logo": "/Partner_Logos/hihonor-seeklogo.png"
+              },
+              {
+                "id": "nokia",
+                "name": "Nokia",
+                "logo": "/Partner_Logos/nokia-seeklogo.png"
+              },
+              {
+                "id": "motorola",
+                "name": "Motorola",
+                "logo": "/Partner_Logos/motorola-seeklogo.png"
+              },
+              {
+                "id": "sony",
+                "name": "Sony",
+                "logo": "/Partner_Logos/sony-seeklogo.png"
+              },
+              {
+                "id": "google",
+                "name": "Google",
+                "logo": "/Partner_Logos/google-2015-new-seeklogo.png"
+              }
+            ]
+          }
+        }
+      },
+      "Stats": {
+        "variants": {
+          "RepairHubStats1": {
+            "stats": [
+              {
+                "id": "s1",
+                "icon": "stats-devices",
+                "label": "Devices Repaired",
+                "value": "15,890+"
+              },
+              {
+                "id": "s2",
+                "icon": "stats-happy",
+                "label": "Happy Customers",
+                "value": "12,750+"
+              },
+              {
+                "id": "s3",
+                "icon": "stats-experience",
+                "label": "Years of Experience",
+                "value": "8+"
+              },
+              {
+                "id": "s4",
+                "icon": "stats-centers",
+                "label": "Service Centers",
+                "value": "25+"
+              }
+            ]
+          },
+          "RepairHubStatsInline": {
+            "layoutType": "inline",
+            "stats": [
+              {
+                "id": "stat-1",
+                "icon": "stats-devices",
+                "label": "Devices Repaired",
+                "value": "15,890+"
+              },
+              {
+                "id": "stat-2",
+                "icon": "stats-happy",
+                "label": "Happy Customers",
+                "value": "12,750+"
+              },
+              {
+                "id": "stat-3",
+                "icon": "stats-experience",
+                "label": "Years of Experience",
+                "value": "8+"
+              },
+              {
+                "id": "stat-4",
+                "icon": "stats-centers",
+                "label": "Service Centers",
+                "value": "25+"
+              }
+            ]
+          }
+        }
+      },
+      "Team": {
+        "variants": {
+          "RepairHubTeam1": {
+            "eyebrow": "MEET OUR TEAM",
+            "heading": {
+              "line1": "We Have an ",
+              "highlight": "Expert Team"
+            },
+            "description": "Skilled professionals dedicated to providing the best\nrepair solutions for your devices.",
+            "members": [
+              {
+                "id": "tm1",
+                "name": "Rohit Sharma",
+                "role": "Senior Technician",
+                "image": "/Team/Team_member2.jpg",
+                "phone": "+91 98765 43210",
+                "email": "rohit.sharma@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "tm2",
+                "name": "Priya Verma",
+                "role": "Device Specialist",
+                "image": "/Team/Team_member1.jpg",
+                "phone": "+91 98765 43210",
+                "email": "priya.verma@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "tm3",
+                "name": "Arjun Mehta",
+                "role": "Chip Level Expert",
+                "image": "/Team/Team_member3.jpg",
+                "phone": "+91 98765 43210",
+                "email": "arjun.mehta@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "tm4",
+                "name": "Vikash Kumar",
+                "role": "Customer Support",
+                "image": "/Team/Team_member5.jpg",
+                "phone": "+91 98765 43210",
+                "email": "vikash.kumar@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "tm5",
+                "name": "Ananya Singh",
+                "role": "Quality Analyst",
+                "image": "/Team/Team_member4.jpg",
+                "phone": "+91 98765 43210",
+                "email": "ananya.singh@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "tm6",
+                "name": "Rajesh Technician",
+                "role": "Hardware Expert",
+                "image": "/Team/Team_member6.jpg",
+                "phone": "+91 98765 43210",
+                "email": "rajesh.technician@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              }
+            ]
+          },
+          "RepairHubTeamGrid": {
+            "layoutType": "grid",
+            "eyebrow": "MEET OUR TEAM",
+            "heading": {
+              "line1": "We Have a ",
+              "highlight": "Expert Team"
+            },
+            "description": "Skilled professionals dedicated to providing the best repair solutions for your devices.",
+            "members": [
+              {
+                "id": "team-1",
+                "name": "Rohit Sharma",
+                "role": "Senior Technician",
+                "image": "/Team/Team_member2.jpg",
+                "phone": "+91 98765 43210",
+                "email": "rohit.sharma@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "team-2",
+                "name": "Priya Verma",
+                "role": "Device Specialist",
+                "image": "/Team/Team_member1.jpg",
+                "phone": "+91 98765 43210",
+                "email": "priya.verma@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "team-3",
+                "name": "Arjun Mehta",
+                "role": "Chip Level Expert",
+                "image": "/Team/Team_member3.jpg",
+                "phone": "+91 98765 43210",
+                "email": "arjun.mehta@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "team-4",
+                "name": "Vikash Kumar",
+                "role": "Customer Support",
+                "image": "/Team/Team_member5.jpg",
+                "phone": "+91 98765 43210",
+                "email": "vikash.kumar@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "team-5",
+                "name": "Ananya Singh",
+                "role": "Quality Analyst",
+                "image": "/Team/Team_member4.jpg",
+                "phone": "+91 98765 43210",
+                "email": "ananya.singh@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "id": "team-6",
+                "name": "Rajesh Technician",
+                "role": "Hardware Expert",
+                "image": "/Team/Team_member6.jpg",
+                "phone": "+91 98765 43210",
+                "email": "rajesh.technician@repairhub.com",
+                "experience": "6+ Years",
+                "specialization": "Mobile Repair Expert",
+                "location": "New Delhi, India",
+                "qualityService": 90,
+                "customerSatisfaction": 95,
+                "about": "Rahul Verma is a skilled and experienced mobile repair technician with a passion for fixing all types of smartphones and tablets. With over 6 years of hands-on experience, he specializes in hardware repairs, screen replacements, battery solutions, and motherboard level repairs. He believes in delivering fast, reliable and high-quality repair services to ensure every customer leaves with a smile.",
+                "expertIn": [
+                  {
+                    "icon": "smartphone",
+                    "title": "Smartphone Repair Expert"
+                  },
+                  {
+                    "icon": "circuit-board",
+                    "title": "Chip Level Expert"
+                  },
+                  {
+                    "icon": "wrench",
+                    "title": "Hardware Specialist"
+                  }
+                ],
+                "skillsDescription": "Rahul has deep knowledge and hands-on experience in diagnosing and repairing a wide range of mobile issues. His expertise ensures accurate solutions and long-lasting performance.",
+                "skills": [
+                  "Display Replacement",
+                  "Motherboard Repair",
+                  "Battery Replacement",
+                  "Software Troubleshooting",
+                  "Charging Port Repair",
+                  "Camera & Speaker Repair",
+                  "Water Damage Repair",
+                  "Data Recovery Services"
+                ],
+                "workSamples": [
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png",
+                  "/Hero_Banner.png"
+                ],
+                "socialLinks": [
+                  {
+                    "platform": "facebook",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "twitter",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "#"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "FAQ": {
+        "variants": {
+          "RepairHubFAQ1": {
+            "eyebrow": "FAQS",
+            "heading": {
+              "line1": "Frequently Asked ",
+              "highlight": "Questions"
+            },
+            "description": "Find quick answers to the most common questions\nabout our mobile repair services.",
+            "questions": [
+              {
+                "id": "q1",
+                "question": "What types of mobile repair services do you offer?",
+                "answer": "We offer a wide range of mobile repair services including screen replacement, battery replacement, charging port repair, camera repair, speaker issues, water damage repair, software troubleshooting, and more for all major brands."
+              },
+              {
+                "id": "q2",
+                "question": "How long does a typical mobile repair take?",
+                "answer": "Most standard repairs like screen or battery replacements take between 30 to 60 minutes. Complex issues like water damage or motherboard repairs may take 24-48 hours depending on the extent of the damage."
+              },
+              {
+                "id": "q3",
+                "question": "Do you use original spare parts?",
+                "answer": "Yes, we prioritize using 100% original OEM parts. When original parts are not available, we use high-quality certified compatible parts and always inform you before proceeding."
+              },
+              {
+                "id": "q4",
+                "question": "Is there a warranty on your repair services?",
+                "answer": "Absolutely! We provide a minimum 3-month warranty on most of our repairs and replacement parts. If the replaced part fails due to a defect within the warranty period, we will fix it for free."
+              },
+              {
+                "id": "q5",
+                "question": "How can I track my repair status?",
+                "answer": "Once you submit your device, you will receive a unique tracking ID via SMS and email. You can use this ID on our website to check the live status of your repair."
+              },
+              {
+                "id": "q6",
+                "question": "Do you offer doorstep pickup and delivery?",
+                "answer": "Yes, we offer free doorstep pickup and delivery services across the city. Our delivery executive will safely collect your device, and we will return it after the repair is completed."
+              }
+            ],
+            "support": {
+              "heading": {
+                "line1": "Still Have ",
+                "highlight": "Questions?"
+              },
+              "description": "Our support team is here to help you\nwith anything you need.",
+              "phone": "+1 12345678920",
+              "whatsapp": "+1 12345678920",
+              "email": "support@repairhub.com",
+              "button": {
+                "label": "Contact Us Now",
+                "href": "/contact"
+              }
+            }
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "RepairHubFooter1": {
+            "logo": {
+              "src": "/RepairHub_Logo_Light.png",
+              "alt": "RepairHub Logo"
+            },
+            "description": "Your trusted partner for fast, reliable, and\naffordable mobile repair services. We fix it\nright, the first time.",
+            "contact": [
+              {
+                "icon": "map-pin",
+                "label": "123 Repair Street,\nLos Angeles, CA 90001, USA"
+              },
+              {
+                "icon": "phone",
+                "label": "Call Us",
+                "value": "+1 12345678920"
+              },
+              {
+                "icon": "envelope",
+                "label": "Email Us",
+                "value": "support@repairhub.com"
+              }
+            ],
+            "linksColumn": {
+              "title": "Useful Links",
+              "links": [
+                {
+                  "label": "Home",
+                  "href": "#home"
+                },
+                {
+                  "label": "About Us",
+                  "href": "#about"
+                },
+                {
+                  "label": "Services",
+                  "href": "#services"
+                },
+                {
+                  "label": "Pricing / Repair Cost",
+                  "href": "#pricing"
+                },
+                {
+                  "label": "Brands We Repair",
+                  "href": "#brands"
+                },
+                {
+                  "label": "Book a Repair",
+                  "href": "#book"
+                },
+                {
+                  "label": "Photo Gallery",
+                  "href": "#gallery"
+                },
+                {
+                  "label": "Video Gallery",
+                  "href": "#video"
+                },
+                {
+                  "label": "Testimonials",
+                  "href": "#testimonials"
+                },
+                {
+                  "label": "Blog",
+                  "href": "#blog"
+                },
+                {
+                  "label": "FAQ",
+                  "href": "#faq"
+                },
+                {
+                  "label": "Contact Us",
+                  "href": "#contact"
+                }
+              ]
+            },
+            "postsColumn": {
+              "title": "Recent Posts",
+              "posts": [
+                {
+                  "image": "/OurService/ipad_repair.jpeg",
+                  "title": "5 Signs Your Phone Battery Needs Replacement",
+                  "date": "May 24, 2024",
+                  "href": "/blog/battery-replacement"
+                },
+                {
+                  "image": "/OurService/laptop_repair.jpg",
+                  "title": "Charging Port Not Working? Here's What You Can Do",
+                  "date": "May 18, 2024",
+                  "href": "/blog/charging-port-not-working"
+                }
+              ],
+              "button": {
+                "label": "View All Posts",
+                "href": "/blog"
+              }
+            },
+            "estimateColumn": {
+              "title": "Get Free Estimate",
+              "phone": "+1 12345678920",
+              "description": "Our online scheduling and payment system is safe and secure.",
+              "button": {
+                "label": "Request With Online Form",
+                "href": "/estimate"
+              }
+            },
+            "bottomBar": {
+              "copyright": "© 2024 RepairHub. All Rights Reserved.",
+              "policies": [
+                {
+                  "label": "Privacy Policy",
+                  "href": "/privacy-policy"
+                },
+                {
+                  "label": "Terms & Conditions",
+                  "href": "/terms"
+                },
+                {
+                  "label": "Refund Policy",
+                  "href": "/refund-policy"
+                },
+                {
+                  "label": "Warranty Policy",
+                  "href": "/warranty"
+                }
+              ],
+              "social": [
+                {
+                  "icon": "facebook",
+                  "href": "#"
+                },
+                {
+                  "icon": "instagram",
+                  "href": "#"
+                },
+                {
+                  "icon": "youtube",
+                  "href": "#"
+                },
+                {
+                  "icon": "linkedin",
+                  "href": "#"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Blog": {
+        "variants": {
+          "RepairHubBlog1": {
+            "eyebrow": "LATEST BLOGS",
+            "heading": {
+              "line1": "Mobile Repair ",
+              "highlight": "Tips & Insights"
+            },
+            "description": "Expert advice, repair guides, and the latest updates from\\nRepairHub – your trusted mobile repair partner.",
+            "posts": [
+              {
+                "id": "screen-repair",
+                "category": "SCREEN REPAIR",
+                "image": {
+                  "src": "/OurService/mobile_repair.jpg",
+                  "alt": "Screen Repair"
+                },
+                "date": "May 24, 2024",
+                "comments": 0,
+                "title": "Common Mobile Screen Problems & How We Fix Them",
+                "link": "/blog/common-mobile-screen-problems"
+              },
+              {
+                "id": "battery-replacement",
+                "category": "BATTERY REPLACEMENT",
+                "image": {
+                  "src": "/OurService/ipad_repair.jpeg",
+                  "alt": "Battery Replacement"
+                },
+                "date": "May 24, 2024",
+                "comments": 0,
+                "title": "Signs You Need a Battery Replacement",
+                "link": "/blog/signs-you-need-battery-replacement"
+              },
+              {
+                "id": "charging-port-repair",
+                "category": "CHARGING PORT REPAIR",
+                "image": {
+                  "src": "/OurService/laptop_repair.jpg",
+                  "alt": "Charging Port Repair"
+                },
+                "date": "May 24, 2024",
+                "comments": 0,
+                "title": "Charging Port Not Working? Here's What You Should Do",
+                "link": "/blog/charging-port-not-working"
+              }
+            ]
+          }
+        }
+      },
+      "PageBanner": {
+        "variants": {
+          "AboutUsBanner": {
+            "title": "About Us",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "About Us",
+                "href": "/about"
+              }
+            ]
+          },
+          "WhyChooseUsBanner": {
+            "title": "Why Choose Us",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Why Choose Us",
+                "href": "/why-choose-us"
+              }
+            ]
+          },
+          "TeamsBanner": {
+            "title": "Our Teams",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Our Teams",
+                "href": "/teams"
+              }
+            ]
+          },
+          "RepairServiceBanner": {
+            "title": "Repair Service",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Repair Service",
+                "href": "/service"
+              }
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "WhyChooseUs1": {
+            "eyebrow": "Why Choose Us",
+            "heading": {
+              "line1": "Your Trusted Partner in ",
+              "highlight": "Device Repairs"
+            },
+            "description": "We believe in providing transparent, high-quality repair services that get your devices back to life quickly. With years of experience and a team of certified technicians, we ensure every repair meets our strict quality standards.",
+            "features": [
+              {
+                "icon": "expert-technician",
+                "title": "Expert Technicians",
+                "description": "Our skilled and certified technicians provide professional repair services you can trust."
+              },
+              {
+                "icon": "shield-check",
+                "title": "Genuine Parts",
+                "description": "We use 100% genuine and high-quality parts to ensure long-lasting performance."
+              },
+              {
+                "icon": "price-tag",
+                "title": "Affordable Pricing",
+                "description": "Get the best repair solutions at competitive prices with no hidden charges."
+              }
+            ],
+            "image": {
+              "src": "/OurService/laptop_repair.jpg",
+              "alt": "Expert device repair technician"
+            }
+          }
+        }
+      },
+      "FeatureCards": {
+        "variants": {
+          "FeatureCards1": {
+            "cards": [
+              {
+                "icon": "smartphone-repair",
+                "title": "Quality Repair Service"
+              },
+              {
+                "icon": "expert-technician",
+                "title": "Expert Technicians"
+              },
+              {
+                "icon": "price-tag",
+                "title": "Affordable Pricing"
+              },
+              {
+                "icon": "shield-check",
+                "title": "Repair Warranty"
+              },
+              {
+                "icon": "genuine-gear",
+                "title": "Genuine Parts"
+              },
+              {
+                "icon": "five-star-satisfaction",
+                "title": "100% Satisfaction"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

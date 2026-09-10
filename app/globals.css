@@ -1,26 +1,365 @@
 @import "tailwindcss";
 
+/*
+  Design tokens — reuse these in every new section.
+
+  Spacing (apply with class `page-gutter`):
+    < 640px   20px  (1.25rem)
+    ≥ 640px   32px  (2rem)
+    ≥ 1024px  40px  (2.5rem)
+    ≥ 1280px  64px  (4rem)
+    ≥ 1536px  88px  (5.5rem)
+
+  Bleed a background to the right edge while keeping inner content on the gutter:
+    class `bleed-right`
+
+  Type (apply with classes below):
+    .type-topbar    13px → 14.5px from sm
+    .type-nav       13.5px → 15px from xl
+    .type-eyebrow   12px → 13px from sm
+    .type-display   40px → 60px sm → 58px lg → 70px xl   (hero h1)
+    .type-heading   30px → 36px sm → 42px xl             (section h2)
+    .type-body      15px → 16px from sm
+    .type-caption   13.5px → 14px from sm
+    .type-cta       13.5px → 15px from xl
+    .type-cta-hero  12px → 13px from sm
+    .type-card      15px → 16px from sm
+
+  Color (Tailwind: bg-navy, text-brand, text-muted, …):
+    navy          #0b172b
+    navy-mid      #101f38
+    brand          #f59e0b
+    brand-light   #fbbf24
+    brand-pale    #fcd34d
+    ink           #020617
+    ink-soft      #64748b   body copy on light backgrounds
+    line          #e6eaf0   hairline dividers
+    muted         #e2e8f0
+    on-dark       #f1f5f9
+    card          #0f172a
+*/
+
+@theme {
+  --font-poppins: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-navy: #0b172b;
+  --color-navy-mid: #101f38;
+  --color-navy-card: #0a1324;
+  --color-brand: #f59e0b;
+  --color-brand-light: #fbbf24;
+  --color-brand-pale: #fcd34d;
+  --color-ink: #020617;
+  --color-ink-soft: #64748b;
+  --color-line: #e6eaf0;
+  --color-muted: #e2e8f0;
+  --color-on-dark: #f1f5f9;
+  --color-card: #0f172a;
+  --color-surface: #ffffff;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b172b;
+  --foreground: #ffffff;
+  --primary-yellow: #f59e0b;
+  --primary-gold: #fbb03b;
+  --navy-dark: #0b172b;
+  --navy-card: #0a1324;
+
+  --page-gutter: 1.25rem;
+
+  --text-topbar: 13px;
+  --text-nav: 13.5px;
+  --text-eyebrow: 12px;
+  --text-display: 40px;
+  --text-heading: 30px;
+  --text-body: 15px;
+  --text-caption: 13.5px;
+  --text-cta: 13.5px;
+  --text-cta-hero: 12px;
+  --text-card: 15px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 640px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --page-gutter: 2rem;
+    --text-topbar: 14.5px;
+    --text-eyebrow: 13px;
+    --text-display: 60px;
+    --text-heading: 36px;
+    --text-body: 16px;
+    --text-caption: 14px;
+    --text-cta-hero: 13px;
+    --text-card: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-gutter: 2.5rem;
+    --text-display: 58px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-gutter: 4rem;
+    --text-nav: 15px;
+    --text-cta: 15px;
+    --text-display: 70px;
+    --text-heading: 42px;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --page-gutter: 5.5rem;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--color-navy);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* clip, not hidden — hidden makes body a scroll container and breaks the sticky header */
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.page-gutter {
+  padding-inline: var(--page-gutter);
+}
+
+.bleed-right {
+  margin-inline-end: calc(var(--page-gutter) * -1);
+  padding-inline-end: var(--page-gutter);
+}
+
+.type-topbar {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-topbar);
+}
+
+.type-nav {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-nav);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.type-eyebrow {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-eyebrow);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.type-display {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-display);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.type-heading {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-heading);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.type-body {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.625;
+}
+
+.type-caption {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-caption);
+  line-height: 1.6;
+}
+
+.type-cta {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-cta);
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.type-cta-hero {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-cta-hero);
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.type-card {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: var(--text-card);
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+/* Motion — entrance animations run once on load, ambient ones loop */
+@keyframes rh-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rh-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rh-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rh-reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(70px) scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes rh-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes rh-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes rh-trace {
+  to {
+    stroke-dashoffset: -260;
+  }
+}
+
+.rh-fade-up {
+  animation: rh-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rh-fade-in {
+  animation: rh-fade-in 0.9s ease-out both;
+}
+
+.rh-fade-left {
+  animation: rh-fade-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rh-reveal-right {
+  animation: rh-reveal-right 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rh-drift {
+  animation: rh-drift 6s ease-in-out infinite;
+}
+
+.rh-glow {
+  animation: rh-glow 7s ease-in-out infinite;
+}
+
+.rh-trace {
+  stroke-dasharray: 14 240;
+  animation: rh-trace 9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rh-fade-up,
+  .rh-fade-in,
+  .rh-fade-left,
+  .rh-reveal-right,
+  .rh-drift,
+  .rh-glow,
+  .rh-trace {
+    animation: none !important;
+  }
+
+  .rh-trace {
+    stroke-dasharray: none;
+  }
+}
+
+.clip-angled-tab {
+  clip-path: polygon(18px 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.clip-logo-accent {
+  clip-path: polygon(25% 0, 100% 0, 75% 100%, 0% 100%);
+}
+
+.circuit-bg {
+  background-color: #08101e;
+  background-image:
+    radial-gradient(circle at 75% 35%, rgba(30, 58, 138, 0.28) 0%, transparent 55%),
+    radial-gradient(circle at 20% 50%, rgba(15, 23, 42, 0.4) 0%, transparent 60%);
+}
+
+.dot-matrix {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.2) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.dot-matrix-blue {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 1px);
+  background-size: 14px 14px;
 }
