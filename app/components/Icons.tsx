@@ -199,19 +199,19 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
       return (
         <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className}>
           {/* Outer Phone Bezel */}
-          <rect x="16" y="8" width="32" height="48" rx="7" stroke="#f59e0b" strokeWidth="3" fill="none" />
+          <rect x="16" y="8" width="32" height="48" rx="7" stroke="currentColor" strokeWidth="3" fill="none" />
           {/* Screen Top Speaker / Notch */}
-          <line x1="28" y1="13" x2="36" y2="13" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
+          <line x1="28" y1="13" x2="36" y2="13" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
           {/* Home Button / Indicator */}
-          <circle cx="32" cy="50" r="2" fill="#f59e0b" />
+          <circle cx="32" cy="50" r="2" fill="currentColor" />
           {/* Diagonal Wrench across phone screen */}
-          <path d="M23 37 L37 23" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" />
-          <path d="M22 34 L25 37 L23 39 L20 36 Z" fill="#f59e0b" />
-          <path d="M35 21 L38 24 L40 22 L37 19 Z" fill="#f59e0b" />
+          <path d="M23 37 L37 23" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          <path d="M22 34 L25 37 L23 39 L20 36 Z" fill="currentColor" />
+          <path d="M35 21 L38 24 L40 22 L37 19 Z" fill="currentColor" />
           {/* Gear in bottom right */}
           <g transform="translate(38, 38)">
-            <circle cx="9" cy="9" r="6.5" stroke="#f59e0b" strokeWidth="2.5" fill="#0a111e" />
-            <path d="M9 1 L9 17 M1 9 L17 9 M3 3 L15 15 M3 15 L15 3" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="9" cy="9" r="6.5" stroke="currentColor" strokeWidth="2.5" fill="#0a111e" />
+            <path d="M9 1 L9 17 M1 9 L17 9 M3 3 L15 15 M3 15 L15 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </g>
         </svg>
       );
@@ -220,15 +220,15 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
       return (
         <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className}>
           {/* Technician Head */}
-          <circle cx="32" cy="25" r="9" stroke="#f59e0b" strokeWidth="3" fill="none" />
+          <circle cx="32" cy="25" r="9" stroke="currentColor" strokeWidth="3" fill="none" />
           {/* Cap / Helmet with Gear Badge */}
-          <path d="M21 23 C21 15 43 15 43 23 L46 25 L18 25 Z" fill="#f59e0b" />
-          <circle cx="32" cy="18" r="2.5" fill="#0a111e" stroke="#f59e0b" strokeWidth="1" />
+          <path d="M21 23 C21 15 43 15 43 23 L46 25 L18 25 Z" fill="currentColor" />
+          <circle cx="32" cy="18" r="2.5" fill="#0a111e" stroke="currentColor" strokeWidth="1" />
           {/* Torso / Shoulders */}
-          <path d="M14 51 C14 38 23 37 32 37 C41 37 50 38 50 51" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" fill="none" />
+          <path d="M14 51 C14 38 23 37 32 37 C41 37 50 38 50 51" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none" />
           {/* Wrench held horizontally across chest */}
-          <path d="M18 48 L46 48" stroke="#f59e0b" strokeWidth="3.5" strokeLinecap="round" />
-          <path d="M16 45 L16 51 M48 45 L48 51" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M18 48 L46 48" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+          <path d="M16 45 L16 51 M48 45 L48 51" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
         </svg>
       );
 
@@ -236,12 +236,12 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
       return (
         <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className}>
           {/* Luggage / Price Tag Outline */}
-          <path d="M32 10 L50 28 L36 54 L18 54 L10 36 L24 10 Z" stroke="#f59e0b" strokeWidth="3" strokeLinejoin="round" fill="#f59e0b" fillOpacity="0.1" />
-          <circle cx="23" cy="22" r="3.5" fill="#f59e0b" />
+          <path d="M32 10 L50 28 L36 54 L18 54 L10 36 L24 10 Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" fill="currentColor" fillOpacity="0.1" />
+          <circle cx="23" cy="22" r="3.5" fill="currentColor" />
           {/* Indian Rupee ₹ symbol */}
           <g transform="translate(25, 26)">
             <path d="M2 3 L14 3 M2 7 L12 7 M2 3 C10 3 10 11 2 11 L12 21 M2 3 L2 21" stroke="#0a111e" strokeWidth="3.5" strokeLinecap="round" />
-            <path d="M2 3 L14 3 M2 7 L12 7 M2 3 C10 3 10 11 2 11 L12 21 M2 3 L2 21" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M2 3 L14 3 M2 7 L12 7 M2 3 C10 3 10 11 2 11 L12 21 M2 3 L2 21" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
           </g>
         </svg>
       );
@@ -250,11 +250,11 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
       return (
         <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className}>
           {/* Outer Shield */}
-          <path d="M32 8 L50 16 V32 C50 44 42 52 32 56 C22 52 14 44 14 32 V16 Z" stroke="#f59e0b" strokeWidth="3.5" strokeLinejoin="round" fill="none" />
+          <path d="M32 8 L50 16 V32 C50 44 42 52 32 56 C22 52 14 44 14 32 V16 Z" stroke="currentColor" strokeWidth="3.5" strokeLinejoin="round" fill="none" />
           {/* Inner Shield Accent */}
-          <path d="M32 14 L44 20 V31 C44 40 38 46 32 49 C26 46 20 40 20 31 V20 Z" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 3" fill="#f59e0b" fillOpacity="0.08" />
+          <path d="M32 14 L44 20 V31 C44 40 38 46 32 49 C26 46 20 40 20 31 V20 Z" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" fill="currentColor" fillOpacity="0.08" />
           {/* Bold Checkmark */}
-          <polyline points="23 32 29 38 41 24" stroke="#f59e0b" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="23 32 29 38 41 24" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
 
@@ -263,7 +263,7 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
         <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className}>
           {/* Circular Gear with 8 cog teeth */}
           <g transform="translate(32, 32)">
-            <circle cx="0" cy="0" r="18" stroke="#f59e0b" strokeWidth="3" fill="none" />
+            <circle cx="0" cy="0" r="18" stroke="currentColor" strokeWidth="3" fill="none" />
             {/* 8 Cog Teeth */}
             {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
               <rect
@@ -273,7 +273,7 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
                 width="7"
                 height="6"
                 rx="1.5"
-                fill="#f59e0b"
+                fill="currentColor"
                 transform={`rotate(${angle})`}
               />
             ))}
@@ -281,7 +281,7 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
           {/* 3D Isometric Parcel Box inside Gear */}
           <g transform="translate(32, 32)">
             {/* Top diamond */}
-            <polygon points="0,-10 10,-4 0,2 -10,-4" fill="#f59e0b" />
+            <polygon points="0,-10 10,-4 0,2 -10,-4" fill="currentColor" />
             {/* Left face */}
             <polygon points="-10,-4 0,2 0,12 -10,6" fill="#d97706" />
             {/* Right face */}
@@ -294,7 +294,7 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
       return (
         <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className}>
           {/* 5 Stars in an arc above */}
-          <g fill="#f59e0b">
+          <g fill="currentColor">
             {/* Star 1 */}
             <polygon points="12,20 14,14 16,20 11,16 17,16" />
             {/* Star 2 */}
@@ -310,11 +310,11 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
           {/* Thumbs Up Hand */}
           <g transform="translate(3, 4)">
             {/* Cuff / Wrist */}
-            <rect x="20" y="36" width="4" height="15" rx="1.5" fill="#f59e0b" />
+            <rect x="20" y="36" width="4" height="15" rx="1.5" fill="currentColor" />
             {/* Palm & 4 curled fingers */}
-            <path d="M26 36 H38 C40 36 41 37.5 41 39 C41 40 40 41 39 41.5 C41 42 42 43.5 41.5 45 C41.2 46 40 47 38.5 47 C40 47.5 40.5 49 40 50 C39.5 51 38 51 36 51 H26 Z" fill="#f59e0b" />
+            <path d="M26 36 H38 C40 36 41 37.5 41 39 C41 40 40 41 39 41.5 C41 42 42 43.5 41.5 45 C41.2 46 40 47 38.5 47 C40 47.5 40.5 49 40 50 C39.5 51 38 51 36 51 H26 Z" fill="currentColor" />
             {/* Erect Thumb pointing up */}
-            <path d="M26 36 L28 29 C29 25 31 24 33 24 C34.5 24 35.5 25.5 35 27.5 L33.5 33 L36 33 C38 33 39 34.5 38.5 36 Z" fill="#f59e0b" />
+            <path d="M26 36 L28 29 C29 25 31 24 33 24 C34.5 24 35.5 25.5 35 27.5 L33.5 33 L36 33 C38 33 39 34.5 38.5 36 Z" fill="currentColor" />
           </g>
         </svg>
       );

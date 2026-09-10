@@ -77,37 +77,36 @@ export const Services: React.FC<ServicesProps> = ({ servicesData }) => {
                   delay={index * 50}
                   className="group flex flex-col overflow-hidden rounded-[20px] bg-navy border-b-[4px] border-brand shadow-[0_15px_40px_-15px_rgba(15,23,42,0.6)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-12px_rgba(15,23,42,0.7)]"
                 >
-                  {/* Card Image */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                    {service.image.src ? (
-                      <Image
-                        src={service.image.src}
-                        alt={service.image.alt}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center text-slate-500">
-                        <span className="text-sm font-medium">Image Placeholder</span>
-                      </div>
-                    )}
-                  </div>
+                  <Link href={service.link.href} className="flex flex-col h-full w-full cursor-pointer">
+                    {/* Card Image */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
+                      {service.image.src ? (
+                        <Image
+                          src={service.image.src}
+                          alt={service.image.alt}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center text-slate-500">
+                          <span className="text-sm font-medium">Image Placeholder</span>
+                        </div>
+                      )}
+                    </div>
 
-                  {/* Card Content */}
-                  <div className="flex flex-1 flex-col items-center justify-between p-6 sm:p-7 text-center">
-                    <h3 className="mb-6 text-center text-[18px] font-bold text-white xl:text-[20px] leading-snug">
-                      {service.title}
-                    </h3>
-                    
-                    <Link
-                      href={service.link.href}
-                      className="mt-auto inline-flex items-center justify-center gap-2 text-[13px] sm:text-[14px] font-bold tracking-wider text-white transition-colors hover:text-brand"
-                    >
-                      <span>{service.link.label}</span>
-                      <DynamicIcon name="arrow-right" className="h-4 w-4 text-brand transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
-                  </div>
+                    {/* Card Content */}
+                    <div className="flex flex-1 flex-col items-center justify-between p-6 sm:p-7 text-center">
+                      <h3 className="mb-6 text-center text-[18px] font-bold text-white xl:text-[20px] leading-snug">
+                        {service.title}
+                      </h3>
+                      
+                      <span className="mt-auto inline-flex items-center justify-center gap-2 text-[13px] sm:text-[14px] font-bold tracking-wider text-white transition-colors group-hover:text-brand">
+                        <span>{service.link.label}</span>
+                        <DynamicIcon name="arrow-right" className="h-4 w-4 text-brand transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </Link>
                 </Reveal>
               ))}
             </div>
@@ -174,37 +173,36 @@ export const Services: React.FC<ServicesProps> = ({ servicesData }) => {
               delay={index * 100}
               className="group flex flex-col overflow-hidden rounded-[20px] bg-navy border-b-[5px] border-brand shadow-[0_15px_40px_-15px_rgba(15,23,42,0.6)] snap-start"
             >
-              {/* Card Image */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                {service.image.src ? (
-                  <Image
-                    src={service.image.src}
-                    alt={service.image.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center text-slate-500">
-                    <span className="text-sm font-medium">Image Placeholder</span>
-                  </div>
-                )}
-              </div>
+              <Link href={service.link.href} className="flex flex-col h-full w-full cursor-pointer">
+                {/* Card Image */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
+                  {service.image.src ? (
+                    <Image
+                      src={service.image.src}
+                      alt={service.image.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-slate-500">
+                      <span className="text-sm font-medium">Image Placeholder</span>
+                    </div>
+                  )}
+                </div>
 
-              {/* Card Content */}
-              <div className="flex flex-1 flex-col items-center justify-between p-6 sm:p-8">
-                <h3 className="mb-6 text-center text-[18px] font-bold text-white xl:text-[20px]">
-                  {service.title}
-                </h3>
-                
-                <Link
-                  href={service.link.href}
-                  className="mt-auto flex items-center justify-center gap-2 text-[14px] font-bold tracking-wider text-white transition-colors hover:text-brand"
-                >
-                  {service.link.label}
-                  <DynamicIcon name="arrow-right" className="h-5 w-5 text-brand transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
+                {/* Card Content */}
+                <div className="flex flex-1 flex-col items-center justify-between p-6 sm:p-8">
+                  <h3 className="mb-6 text-center text-[18px] font-bold text-white xl:text-[20px]">
+                    {service.title}
+                  </h3>
+                  
+                  <span className="mt-auto flex items-center justify-center gap-2 text-[14px] font-bold tracking-wider text-white transition-colors group-hover:text-brand">
+                    {service.link.label}
+                    <DynamicIcon name="arrow-right" className="h-5 w-5 text-brand transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
             </Reveal>
           ))}
         </div>
