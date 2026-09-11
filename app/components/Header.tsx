@@ -34,6 +34,10 @@ interface HeaderData {
     href: string;
     active?: boolean;
     hasDropdown?: boolean;
+    dropdownItems?: Array<{
+      label: string;
+      href: string;
+    }>;
   }>;
   buttons: Array<{
     label: string;
@@ -52,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
   const cta = headerData.buttons[0];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-navy text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)]">
+    <header className="sticky top-0 z-50 w-full bg-[#050e1d] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)]">
       {/* Height is pinned so the logo can't outgrow the topbar + nav rows */}
       <div className="page-gutter flex h-[5.5rem] w-full items-stretch sm:h-[6.5rem]">
         {/* BRAND BLOCK — fills header height with almost no extra padding */}
@@ -137,40 +141,60 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
           <div className="flex h-[2.5rem] flex-1 items-stretch justify-between sm:h-16">
             <nav className="type-nav hidden items-center gap-4 lg:flex xl:gap-6 2xl:gap-8">
               {headerData.menu.map((item, index) => (
-                <Link
+                <div
                   key={item.label}
-                  href={item.href}
                   style={{ animationDelay: `${200 + index * 70}ms` }}
-                  className={`rh-fade-up group relative flex items-center gap-1 transition-colors ${
-                    item.active
-                      ? "text-brand-light"
-                      : "text-on-dark hover:text-brand-light"
-                  }`}
+                  className="rh-fade-up group relative flex h-full items-center"
                 >
-                  <span className="relative">
-                    {item.label}
-                    <span
-                      className={`absolute -bottom-1.5 left-0 h-[2px] w-full origin-left bg-brand-light transition-transform duration-300 ${
-                        item.active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    />
-                  </span>
-                  {item.hasDropdown && (
-                    <svg
-                      className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-y-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="3"
-                        d="M19 9l-7 7-7-7"
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-1 transition-colors ${
+                      item.active
+                        ? "text-brand-light"
+                        : "text-on-dark hover:text-brand-light"
+                    }`}
+                  >
+                    <span className="relative">
+                      {item.label}
+                      <span
+                        className={`absolute -bottom-1.5 left-0 h-[2px] w-full origin-left bg-brand-light transition-transform duration-300 ${
+                          item.active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                        }`}
                       />
-                    </svg>
+                    </span>
+                    {item.hasDropdown && (
+                      <svg
+                        className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-y-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    )}
+                  </Link>
+
+                  {item.hasDropdown && item.dropdownItems && (
+                    <div className="absolute left-0 top-[calc(100%-1rem)] min-w-[200px] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 bg-[#050e1d] border border-white/10 rounded-b shadow-xl py-2 flex flex-col z-50">
+                      {/* Invisible bridge to keep hover active */}
+                      <div className="absolute -top-6 left-0 w-full h-6 bg-transparent" />
+                      {item.dropdownItems.map((dropItem) => (
+                        <Link
+                          key={dropItem.label}
+                          href={dropItem.href}
+                          className="px-5 py-3 text-sm text-slate-300 hover:text-brand hover:bg-white/5 transition-colors"
+                        >
+                          {dropItem.label}
+                        </Link>
+                      ))}
+                    </div>
                   )}
-                </Link>
+                </div>
               ))}
             </nav>
 
@@ -220,18 +244,36 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
 
       {/* MOBILE NAV PANEL */}
       {mobileOpen && (
-        <nav className="page-gutter border-t border-white/10 bg-navy py-3 lg:hidden">
+        <nav className="page-gutter border-t border-white/10 bg-[#050e1d] py-3 lg:hidden">
           {headerData.menu.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className={`type-nav flex items-center gap-1 border-b border-white/5 py-3 last:border-0 ${
-                item.active ? "text-brand-light" : "text-on-dark"
-              }`}
-            >
-              {item.label}
-            </Link>
+            <div key={item.label} className="border-b border-white/5 last:border-0">
+              <Link
+                href={item.href}
+                onClick={() => !item.hasDropdown && setMobileOpen(false)}
+                className={`type-nav flex items-center justify-between py-3 ${
+                  item.active ? "text-brand-light" : "text-on-dark"
+                }`}
+              >
+                {item.label}
+                {item.hasDropdown && !item.dropdownItems && (
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                )}
+              </Link>
+              {item.dropdownItems && (
+                <div className="flex flex-col pl-4 pb-2">
+                  {item.dropdownItems.map((dropItem) => (
+                    <Link
+                      key={dropItem.label}
+                      href={dropItem.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="type-nav py-2 text-[14px] text-slate-400 hover:text-brand"
+                    >
+                      {dropItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
       )}

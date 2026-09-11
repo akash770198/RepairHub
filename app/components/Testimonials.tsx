@@ -192,22 +192,22 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonialsData }) 
           </div>
         </div>
 
-        {/* Navigation Arrows */}
-        <div className="mt-2 flex items-center justify-center gap-4">
-          <button 
-            onClick={() => scroll('left')}
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-500 shadow-sm transition-colors hover:border-brand hover:bg-brand hover:text-white"
-            aria-label="Previous testimonial"
-          >
-            <DynamicIcon name="arrow-right" className="h-5 w-5 rotate-180" />
-          </button>
-          <button 
-            onClick={() => scroll('right')}
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-500 shadow-sm transition-colors hover:border-brand hover:bg-brand hover:text-white"
-            aria-label="Next testimonial"
-          >
-            <DynamicIcon name="arrow-right" className="h-5 w-5" />
-          </button>
+        {/* Navigation Dots */}
+        <div className="mt-8 flex items-center justify-center gap-3">
+          {testimonialsData.testimonials.map((_, i) => (
+             <button
+               key={i}
+               onClick={() => {
+                 setActiveIndex(i);
+                 if (scrollRef.current && scrollRef.current.firstElementChild) {
+                   const cardWidth = (scrollRef.current.firstElementChild as HTMLElement).offsetWidth;
+                   scrollRef.current.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+                 }
+               }}
+               className={`h-3 w-3 rounded-full transition-all duration-300 ${i === activeIndex ? "bg-brand" : "bg-slate-300 hover:bg-slate-400"}`}
+               aria-label={`Go to slide ${i + 1}`}
+             />
+          ))}
         </div>
       </div>
     </section>

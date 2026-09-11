@@ -201,12 +201,18 @@
               },
               {
                 "label": "ABOUT",
-                "href": "/about"
+                "href": "#",
+                "hasDropdown": true,
+                "dropdownItems": [
+                  { "label": "About Us", "href": "/about" },
+                  { "label": "Why Choose Us", "href": "/why-choose-us" },
+                  { "label": "Teams", "href": "/teams" },
+                  { "label": "Pricing", "href": "/pricing" }
+                ]
               },
               {
                 "label": "SERVICE",
-                "href": "/service",
-                "hasDropdown": true
+                "href": "/service"
               },
               {
                 "label": "OUR GALLERY",
@@ -2044,19 +2050,19 @@
                 },
                 {
                   "label": "Book a Repair",
-                  "href": "#book"
+                  "href": "/book-repair"
                 },
                 {
                   "label": "Photo Gallery",
-                  "href": "#gallery"
+                  "href": "/gallery"
                 },
                 {
                   "label": "Video Gallery",
-                  "href": "#video"
+                  "href": "/gallery"
                 },
                 {
                   "label": "Testimonials",
-                  "href": "#testimonials"
+                  "href": "/testimonials"
                 },
                 {
                   "label": "Blog",
@@ -2247,6 +2253,132 @@
                 "href": "/service"
               }
             ]
+          },
+          "BrandsBanner": {
+            "title": "Brands We Repair",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Brands We Repair",
+                "href": "/brands"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "BookRepairBanner": {
+            "title": "Book A Repair",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Book A Repair",
+                "href": "/book-repair"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "PricingBanner": {
+            "title": "Pricing",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Pricing",
+                "href": "/pricing"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "GalleryBanner": {
+            "title": "Our Gallery",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Our Gallery",
+                "href": "/gallery"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "TestimonialsBanner": {
+            "title": "Testimonials",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Testimonials",
+                "href": "/testimonials"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "BlogsBanner": {
+            "title": "Our Blogs",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Our Blogs",
+                "href": "/blogs"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "FaqsBanner": {
+            "title": "Frequently Asked Questions",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Frequently Asked Questions",
+                "href": "/faqs"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "ContactBanner": {
+            "title": "Contact Us",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Contact Us",
+                "href": "/contact"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
+          },
+          "RefundPolicyBanner": {
+            "title": "Refund Policy",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Refund Policy",
+                "href": "/refund-policy"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
           }
         }
       },
@@ -2266,14 +2398,14 @@
                 "description": "Our skilled and certified technicians provide professional repair services you can trust."
               },
               {
-                "icon": "shield-check",
-                "title": "Genuine Parts",
-                "description": "We use 100% genuine and high-quality parts to ensure long-lasting performance."
-              },
-              {
                 "icon": "price-tag",
                 "title": "Affordable Pricing",
-                "description": "Get the best repair solutions at competitive prices with no hidden charges."
+                "description": "We offer transparent and competitive pricing without compromising on quality."
+              },
+              {
+                "icon": "shield-check",
+                "title": "Repair Warranty",
+                "description": "We stand behind our work with a comprehensive repair warranty on parts and labor."
               }
             ],
             "image": {
@@ -2312,6 +2444,235 @@
                 "title": "100% Satisfaction"
               }
             ]
+          }
+        }
+      },
+      "Gallery": {
+        "variants": {
+          "RepairHubGallery1": {
+            "photoCategories": ["All Photos", "Our Work", "Shop", "Team", "Customer"],
+            "videoCategories": ["All Videos", "Repairs", "Shop Tour", "Tips & Tricks", "Customers"],
+            "photos": [
+              { "id": 1, "src": "/AboutUs/phone_repair_main.jpg", "category": "Our Work" },
+              { "id": 2, "src": "/AboutUs/phone_repair_secondary.jpg", "category": "Our Work" },
+              { "id": 3, "src": "/Hero_Banner.png", "category": "Shop" },
+              { "id": 4, "src": "/AboutUs/phone_repair_main.jpg", "category": "Our Work" },
+              { "id": 5, "src": "/AboutUs/phone_repair_secondary.jpg", "category": "Team" },
+              { "id": 6, "src": "/Hero_Banner.png", "category": "Shop" },
+              { "id": 7, "src": "/AboutUs/phone_repair_main.jpg", "category": "Customer" },
+              { "id": 8, "src": "/AboutUs/phone_repair_secondary.jpg", "category": "Our Work" }
+            ],
+            "videos": [
+              { "id": 1, "title": "iPhone Screen Replacement", "category": "Repairs", "duration": "1:25", "thumbnail": "/AboutUs/phone_repair_primary.jpg", "videoUrl": "" },
+              { "id": 2, "title": "Charging Port Repair Process", "category": "Repairs", "duration": "1:18", "thumbnail": "/AboutUs/phone_repair_secondary.jpg", "videoUrl": "" },
+              { "id": 3, "title": "Battery Replacement Guide", "category": "Repairs", "duration": "0:58", "thumbnail": "/Hero_Banner.png", "videoUrl": "" },
+              { "id": 4, "title": "Fixaro Shop Tour", "category": "Shop Tour", "duration": "2:20", "thumbnail": "/AboutUs/phone_repair_primary.jpg", "videoUrl": "" },
+              { "id": 5, "title": "How We Repair Water Damage", "category": "Repairs", "duration": "1:32", "thumbnail": "/AboutUs/phone_repair_secondary.jpg", "videoUrl": "" },
+              { "id": 6, "title": "Top 5 Mobile Care Tips", "category": "Tips & Tricks", "duration": "1:05", "thumbnail": "/Hero_Banner.png", "videoUrl": "" }
+            ]
+          }
+        }
+      },
+      "Faqs": {
+        "variants": {
+          "RepairHubFaqs1": {
+            "eyebrow": "FAQS",
+            "heading": {
+              "line1": "Frequently Asked ",
+              "highlight": "Questions"
+            },
+            "description": "Find quick answers to the most common questions about our mobile repair services.",
+            "questions": [
+              {
+                "id": "q1",
+                "question": "What types of mobile repair services do you offer?",
+                "answer": "We offer a wide range of mobile repair services including screen replacement, battery replacement, charging port repair, camera repair, speaker issues, water damage repair, software troubleshooting, and more for all major brands."
+              },
+              {
+                "id": "q2",
+                "question": "How long does a typical mobile repair take?",
+                "answer": "Most of our standard repairs, such as screen or battery replacements, are completed within 30-60 minutes depending on the device."
+              },
+              {
+                "id": "q3",
+                "question": "Do you use original spare parts?",
+                "answer": "Yes, we prioritize using 100% genuine and OEM parts for all our repairs to ensure the best performance and longevity of your device."
+              },
+              {
+                "id": "q4",
+                "question": "Is there a warranty on your repair services?",
+                "answer": "Absolutely! We offer up to a 6-month warranty on most of our repair services, covering parts and labor."
+              },
+              {
+                "id": "q5",
+                "question": "How can I track my repair status?",
+                "answer": "You can track your repair status online through our customer portal using your repair ID and phone number."
+              },
+              {
+                "id": "q6",
+                "question": "Do you offer doorstep pickup and delivery?",
+                "answer": "Yes, we provide convenient doorstep pickup and delivery services across the city for a hassle-free repair experience."
+              }
+            ],
+            "sidebar": {
+              "title": "Still Have ",
+              "titleHighlight": "Questions?",
+              "description": "Our support team is here to help you with anything you need.",
+              "icon": "headset",
+              "contacts": [
+                {
+                  "icon": "phone",
+                  "label": "Call Us",
+                  "value": "+1 12345678920"
+                },
+                {
+                  "icon": "whatsapp",
+                  "label": "WhatsApp Us",
+                  "value": "+1 12345678920"
+                },
+                {
+                  "icon": "envelope",
+                  "label": "Email Us",
+                  "value": "support@repairhub.com"
+                }
+              ],
+              "button": {
+                "label": "Contact Us Now",
+                "href": "/contact"
+              }
+            }
+          }
+        }
+      },
+      "Blogs": {
+        "variants": {
+          "RepairHubBlogs1": {
+            "eyebrow": "LATEST BLOGS",
+            "heading": {
+              "line1": "Mobile Repair ",
+              "highlight": "Tips & Insights"
+            },
+            "description": "Expert advice, repair guides, and the latest updates from RepairHub – your trusted mobile repair partner.",
+            "posts": [
+              {
+                "id": "p1",
+                "featured": true,
+                "image": "/AboutUs/phone_repair_main.jpg",
+                "tag": "SCREEN REPAIR",
+                "date": "May 24, 2024",
+                "comments": "0 Comments",
+                "title": "Common Mobile Screen Problems & How We Fix Them",
+                "href": "/blogs/screen-problems"
+              },
+              {
+                "id": "p2",
+                "featured": false,
+                "image": "/AboutUs/phone_repair_secondary.jpg",
+                "tag": "BATTERY REPLACEMENT",
+                "date": "May 24, 2024",
+                "comments": "0 Comments",
+                "title": "Signs You Need a Battery Replacement",
+                "href": "/blogs/battery-replacement"
+              },
+              {
+                "id": "p3",
+                "featured": false,
+                "image": "/OurService/laptop_repair.jpg",
+                "tag": "CHARGING PORT REPAIR",
+                "date": "May 24, 2024",
+                "comments": "0 Comments",
+                "title": "Charging Port Not Working? Here's What You Should Do",
+                "href": "/blogs/charging-port"
+              },
+              {
+                "id": "p4",
+                "featured": false,
+                "image": "/OurService/ipad_repair.jpeg",
+                "tag": "BATTERY REPLACEMENT",
+                "date": "May 24, 2024",
+                "comments": "0 Comments",
+                "title": "Signs You Need a Battery Replacement",
+                "href": "/blogs/battery-replacement-2"
+              },
+              {
+                "id": "p5",
+                "featured": false,
+                "image": "/AboutUs/phone_repair_secondary.jpg",
+                "tag": "BATTERY REPLACEMENT",
+                "date": "May 24, 2024",
+                "comments": "0 Comments",
+                "title": "Signs You Need a Battery Replacement",
+                "href": "/blogs/battery-replacement-3"
+              },
+              {
+                "id": "p6",
+                "featured": false,
+                "image": "/OurService/laptop_repair.jpg",
+                "tag": "CHARGING PORT REPAIR",
+                "date": "May 24, 2024",
+                "comments": "0 Comments",
+                "title": "Charging Port Not Working? Here's What You Should Do",
+                "href": "/blogs/charging-port-2"
+              },
+              {
+                "id": "p7",
+                "featured": false,
+                "image": "/AboutUs/phone_repair_main.jpg",
+                "tag": "SCREEN REPAIR",
+                "date": "May 25, 2024",
+                "comments": "0 Comments",
+                "title": "Top 5 Mobile Screen Protectors",
+                "href": "/blogs/screen-protectors"
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "RepairHubContact1": {
+            "eyebrow": "CONTACT INFORMATION",
+            "heading": {
+              "line1": "Contact Info For Our Client\n",
+              "highlight": "To Get In Touch"
+            },
+            "infoCards": [
+              {
+                "icon": "map-pin",
+                "title": "Our head office address:",
+                "details": [
+                  "123 Tech Street, Sector 15,",
+                  "Noida, Uttar Pradesh 201301,",
+                  "India"
+                ]
+              },
+              {
+                "icon": "phone",
+                "title": "Call for help:",
+                "details": [
+                  "Phone : +91 98765 43210",
+                  "Support : +91 11223 45678",
+                  "Mon - Sat: 10:00 AM - 8:00 PM"
+                ]
+              },
+              {
+                "icon": "envelope",
+                "title": "Mail us for information:",
+                "details": [
+                  "Email : support@repairhub.com",
+                  "info@repairhub.com"
+                ]
+              }
+            ],
+            "form": {
+              "eyebrow": "WHAT WE DO",
+              "heading": "Request A Quote For Your Work",
+              "button": "Send Now",
+              "sideContent": {
+                "image": "/AboutUs/phone_repair_main.jpg",
+                "text": "Complete control over products allows us to ensure our customers receive the best quality prices and service."
+              }
+            }
           }
         }
       }

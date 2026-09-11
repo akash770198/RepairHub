@@ -121,7 +121,7 @@ export const About: React.FC<AboutProps> = ({ aboutData }) => {
           {/* Centre emblem straddling both photos */}
           <span className="absolute left-[60%] top-[61%] z-30 flex aspect-square w-[22%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-navy shadow-[0_14px_30px_-10px_rgba(2,6,23,0.6)]">
             <span className="absolute inset-[7%] rounded-full border-2 border-dashed border-brand animate-[spin_8s_linear_infinite]" />
-            <DynamicIcon name={badgeIcon} className="h-[65%] w-[65%] text-brand" size={64} />
+            <DynamicIcon name={badgeIcon} className="h-[45%] w-[45%] text-brand" size={40} />
           </span>
         </Reveal>
 

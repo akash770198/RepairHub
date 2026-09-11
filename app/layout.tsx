@@ -19,10 +19,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${poppins.variable} font-sans h-full antialiased`}
+      className={`${poppins.variable} font-sans antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      <body className="min-h-screen flex flex-col">
+        <SmoothScrollProvider>
+          <div className="flex flex-col min-h-screen overflow-x-clip">
+            {children}
+          </div>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
