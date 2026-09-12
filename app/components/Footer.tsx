@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import siteData from "@/data/site.json";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 
@@ -66,9 +67,38 @@ interface FooterProps {
   footerData: FooterData;
 }
 
+function resolveFooterPosts(posts: Post[]): Post[] {
+  const blogPosts =
+    siteData.RepairHub.sections.Blogs?.variants?.RepairHubBlogs1?.posts || [];
+
+  return posts.map((item) => {
+    const slug = item.href.split("/").filter(Boolean).pop();
+    const blog = blogPosts.find((p: { id?: string; link?: string }) => {
+      const linkSlug = p.link ? p.link.split("/").filter(Boolean).pop() : p.id;
+      return p.id === slug || linkSlug === slug || p.link === item.href;
+    });
+
+    if (!blog) return item;
+
+    const image =
+      typeof blog.image === "string"
+        ? blog.image
+        : blog.image?.src || item.image;
+
+    return {
+      image,
+      title: blog.title || item.title,
+      date: blog.date || item.date,
+      href: blog.link || item.href,
+    };
+  });
+}
+
 export const Footer: React.FC<FooterProps> = ({ footerData }) => {
+  const recentPosts = resolveFooterPosts(footerData.postsColumn.posts);
+
   return (
-    <footer className="w-full bg-[#050e1d] border-t-4 border-brand text-slate-300">
+    <footer className="w-full bg-[#081c3c] border-t-4 border-brand text-slate-300">
       <div className="page-gutter py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
@@ -133,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ footerData }) => {
               <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-brand" />
             </h3>
             <div className="flex flex-col gap-6">
-              {footerData.postsColumn.posts.map((post, index) => (
+              {recentPosts.map((post, index) => (
                 <Link key={index} href={post.href} className="flex items-center gap-4 group">
                   <div className="flex-shrink-0 w-20 h-16 relative rounded overflow-hidden">
                     <Image 
@@ -190,7 +220,7 @@ export const Footer: React.FC<FooterProps> = ({ footerData }) => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-[#0a1526] py-6 border-t border-slate-800">
+      <div className="w-full bg-[#010a1a] py-6 border-t border-slate-800">
         <div className="page-gutter flex flex-col md:flex-row items-center justify-between gap-6">
           
           <div className="text-[14px]">

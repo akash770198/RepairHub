@@ -49,7 +49,7 @@ export const FAQ: React.FC<FAQProps> = ({ faqData }) => {
   };
 
   return (
-    <section id="faq" className="relative w-full bg-[#0a111e] py-20 lg:py-24 border-t border-slate-800">
+    <section id="faq" className="relative w-full bg-[#081c3c] py-20 lg:py-24 border-t border-slate-800">
       <div className="page-gutter flex flex-col">
         
         {/* Header */}
@@ -79,8 +79,8 @@ export const FAQ: React.FC<FAQProps> = ({ faqData }) => {
                   <div 
                     className={`rounded-lg border transition-all duration-300 overflow-hidden cursor-pointer ${
                       isOpen 
-                        ? "border-slate-600 bg-[#101a2e]" 
-                        : "border-slate-800 bg-[#0a111e] hover:border-slate-700 hover:bg-[#0c1524]"
+                        ? "border-slate-600 bg-[#031c46]" 
+                        : "border-slate-800 bg-[#081c3c] hover:border-slate-700 hover:bg-[#0b254a]"
                     }`}
                     onClick={() => toggleAccordion(index)}
                   >
@@ -128,7 +128,7 @@ export const FAQ: React.FC<FAQProps> = ({ faqData }) => {
 
           {/* Right Column: Support Box */}
           <Reveal delay={300} animation="rh-fade-left">
-            <div className="rounded-xl border border-slate-700 bg-[#101a2e] p-8 lg:p-10 flex flex-col items-center text-center sticky top-24">
+            <div className="rounded-xl border border-slate-700 bg-[#031c46] p-8 lg:p-10 flex flex-col items-center text-center sticky top-24">
               
               {/* Icon */}
               <div className="flex items-center justify-center w-[72px] h-[72px] rounded-full border border-slate-600 text-brand mb-6">

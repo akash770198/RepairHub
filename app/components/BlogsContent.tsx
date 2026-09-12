@@ -9,12 +9,15 @@ import { Reveal } from "./Reveal";
 interface BlogPost {
   id: string;
   featured: boolean;
-  image: string;
-  tag: string;
+  category: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   date: string;
-  comments: string;
+  comments: number;
   title: string;
-  href: string;
+  link: string;
 }
 
 interface BlogsData {
@@ -55,14 +58,14 @@ export const BlogsContent = ({ blogsData }: { blogsData: BlogsData }) => {
                 {/* Image Section */}
                 <div className={`relative shrink-0 overflow-hidden ${post.featured ? 'w-full h-1/2 sm:h-[55%]' : 'w-full sm:w-[45%] h-64 sm:h-full'}`}>
                   <Image 
-                    src={post.image} 
-                    alt={post.title} 
+                    src={post.image?.src || ""} 
+                    alt={post.image?.alt || post.title} 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Tag Badge overlay at bottom left of image */}
                   <div className="absolute bottom-0 left-0 bg-brand text-navy text-[11px] sm:text-[13px] font-bold uppercase tracking-wider px-3 py-1.5 sm:px-4 sm:py-2 rounded-tr-[12px]">
-                    {post.tag}
+                    {post.category}
                   </div>
                 </div>
 
@@ -76,20 +79,20 @@ export const BlogsContent = ({ blogsData }: { blogsData: BlogsData }) => {
                     </div>
                     <div className="flex items-center gap-2">
                       <DynamicIcon name="message-circle" className="w-[18px] h-[18px] text-brand" />
-                      {post.comments}
+                      {String(post.comments).padStart(2, '0')} Comments
                     </div>
                   </div>
 
                   {/* Title */}
                   <h3 className={`font-extrabold text-navy leading-snug mb-6 group-hover:text-brand transition-colors ${post.featured ? 'text-3xl sm:text-[34px] xl:text-[38px]' : 'text-xl sm:text-[22px]'}`}>
-                    <Link href={post.href}>
+                    <Link href={post.link}>
                       {post.title}
                     </Link>
                   </h3>
 
                   {/* Read More Button Area */}
                   <div className="mt-auto pt-2 flex items-center justify-between">
-                    <Link href={post.href} className={`inline-flex items-center gap-3 text-navy font-bold group/btn ${post.featured ? 'text-[16px]' : 'text-[14px]'}`}>
+                    <Link href={post.link} className={`inline-flex items-center gap-3 text-navy font-bold group/btn ${post.featured ? 'text-[16px]' : 'text-[14px]'}`}>
                       <span className={`rounded-full bg-brand flex items-center justify-center transition-transform duration-300 group-hover/btn:scale-110 shadow-sm shrink-0 ${post.featured ? 'w-12 h-12' : 'w-9 h-9'}`}>
                         <DynamicIcon name="arrow-right" className={`${post.featured ? 'w-6 h-6' : 'w-4 h-4'} text-navy`} />
                       </span>

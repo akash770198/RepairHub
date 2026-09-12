@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
@@ -30,6 +30,16 @@ interface ContactData {
 }
 
 export const ContactContent = ({ contactData }: { contactData: ContactData }) => {
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    form.reset();
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 4000);
+  };
+
   return (
     <section className="w-full bg-white relative">
       
@@ -99,7 +109,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                   {contactData.form.heading}
                 </h2>
 
-                <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Name */}
                     <div className="relative">
@@ -108,7 +118,8 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                       </div>
                       <input 
                         type="text" 
-                        placeholder="Your Name" 
+                        placeholder="Your Name"
+                        required
                         className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
                       />
                     </div>
@@ -119,7 +130,8 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                       </div>
                       <input 
                         type="email" 
-                        placeholder="Your Email" 
+                        placeholder="Your Email"
+                        required
                         className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
                       />
                     </div>
@@ -132,7 +144,8 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                     </div>
                     <input 
                       type="text" 
-                      placeholder="Subject" 
+                      placeholder="Subject"
+                      required
                       className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
                     />
                   </div>
@@ -143,7 +156,8 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                       <DynamicIcon name="message-circle" className="h-[18px] w-[18px] text-brand" />
                     </div>
                     <textarea 
-                      placeholder="Your Message" 
+                      placeholder="Your Message"
+                      required
                       rows={5}
                       className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none"
                     />
@@ -179,6 +193,20 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
         </div>
 
       </div>
+      {/* Success Toast */}
+      {showSuccess && (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] animate-fade-in-up">
+          <div className="flex items-center gap-4 bg-white border border-green-200 shadow-2xl rounded-2xl px-6 py-5 min-w-[320px]">
+            <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+              <DynamicIcon name="check" size={24} className="text-green-600" />
+            </div>
+            <div>
+              <p className="font-extrabold text-navy text-[15px]">Thank you for your response!</p>
+              <p className="text-slate-500 text-sm mt-0.5">We'll get back to you shortly.</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

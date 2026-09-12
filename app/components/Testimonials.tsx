@@ -175,7 +175,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonialsData }) 
                   </svg>
 
                   {/* Avatar Wrapper (Completely Separate, sitting perfectly in the arch gap) */}
-                  <div className="absolute -bottom-[96px] left-1/2 z-20 h-[88px] w-[88px] -translate-x-1/2 rounded-full bg-white p-[5px]">
+                  <div className="absolute -bottom-[96px] left-1/2 z-20 h-[88px] w-[88px] -translate-x-1/2 rounded-full bg-brand p-[5px]">
                     <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-100">
                       <Image
                         src={testimonial.avatar}

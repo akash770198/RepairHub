@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { DynamicIcon } from "./Icons";
 
 interface TopbarData {
@@ -53,10 +54,16 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
   const cta = headerData.buttons[0];
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#050e1d] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)]">
+    <header className="sticky top-0 z-50 w-full bg-[#081c3c] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)]">
       {/* Height is pinned so the logo can't outgrow the topbar + nav rows */}
       <div className="page-gutter flex h-[5.5rem] w-full items-stretch sm:h-[6.5rem]">
         {/* BRAND BLOCK — fills header height with almost no extra padding */}
@@ -149,7 +156,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
                   <Link
                     href={item.href}
                     className={`flex items-center gap-1 transition-colors ${
-                      item.active
+                      isActive(item.href)
                         ? "text-brand-light"
                         : "text-on-dark hover:text-brand-light"
                     }`}
@@ -158,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
                       {item.label}
                       <span
                         className={`absolute -bottom-1.5 left-0 h-[2px] w-full origin-left bg-brand-light transition-transform duration-300 ${
-                          item.active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                          isActive(item.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                         }`}
                       />
                     </span>
@@ -180,7 +187,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
                   </Link>
 
                   {item.hasDropdown && item.dropdownItems && (
-                    <div className="absolute left-0 top-[calc(100%-1rem)] min-w-[200px] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 bg-[#050e1d] border border-white/10 rounded-b shadow-xl py-2 flex flex-col z-50">
+                    <div className="absolute left-0 top-[calc(100%-1rem)] min-w-[200px] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 bg-[#081c3c] border border-white/10 rounded-b shadow-xl py-2 flex flex-col z-50">
                       {/* Invisible bridge to keep hover active */}
                       <div className="absolute -top-6 left-0 w-full h-6 bg-transparent" />
                       {item.dropdownItems.map((dropItem) => (
@@ -244,14 +251,14 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
 
       {/* MOBILE NAV PANEL */}
       {mobileOpen && (
-        <nav className="page-gutter border-t border-white/10 bg-[#050e1d] py-3 lg:hidden">
+        <nav className="page-gutter border-t border-white/10 bg-[#081c3c] py-3 lg:hidden">
           {headerData.menu.map((item) => (
             <div key={item.label} className="border-b border-white/5 last:border-0">
               <Link
                 href={item.href}
                 onClick={() => !item.hasDropdown && setMobileOpen(false)}
                 className={`type-nav flex items-center justify-between py-3 ${
-                  item.active ? "text-brand-light" : "text-on-dark"
+                  isActive(item.href) ? "text-brand-light" : "text-on-dark"
                 }`}
               >
                 {item.label}

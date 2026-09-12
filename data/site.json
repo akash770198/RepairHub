@@ -204,10 +204,22 @@
                 "href": "#",
                 "hasDropdown": true,
                 "dropdownItems": [
-                  { "label": "About Us", "href": "/about" },
-                  { "label": "Why Choose Us", "href": "/why-choose-us" },
-                  { "label": "Teams", "href": "/teams" },
-                  { "label": "Pricing", "href": "/pricing" }
+                  {
+                    "label": "About Us",
+                    "href": "/about"
+                  },
+                  {
+                    "label": "Why Choose Us",
+                    "href": "/why-choose-us"
+                  },
+                  {
+                    "label": "Teams",
+                    "href": "/teams"
+                  },
+                  {
+                    "label": "Pricing",
+                    "href": "/pricing"
+                  }
                 ]
               },
               {
@@ -2066,11 +2078,15 @@
                 },
                 {
                   "label": "Blog",
-                  "href": "#blog"
+                  "href": "/blogs"
                 },
                 {
                   "label": "FAQ",
-                  "href": "#faq"
+                  "href": "/faq"
+                },
+                {
+                  "label": "Careers",
+                  "href": "/career"
                 },
                 {
                   "label": "Contact Us",
@@ -2082,21 +2098,21 @@
               "title": "Recent Posts",
               "posts": [
                 {
-                  "image": "/OurService/ipad_repair.jpeg",
-                  "title": "5 Signs Your Phone Battery Needs Replacement",
+                  "image": "/AboutUs/phone_repair_secondary.jpg",
+                  "title": "Signs You Need a Battery Replacement",
                   "date": "May 24, 2024",
-                  "href": "/blog/battery-replacement"
+                  "href": "/blogs/battery-replacement"
                 },
                 {
-                  "image": "/OurService/laptop_repair.jpg",
-                  "title": "Charging Port Not Working? Here's What You Can Do",
-                  "date": "May 18, 2024",
-                  "href": "/blog/charging-port-not-working"
+                  "image": "/RepairBlogs/PortDamaged.jpg",
+                  "title": "Charging Port Not Working? Here's What You Should Do",
+                  "date": "May 24, 2024",
+                  "href": "/blogs/charging-port"
                 }
               ],
               "button": {
                 "label": "View All Posts",
-                "href": "/blog"
+                "href": "/blogs"
               }
             },
             "estimateColumn": {
@@ -2109,7 +2125,7 @@
               }
             },
             "bottomBar": {
-              "copyright": "© 2024 RepairHub. All Rights Reserved.",
+              "copyright": "© 2024 RepairHub. All rights reserved. Powered by Lestow",
               "policies": [
                 {
                   "label": "Privacy Policy",
@@ -2126,6 +2142,10 @@
                 {
                   "label": "Warranty Policy",
                   "href": "/warranty"
+                },
+                {
+                  "label": "Sitemap",
+                  "href": "/sitemap"
                 }
               ],
               "social": [
@@ -2147,56 +2167,6 @@
                 }
               ]
             }
-          }
-        }
-      },
-      "Blog": {
-        "variants": {
-          "RepairHubBlog1": {
-            "eyebrow": "LATEST BLOGS",
-            "heading": {
-              "line1": "Mobile Repair ",
-              "highlight": "Tips & Insights"
-            },
-            "description": "Expert advice, repair guides, and the latest updates from\\nRepairHub – your trusted mobile repair partner.",
-            "posts": [
-              {
-                "id": "screen-repair",
-                "category": "SCREEN REPAIR",
-                "image": {
-                  "src": "/OurService/mobile_repair.jpg",
-                  "alt": "Screen Repair"
-                },
-                "date": "May 24, 2024",
-                "comments": 0,
-                "title": "Common Mobile Screen Problems & How We Fix Them",
-                "link": "/blog/common-mobile-screen-problems"
-              },
-              {
-                "id": "battery-replacement",
-                "category": "BATTERY REPLACEMENT",
-                "image": {
-                  "src": "/OurService/ipad_repair.jpeg",
-                  "alt": "Battery Replacement"
-                },
-                "date": "May 24, 2024",
-                "comments": 0,
-                "title": "Signs You Need a Battery Replacement",
-                "link": "/blog/signs-you-need-battery-replacement"
-              },
-              {
-                "id": "charging-port-repair",
-                "category": "CHARGING PORT REPAIR",
-                "image": {
-                  "src": "/OurService/laptop_repair.jpg",
-                  "alt": "Charging Port Repair"
-                },
-                "date": "May 24, 2024",
-                "comments": 0,
-                "title": "Charging Port Not Working? Here's What You Should Do",
-                "link": "/blog/charging-port-not-working"
-              }
-            ]
           }
         }
       },
@@ -2379,6 +2349,24 @@
               }
             ],
             "backgroundImage": "/Hero_Banner.png"
+          },
+          "BlogDetailBanner": {
+            "title": "Blog Detail",
+            "breadcrumbs": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Our Blogs",
+                "href": "/blogs"
+              },
+              {
+                "label": "Blog Detail",
+                "href": "#"
+              }
+            ],
+            "backgroundImage": "/Hero_Banner.png"
           }
         }
       },
@@ -2450,25 +2438,111 @@
       "Gallery": {
         "variants": {
           "RepairHubGallery1": {
-            "photoCategories": ["All Photos", "Our Work", "Shop", "Team", "Customer"],
-            "videoCategories": ["All Videos", "Repairs", "Shop Tour", "Tips & Tricks", "Customers"],
+            "photoCategories": [
+              "All Photos",
+              "Our Work",
+              "Shop",
+              "Team",
+              "Customer"
+            ],
+            "videoCategories": [
+              "All Videos",
+              "Repairs",
+              "Shop Tour",
+              "Tips & Tricks",
+              "Customers"
+            ],
             "photos": [
-              { "id": 1, "src": "/AboutUs/phone_repair_main.jpg", "category": "Our Work" },
-              { "id": 2, "src": "/AboutUs/phone_repair_secondary.jpg", "category": "Our Work" },
-              { "id": 3, "src": "/Hero_Banner.png", "category": "Shop" },
-              { "id": 4, "src": "/AboutUs/phone_repair_main.jpg", "category": "Our Work" },
-              { "id": 5, "src": "/AboutUs/phone_repair_secondary.jpg", "category": "Team" },
-              { "id": 6, "src": "/Hero_Banner.png", "category": "Shop" },
-              { "id": 7, "src": "/AboutUs/phone_repair_main.jpg", "category": "Customer" },
-              { "id": 8, "src": "/AboutUs/phone_repair_secondary.jpg", "category": "Our Work" }
+              {
+                "id": 1,
+                "src": "/AboutUs/phone_repair_main.jpg",
+                "category": "Our Work"
+              },
+              {
+                "id": 2,
+                "src": "/AboutUs/phone_repair_secondary.jpg",
+                "category": "Our Work"
+              },
+              {
+                "id": 3,
+                "src": "/Hero_Banner.png",
+                "category": "Shop"
+              },
+              {
+                "id": 4,
+                "src": "/AboutUs/phone_repair_main.jpg",
+                "category": "Our Work"
+              },
+              {
+                "id": 5,
+                "src": "/AboutUs/phone_repair_secondary.jpg",
+                "category": "Team"
+              },
+              {
+                "id": 6,
+                "src": "/Hero_Banner.png",
+                "category": "Shop"
+              },
+              {
+                "id": 7,
+                "src": "/AboutUs/phone_repair_main.jpg",
+                "category": "Customer"
+              },
+              {
+                "id": 8,
+                "src": "/AboutUs/phone_repair_secondary.jpg",
+                "category": "Our Work"
+              }
             ],
             "videos": [
-              { "id": 1, "title": "iPhone Screen Replacement", "category": "Repairs", "duration": "1:25", "thumbnail": "/AboutUs/phone_repair_primary.jpg", "videoUrl": "" },
-              { "id": 2, "title": "Charging Port Repair Process", "category": "Repairs", "duration": "1:18", "thumbnail": "/AboutUs/phone_repair_secondary.jpg", "videoUrl": "" },
-              { "id": 3, "title": "Battery Replacement Guide", "category": "Repairs", "duration": "0:58", "thumbnail": "/Hero_Banner.png", "videoUrl": "" },
-              { "id": 4, "title": "Fixaro Shop Tour", "category": "Shop Tour", "duration": "2:20", "thumbnail": "/AboutUs/phone_repair_primary.jpg", "videoUrl": "" },
-              { "id": 5, "title": "How We Repair Water Damage", "category": "Repairs", "duration": "1:32", "thumbnail": "/AboutUs/phone_repair_secondary.jpg", "videoUrl": "" },
-              { "id": 6, "title": "Top 5 Mobile Care Tips", "category": "Tips & Tricks", "duration": "1:05", "thumbnail": "/Hero_Banner.png", "videoUrl": "" }
+              {
+                "id": 1,
+                "title": "iPhone Screen Replacement",
+                "category": "Repairs",
+                "duration": "1:25",
+                "thumbnail": "/AboutUs/phone_repair_primary.jpg",
+                "videoUrl": ""
+              },
+              {
+                "id": 2,
+                "title": "Charging Port Repair Process",
+                "category": "Repairs",
+                "duration": "1:18",
+                "thumbnail": "/AboutUs/phone_repair_secondary.jpg",
+                "videoUrl": ""
+              },
+              {
+                "id": 3,
+                "title": "Battery Replacement Guide",
+                "category": "Repairs",
+                "duration": "0:58",
+                "thumbnail": "/Hero_Banner.png",
+                "videoUrl": ""
+              },
+              {
+                "id": 4,
+                "title": "Fixaro Shop Tour",
+                "category": "Shop Tour",
+                "duration": "2:20",
+                "thumbnail": "/AboutUs/phone_repair_primary.jpg",
+                "videoUrl": ""
+              },
+              {
+                "id": 5,
+                "title": "How We Repair Water Damage",
+                "category": "Repairs",
+                "duration": "1:32",
+                "thumbnail": "/AboutUs/phone_repair_secondary.jpg",
+                "videoUrl": ""
+              },
+              {
+                "id": 6,
+                "title": "Top 5 Mobile Care Tips",
+                "category": "Tips & Tricks",
+                "duration": "1:05",
+                "thumbnail": "/Hero_Banner.png",
+                "videoUrl": ""
+              }
             ]
           }
         }
@@ -2555,74 +2629,368 @@
             "description": "Expert advice, repair guides, and the latest updates from RepairHub – your trusted mobile repair partner.",
             "posts": [
               {
-                "id": "p1",
+                "id": "react-outside-click",
                 "featured": true,
-                "image": "/AboutUs/phone_repair_main.jpg",
-                "tag": "SCREEN REPAIR",
+                "category": "REPAIR TIPS",
+                "image": {
+                  "src": "/AboutUs/phone_repair_main.jpg",
+                  "alt": "Phone screen repair at RepairHub"
+                },
+                "date": "25 Jan 2022",
+                "author": "RepairHub Team",
+                "comments": 7,
+                "title": "5 Signs Your Phone Screen Needs Immediate Replacement",
+                "link": "/blogs/react-outside-click",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "Your smartphone screen takes a beating every single day — drops, bumps, pressure, and exposure to extreme temperatures all take their toll. Knowing when a screen needs replacement versus when it can be repaired can save you time, money, and a lot of frustration. Here are five clear signs that it's time to bring your phone to RepairHub for a screen replacement."
+                  },
+                  {
+                    "type": "blockquote",
+                    "text": "A cracked screen is more than a cosmetic issue — it can expose your phone's internals to dust, moisture, and further damage. Act fast to protect your investment."
+                  },
+                  {
+                    "type": "heading",
+                    "text": "1. Visible Cracks or Shattered Glass"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "The most obvious sign is physical damage — cracks, chips, or a completely shattered display. Even hairline cracks can worsen over time, allowing moisture and dust to enter the device and damage internal components. If your screen glass is broken, don't delay; a prompt replacement prevents far more costly repairs down the line."
+                  },
+                  {
+                    "type": "heading",
+                    "text": "2. Unresponsive or Ghost Touch"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "If your touchscreen stops responding to taps or starts registering touches you never made — known as 'ghost touching' — the digitizer layer beneath the glass is likely damaged. This can make your phone nearly impossible to use and often indicates the screen assembly needs a full replacement rather than a simple fix."
+                  },
+                  {
+                    "type": "split-list",
+                    "image": {
+                      "src": "/AboutUs/phone_repair_secondary.jpg",
+                      "alt": "RepairHub professional screen repair services"
+                    },
+                    "title": "Why Choose RepairHub for Screen Repairs?",
+                    "description": "We use only OEM-grade or manufacturer-approved replacement parts, backed by a 90-day warranty on every screen repair.",
+                    "items": [
+                      "OEM-grade replacement screens for all major brands",
+                      "90-day warranty on all screen replacements",
+                      "Expert technicians with 10+ years of experience",
+                      "Same-day repair service available"
+                    ]
+                  },
+                  {
+                    "type": "heading",
+                    "text": "3. Dead Pixels or Dark Spots"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "Dark blotches, coloured lines, or patches of pixels that no longer display correctly are signs of LCD or OLED damage. These often appear after a drop even if the outer glass looks fine — the impact travels through to the display panel beneath. Once dead pixels appear, they typically spread and will not resolve on their own."
+                  },
+                  {
+                    "type": "heading",
+                    "text": "4. Screen Flickering or Discolouration"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "Random flickering, green or purple tints, or sudden shifts in brightness can point to a failing display panel or a loose internal connection. While some software updates can cause temporary display issues, persistent flickering almost always signals a hardware problem that needs professional attention."
+                  },
+                  {
+                    "type": "heading",
+                    "text": "5. The Screen Won't Turn On"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "If your phone powers on (you can hear sounds or feel vibrations) but the screen stays completely black, the display hardware has likely failed. This can result from severe impact damage or internal short circuits. A technician will need to diagnose whether it's the screen, the connector, or the logic board."
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Quick Tips Before You Visit a Repair Shop"
+                  },
+                  {
+                    "type": "list",
+                    "items": [
+                      "Back up your data immediately — even a cracked screen may become fully unresponsive soon.",
+                      "Avoid using third-party screen protectors over broken glass as they can trap sharp shards.",
+                      "Do not attempt DIY repairs on OLED screens — they are fragile and expensive.",
+                      "Book a same-day appointment at RepairHub for a free diagnostic check."
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "At RepairHub, we specialise in fast, reliable screen replacements for all major brands including Apple, Samsung, OnePlus, and more. Our technicians use only high-quality replacement parts backed by a 90-day warranty, so you can trust that your device is in safe hands. Book your repair online or walk into any of our service centres today."
+                  }
+                ]
+              },
+              {
+                "id": "p1",
+                "featured": false,
+                "category": "SCREEN REPAIR",
+                "image": {
+                  "src": "/AboutUs/phone_repair_main.jpg",
+                  "alt": "Common Mobile Screen Problems & How We Fix Them"
+                },
                 "date": "May 24, 2024",
-                "comments": "0 Comments",
+                "author": "RepairHub Team",
+                "comments": 0,
                 "title": "Common Mobile Screen Problems & How We Fix Them",
-                "href": "/blogs/screen-problems"
+                "link": "/blogs/screen-problems",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  },
+                  {
+                    "type": "blockquote",
+                    "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma which is living with the results of other people's thinking. -Steve Jobs"
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Why Outside Click & Focus Handling is Important?"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In modern web applications, especially when dealing with dropdowns, modals, or popups, we often need to close the component when a user clicks outside of it or moves focus away. This improves user experience and makes the interface more intuitive."
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In this guide, we'll walk through how to build a reusable React component that handles both outside click and focus events efficiently."
+                  },
+                  {
+                    "type": "split-list",
+                    "image": {
+                      "src": "/AboutUs/phone_repair_secondary.jpg",
+                      "alt": "Professional Repair Services"
+                    },
+                    "title": "Our Professional Repair Services",
+                    "description": "All kinds of laptop, desktop computer servicing center forti is a long established fact.",
+                    "items": [
+                      "Professional Exceptional Standards Vehicle",
+                      "Vehicle Serviced Properly",
+                      "Highly Experienced Courtesy",
+                      "Full-service for Car Repair"
+                    ]
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Best Practices to Keep in Mind"
+                  },
+                  {
+                    "type": "list",
+                    "items": [
+                      "Always clean up event listeners to prevent memory leaks.",
+                      "Ensure accessibility by handling focus events properly.",
+                      "Test on different devices and screen sizes."
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  }
+                ]
               },
               {
                 "id": "p2",
                 "featured": false,
-                "image": "/AboutUs/phone_repair_secondary.jpg",
-                "tag": "BATTERY REPLACEMENT",
+                "category": "BATTERY REPLACEMENT",
+                "image": {
+                  "src": "/AboutUs/phone_repair_secondary.jpg",
+                  "alt": "Signs You Need a Battery Replacement"
+                },
                 "date": "May 24, 2024",
-                "comments": "0 Comments",
+                "author": "RepairHub Team",
+                "comments": 0,
                 "title": "Signs You Need a Battery Replacement",
-                "href": "/blogs/battery-replacement"
+                "link": "/blogs/battery-replacement",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  },
+                  {
+                    "type": "blockquote",
+                    "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma which is living with the results of other people's thinking. -Steve Jobs"
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Why Outside Click & Focus Handling is Important?"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In modern web applications, especially when dealing with dropdowns, modals, or popups, we often need to close the component when a user clicks outside of it or moves focus away. This improves user experience and makes the interface more intuitive."
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In this guide, we'll walk through how to build a reusable React component that handles both outside click and focus events efficiently."
+                  },
+                  {
+                    "type": "split-list",
+                    "image": {
+                      "src": "/AboutUs/phone_repair_secondary.jpg",
+                      "alt": "Professional Repair Services"
+                    },
+                    "title": "Our Professional Repair Services",
+                    "description": "All kinds of laptop, desktop computer servicing center forti is a long established fact.",
+                    "items": [
+                      "Professional Exceptional Standards Vehicle",
+                      "Vehicle Serviced Properly",
+                      "Highly Experienced Courtesy",
+                      "Full-service for Car Repair"
+                    ]
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Best Practices to Keep in Mind"
+                  },
+                  {
+                    "type": "list",
+                    "items": [
+                      "Always clean up event listeners to prevent memory leaks.",
+                      "Ensure accessibility by handling focus events properly.",
+                      "Test on different devices and screen sizes."
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  }
+                ]
               },
               {
                 "id": "p3",
                 "featured": false,
-                "image": "/OurService/laptop_repair.jpg",
-                "tag": "CHARGING PORT REPAIR",
+                "category": "CHARGING PORT REPAIR",
+                "image": {
+                  "src": "/OurService/laptop_repair.jpg",
+                  "alt": "Charging Port Not Working? Here's What You Should Do"
+                },
                 "date": "May 24, 2024",
-                "comments": "0 Comments",
+                "author": "RepairHub Team",
+                "comments": 0,
                 "title": "Charging Port Not Working? Here's What You Should Do",
-                "href": "/blogs/charging-port"
-              },
-              {
-                "id": "p4",
-                "featured": false,
-                "image": "/OurService/ipad_repair.jpeg",
-                "tag": "BATTERY REPLACEMENT",
-                "date": "May 24, 2024",
-                "comments": "0 Comments",
-                "title": "Signs You Need a Battery Replacement",
-                "href": "/blogs/battery-replacement-2"
-              },
-              {
-                "id": "p5",
-                "featured": false,
-                "image": "/AboutUs/phone_repair_secondary.jpg",
-                "tag": "BATTERY REPLACEMENT",
-                "date": "May 24, 2024",
-                "comments": "0 Comments",
-                "title": "Signs You Need a Battery Replacement",
-                "href": "/blogs/battery-replacement-3"
-              },
-              {
-                "id": "p6",
-                "featured": false,
-                "image": "/OurService/laptop_repair.jpg",
-                "tag": "CHARGING PORT REPAIR",
-                "date": "May 24, 2024",
-                "comments": "0 Comments",
-                "title": "Charging Port Not Working? Here's What You Should Do",
-                "href": "/blogs/charging-port-2"
+                "link": "/blogs/charging-port",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  },
+                  {
+                    "type": "blockquote",
+                    "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma which is living with the results of other people's thinking. -Steve Jobs"
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Why Outside Click & Focus Handling is Important?"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In modern web applications, especially when dealing with dropdowns, modals, or popups, we often need to close the component when a user clicks outside of it or moves focus away. This improves user experience and makes the interface more intuitive."
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In this guide, we'll walk through how to build a reusable React component that handles both outside click and focus events efficiently."
+                  },
+                  {
+                    "type": "split-list",
+                    "image": {
+                      "src": "/AboutUs/phone_repair_secondary.jpg",
+                      "alt": "Professional Repair Services"
+                    },
+                    "title": "Our Professional Repair Services",
+                    "description": "All kinds of laptop, desktop computer servicing center forti is a long established fact.",
+                    "items": [
+                      "Professional Exceptional Standards Vehicle",
+                      "Vehicle Serviced Properly",
+                      "Highly Experienced Courtesy",
+                      "Full-service for Car Repair"
+                    ]
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Best Practices to Keep in Mind"
+                  },
+                  {
+                    "type": "list",
+                    "items": [
+                      "Always clean up event listeners to prevent memory leaks.",
+                      "Ensure accessibility by handling focus events properly.",
+                      "Test on different devices and screen sizes."
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  }
+                ]
               },
               {
                 "id": "p7",
                 "featured": false,
-                "image": "/AboutUs/phone_repair_main.jpg",
-                "tag": "SCREEN REPAIR",
+                "category": "SCREEN REPAIR",
+                "image": {
+                  "src": "/AboutUs/phone_repair_main.jpg",
+                  "alt": "Top 5 Mobile Screen Protectors"
+                },
                 "date": "May 25, 2024",
-                "comments": "0 Comments",
+                "author": "RepairHub Team",
+                "comments": 0,
                 "title": "Top 5 Mobile Screen Protectors",
-                "href": "/blogs/screen-protectors"
+                "link": "/blogs/screen-protectors",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  },
+                  {
+                    "type": "blockquote",
+                    "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma which is living with the results of other people's thinking. -Steve Jobs"
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Why Outside Click & Focus Handling is Important?"
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In modern web applications, especially when dealing with dropdowns, modals, or popups, we often need to close the component when a user clicks outside of it or moves focus away. This improves user experience and makes the interface more intuitive."
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "In this guide, we'll walk through how to build a reusable React component that handles both outside click and focus events efficiently."
+                  },
+                  {
+                    "type": "split-list",
+                    "image": {
+                      "src": "/AboutUs/phone_repair_secondary.jpg",
+                      "alt": "Professional Repair Services"
+                    },
+                    "title": "Our Professional Repair Services",
+                    "description": "All kinds of laptop, desktop computer servicing center forti is a long established fact.",
+                    "items": [
+                      "Professional Exceptional Standards Vehicle",
+                      "Vehicle Serviced Properly",
+                      "Highly Experienced Courtesy",
+                      "Full-service for Car Repair"
+                    ]
+                  },
+                  {
+                    "type": "heading",
+                    "text": "Best Practices to Keep in Mind"
+                  },
+                  {
+                    "type": "list",
+                    "items": [
+                      "Always clean up event listeners to prevent memory leaks.",
+                      "Ensure accessibility by handling focus events properly.",
+                      "Test on different devices and screen sizes."
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "text": "We pride ourselves on our breaking news stories, in-depth analysis and thoughtful opinion pieces. But it's not just the news desk that works round the clock. Across the world, our sports writers, arts critics, interviewers and science reporters are dedicated to bringing you the quality coverage."
+                  }
+                ]
               }
             ]
           }
@@ -2672,6 +3040,443 @@
                 "image": "/AboutUs/phone_repair_main.jpg",
                 "text": "Complete control over products allows us to ensure our customers receive the best quality prices and service."
               }
+            }
+          }
+        }
+      },
+      "Career": {
+        "variants": {
+          "RepairHubCareer1": {
+            "banner": {
+              "title": "Career",
+              "breadcrumbs": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Career",
+                  "href": "/career"
+                }
+              ]
+            },
+            "intro": {
+              "tag": "CAREERS AT REPAIRHUB",
+              "titlePart1": "Build Your Career With ",
+              "titleHighlight": "RepairHub",
+              "description": "Passionate about mobile devices and technology? Join RepairHub and be a part of a team that keeps thousands of devices – and customers – happy every day.",
+              "benefits": [
+                {
+                  "icon": "users",
+                  "title": "Growing Team",
+                  "description": "Join a fast growing and friendly team"
+                },
+                {
+                  "icon": "star",
+                  "title": "Learn & Grow",
+                  "description": "Continuous learning and skill development"
+                },
+                {
+                  "icon": "settings",
+                  "title": "Make an Impact",
+                  "description": "Help customers by fixing their devices."
+                },
+                {
+                  "icon": "heart",
+                  "title": "Great Environment",
+                  "description": "Work in a positive, supportive workplace."
+                }
+              ]
+            },
+            "positions": {
+              "title": "Open Positions",
+              "subtitle": "Explore exciting career opportunities and become a part of the RepairHub family.",
+              "list": [
+                {
+                  "icon": "smartphone",
+                  "title": "Mobile Repair Technician",
+                  "type": "Full Time",
+                  "location": "On-site",
+                  "description": "Diagnose and repair smartphones and tablets with precision and care.",
+                  "link": "/career/mobile-repair-technician"
+                },
+                {
+                  "icon": "cpu",
+                  "title": "Hardware Specialist",
+                  "type": "Full Time",
+                  "location": "On-site",
+                  "description": "Specialize in advanced hardware repair and micro-soldering.",
+                  "link": "/career/hardware-specialist"
+                },
+                {
+                  "icon": "headphones",
+                  "title": "Customer Support Executive",
+                  "type": "Full Time",
+                  "location": "On-site",
+                  "description": "Assist customers, answer queries and ensure a smooth service experience.",
+                  "link": "/career/customer-support"
+                },
+                {
+                  "icon": "package",
+                  "title": "Inventory & Store Executive",
+                  "type": "Full Time",
+                  "location": "On-site",
+                  "description": "Manage spare parts inventory and ensure stock accuracy.",
+                  "link": "/career/inventory-executive"
+                },
+                {
+                  "icon": "megaphone",
+                  "title": "Marketing Executive",
+                  "type": "Full Time",
+                  "location": "On-site",
+                  "description": "Promote our services and grow RepairHub's presence in the market.",
+                  "link": "/career/marketing-executive"
+                },
+                {
+                  "icon": "briefcase",
+                  "title": "Business Development Executive",
+                  "type": "Full Time",
+                  "location": "On-site",
+                  "description": "Build relationships and bring new business opportunities.",
+                  "link": "/career/business-development"
+                }
+              ],
+              "button": {
+                "label": "View All Open Positions",
+                "href": "/career/positions"
+              }
+            },
+            "whyJoin": {
+              "title": "Why Join RepairHub?",
+              "titleHighlight": "RepairHub?",
+              "subtitle": "We believe in creating an environment where talent thrives and passion turns into purpose.",
+              "reasons": [
+                {
+                  "icon": "trending-up",
+                  "title": "Career Growth",
+                  "description": "Opportunities to learn, grow and advance your career."
+                },
+                {
+                  "icon": "book-open",
+                  "title": "Skill Development",
+                  "description": "Work with latest tools and get hands-on training."
+                },
+                {
+                  "icon": "users",
+                  "title": "Supportive Team",
+                  "description": "Collaborate with experienced and friendly colleagues."
+                },
+                {
+                  "icon": "award",
+                  "title": "Recognition",
+                  "description": "Your hard work is recognized and rewarded."
+                },
+                {
+                  "icon": "clock",
+                  "title": "Work-Life Balance",
+                  "description": "We value your time and support a healthy work-life balance."
+                }
+              ]
+            },
+            "cta": {
+              "title": "Don't See the Right Role?",
+              "description": "We are always looking for passionate people. Send your resume and be a part of RepairHub.",
+              "button": {
+                "label": "Send Your Resume",
+                "href": "/contact"
+              }
+            },
+            "jobs": [
+              {
+                "slug": "mobile-repair-technician",
+                "title": "Mobile Repair Technician",
+                "tag": "WE ARE HIRING",
+                "type": "Full Time",
+                "location": "Delhi, India",
+                "datePosted": "May 24, 2024",
+                "workMode": "On-site",
+                "experience": "1 - 3 Years",
+                "department": "Repair & Service",
+                "image": "/OurService/mobile_repair.jpg",
+                "overview": "We are looking for a skilled and detail-oriented Mobile Repair Technician to join our growing team at RepairHub. You will be responsible for diagnosing, repairing, and maintaining a wide range of smartphones and tablets while ensuring excellent customer satisfaction.",
+                "responsibilities": [
+                  "Diagnose and repair hardware and software issues in smartphones and tablets.",
+                  "Replace broken screens, batteries, charging ports, and other components.",
+                  "Perform device testing to ensure proper functionality after repair.",
+                  "Provide excellent customer service and explain repair solutions clearly.",
+                  "Maintain a clean and organized work area and repair tools.",
+                  "Stay updated with the latest mobile technologies and repair techniques."
+                ],
+                "requirements": [
+                  "1-3 years of experience in mobile repair.",
+                  "Knowledge of both Android and iOS devices is preferred.",
+                  "Ability to troubleshoot hardware and software issues.",
+                  "Good hand skills, attention to detail, and problem-solving ability.",
+                  "High school diploma or equivalent; technical certification is a plus."
+                ],
+                "offers": [
+                  {
+                    "icon": "price-tag",
+                    "title": "Competitive Salary"
+                  },
+                  {
+                    "icon": "trending-up",
+                    "title": "Career Growth Opportunities"
+                  },
+                  {
+                    "icon": "settings",
+                    "title": "Training & Skill Development"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Friendly & Supportive Work Environment"
+                  }
+                ]
+              },
+              {
+                "slug": "hardware-specialist",
+                "title": "Hardware Specialist",
+                "tag": "WE ARE HIRING",
+                "type": "Full Time",
+                "location": "Delhi, India",
+                "datePosted": "May 22, 2024",
+                "workMode": "On-site",
+                "experience": "3 - 5 Years",
+                "department": "Advanced Repair",
+                "image": "/OurService/laptop_repair.jpg",
+                "overview": "Seeking an advanced hardware repair expert specialized in micro-soldering and logic board repairs. You will handle complex cases escalated from primary technicians.",
+                "responsibilities": [
+                  "Perform component-level motherboard repairs on smartphones and tablets.",
+                  "Micro-soldering, reballing ICs, and tracing circuit board faults.",
+                  "Document and track complex repair workflows."
+                ],
+                "requirements": [
+                  "3+ years in logic board repair and micro-soldering.",
+                  "Proficiency with multimeter, oscilloscope, and soldering stations.",
+                  "Deep understanding of mobile circuitry and schematics."
+                ],
+                "offers": [
+                  {
+                    "icon": "price-tag",
+                    "title": "Competitive Salary"
+                  },
+                  {
+                    "icon": "trending-up",
+                    "title": "Career Growth Opportunities"
+                  },
+                  {
+                    "icon": "settings",
+                    "title": "Training & Skill Development"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Friendly & Supportive Work Environment"
+                  }
+                ]
+              },
+              {
+                "slug": "customer-support",
+                "title": "Customer Support",
+                "tag": "WE ARE HIRING",
+                "type": "Full Time",
+                "location": "Delhi, India",
+                "datePosted": "May 20, 2024",
+                "workMode": "On-site",
+                "experience": "1 - 3 Years",
+                "department": "Operations",
+                "image": "/OurService/ipad_repair.jpeg",
+                "overview": "Join our dynamic operations team to help drive the success of RepairHub. We value dedication, customer focus, and a passion for excellence.",
+                "responsibilities": [
+                  "Handle daily tasks associated with your role efficiently.",
+                  "Collaborate with team members to achieve departmental goals.",
+                  "Maintain high standards of service and operational integrity."
+                ],
+                "requirements": [
+                  "Relevant degree or diploma.",
+                  "1-3 years of proven experience in a similar role.",
+                  "Excellent communication and problem-solving skills."
+                ],
+                "offers": [
+                  {
+                    "icon": "price-tag",
+                    "title": "Competitive Salary"
+                  },
+                  {
+                    "icon": "trending-up",
+                    "title": "Career Growth Opportunities"
+                  },
+                  {
+                    "icon": "settings",
+                    "title": "Training & Skill Development"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Friendly & Supportive Work Environment"
+                  }
+                ]
+              },
+              {
+                "slug": "inventory-executive",
+                "title": "Inventory Executive",
+                "tag": "WE ARE HIRING",
+                "type": "Full Time",
+                "location": "Delhi, India",
+                "datePosted": "May 20, 2024",
+                "workMode": "On-site",
+                "experience": "1 - 3 Years",
+                "department": "Operations",
+                "image": "/OurService/ipad_repair.jpeg",
+                "overview": "Join our dynamic operations team to help drive the success of RepairHub. We value dedication, customer focus, and a passion for excellence.",
+                "responsibilities": [
+                  "Handle daily tasks associated with your role efficiently.",
+                  "Collaborate with team members to achieve departmental goals.",
+                  "Maintain high standards of service and operational integrity."
+                ],
+                "requirements": [
+                  "Relevant degree or diploma.",
+                  "1-3 years of proven experience in a similar role.",
+                  "Excellent communication and problem-solving skills."
+                ],
+                "offers": [
+                  {
+                    "icon": "price-tag",
+                    "title": "Competitive Salary"
+                  },
+                  {
+                    "icon": "trending-up",
+                    "title": "Career Growth Opportunities"
+                  },
+                  {
+                    "icon": "settings",
+                    "title": "Training & Skill Development"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Friendly & Supportive Work Environment"
+                  }
+                ]
+              },
+              {
+                "slug": "marketing-executive",
+                "title": "Marketing Executive",
+                "tag": "WE ARE HIRING",
+                "type": "Full Time",
+                "location": "Delhi, India",
+                "datePosted": "May 20, 2024",
+                "workMode": "On-site",
+                "experience": "1 - 3 Years",
+                "department": "Operations",
+                "image": "/OurService/ipad_repair.jpeg",
+                "overview": "Join our dynamic operations team to help drive the success of RepairHub. We value dedication, customer focus, and a passion for excellence.",
+                "responsibilities": [
+                  "Handle daily tasks associated with your role efficiently.",
+                  "Collaborate with team members to achieve departmental goals.",
+                  "Maintain high standards of service and operational integrity."
+                ],
+                "requirements": [
+                  "Relevant degree or diploma.",
+                  "1-3 years of proven experience in a similar role.",
+                  "Excellent communication and problem-solving skills."
+                ],
+                "offers": [
+                  {
+                    "icon": "price-tag",
+                    "title": "Competitive Salary"
+                  },
+                  {
+                    "icon": "trending-up",
+                    "title": "Career Growth Opportunities"
+                  },
+                  {
+                    "icon": "settings",
+                    "title": "Training & Skill Development"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Friendly & Supportive Work Environment"
+                  }
+                ]
+              },
+              {
+                "slug": "business-development",
+                "title": "Business Development",
+                "tag": "WE ARE HIRING",
+                "type": "Full Time",
+                "location": "Delhi, India",
+                "datePosted": "May 20, 2024",
+                "workMode": "On-site",
+                "experience": "1 - 3 Years",
+                "department": "Operations",
+                "image": "/OurService/ipad_repair.jpeg",
+                "overview": "Join our dynamic operations team to help drive the success of RepairHub. We value dedication, customer focus, and a passion for excellence.",
+                "responsibilities": [
+                  "Handle daily tasks associated with your role efficiently.",
+                  "Collaborate with team members to achieve departmental goals.",
+                  "Maintain high standards of service and operational integrity."
+                ],
+                "requirements": [
+                  "Relevant degree or diploma.",
+                  "1-3 years of proven experience in a similar role.",
+                  "Excellent communication and problem-solving skills."
+                ],
+                "offers": [
+                  {
+                    "icon": "price-tag",
+                    "title": "Competitive Salary"
+                  },
+                  {
+                    "icon": "trending-up",
+                    "title": "Career Growth Opportunities"
+                  },
+                  {
+                    "icon": "settings",
+                    "title": "Training & Skill Development"
+                  },
+                  {
+                    "icon": "users",
+                    "title": "Friendly & Supportive Work Environment"
+                  }
+                ]
+              }
+            ],
+            "sidebar": {
+              "summaryTitle": "Job Summary",
+              "shareTitle": "Share This Job",
+              "otherOpeningsTitle": "Other Openings",
+              "needHelp": {
+                "title": "Need Help?",
+                "description": "Have questions about this role? Our HR team is here to help.",
+                "phone": "+91 12345 67890",
+                "email": "careers@repairhub.com",
+                "button": {
+                  "label": "Contact HR Team",
+                  "href": "/contact"
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "variants": {
+          "RepairHubNotFound1": {
+            "code": "404",
+            "heading": "Oops! Page Not Found",
+            "description": "The page you are looking for doesn't exist or has been moved. Don't worry, we can help you find what you need.",
+            "button": {
+              "label": "Go to Homepage",
+              "href": "/",
+              "icon": "home"
+            },
+            "image": {
+              "src": "/NotFound.png",
+              "alt": "Broken phone illustration for page not found",
+              "width": 720,
+              "height": 560
+            },
+            "meta": {
+              "title": "404 - Page Not Found | RepairHub",
+              "description": "The page you are looking for doesn't exist or has been moved."
             }
           }
         }

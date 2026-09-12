@@ -358,6 +358,135 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
           <polyline points="10 9 9 9 8 9" />
         </svg>
       );
+    case "headphones":
+      return (
+        <svg {...defaultProps}>
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+        </svg>
+      );
+    case "package":
+      return (
+        <svg {...defaultProps}>
+          <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+      );
+    case "megaphone":
+      return (
+        <svg {...defaultProps}>
+          <path d="M3 11l18-5v12L3 14v-3z"></path>
+          <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
+        </svg>
+      );
+    case "briefcase":
+      return (
+        <svg {...defaultProps}>
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+      );
+    case "users":
+      return (
+        <svg {...defaultProps}>
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      );
+    case "heart":
+      return (
+        <svg {...defaultProps}>
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      );
+    case "trending-up":
+      return (
+        <svg {...defaultProps}>
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+      );
+    case "book-open":
+      return (
+        <svg {...defaultProps}>
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+      );
+    case "award":
+      return (
+        <svg {...defaultProps}>
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+      );
+    case "search":
+      return (
+        <svg {...defaultProps}>
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      );
+    case "home":
+      return (
+        <svg {...defaultProps}>
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      );
+    case "info":
+      return (
+        <svg {...defaultProps}>
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+      );
+    case "help-circle":
+      return (
+        <svg {...defaultProps}>
+          <circle cx="12" cy="12" r="10" />
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+      );
+    case "shield":
+      return (
+        <svg {...defaultProps}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+      );
+    case "map":
+      return (
+        <svg {...defaultProps}>
+          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+          <line x1="8" y1="2" x2="8" y2="18" />
+          <line x1="16" y1="6" x2="16" y2="22" />
+        </svg>
+      );
+    case "check":
+      return (
+        <svg {...defaultProps}>
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      );
+    case "chevron-right":
+      return (
+        <svg {...defaultProps}>
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      );
+    case "tag":
+      return (
+        <svg {...defaultProps}>
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+          <line x1="7" y1="7" x2="7.01" y2="7" />
+        </svg>
+      );
     default:
       return null;
   }

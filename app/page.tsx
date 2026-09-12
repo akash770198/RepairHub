@@ -25,7 +25,7 @@ export default function Home() {
   const statsVariant = categoryData.sections.Stats.variants.RepairHubStats1;
   const testimonialsVariant = categoryData.sections.Testimonials.variants.RepairHubTestimonials1;
   const teamVariant = categoryData.sections.Team.variants.RepairHubTeam1;
-  const blogVariant = categoryData.sections.Blog.variants.RepairHubBlog1;
+  const blogVariant = categoryData.sections.Blogs.variants.RepairHubBlogs1;
   const faqVariant = categoryData.sections.FAQ.variants.RepairHubFAQ1;
   const footerVariant = categoryData.sections.Footer.variants.RepairHubFooter1;
 

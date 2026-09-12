@@ -208,7 +208,7 @@ export const Hero: React.FC<HeroProps> = ({ bannerData, featuresData }) => {
             <div className="rh-fade-up mt-7" style={{ animationDelay: "600ms" }}>
               <Link
                 href={bannerData.ctaButton.href}
-                className="type-cta-hero group inline-flex items-center gap-3 rounded-full bg-brand-light py-2.5 pl-5 pr-2.5 text-ink shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-pale hover:shadow-xl hover:shadow-brand/30"
+                className="type-cta-hero group inline-flex items-center gap-3 rounded-full bg-brand py-2.5 pl-5 pr-2.5 text-ink shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-light hover:shadow-xl hover:shadow-brand/30"
               >
                 <DynamicIcon
                   name={bannerData.ctaButton.iconLeft}
