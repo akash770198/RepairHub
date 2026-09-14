@@ -26,6 +26,8 @@ interface BlogData {
     highlight: string;
   };
   description: string;
+  readMoreLabel?: string;
+  commentsLabel?: string;
   posts: BlogPost[];
 }
 
@@ -38,6 +40,8 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
 
   const mainPost = blogData.posts[0];
   const sidePosts = blogData.posts.slice(1, 3);
+  const readMore = blogData.readMoreLabel ?? "Read More";
+  const commentsWord = blogData.commentsLabel ?? "Comments";
 
   return (
     <section id="blog" className="py-20 lg:py-24 bg-white">
@@ -84,7 +88,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
                 </div>
                 <div className="flex items-center gap-2">
                   <DynamicIcon name="chat" className="w-4 h-4 text-brand" />
-                  <span>{mainPost.comments} Comments</span>
+                  <span>{mainPost.comments} {commentsWord}</span>
                 </div>
               </div>
               
@@ -99,7 +103,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white">
                     <DynamicIcon name="arrow-right" className="h-5 w-5" />
                   </span>
-                  Read More
+                  {readMore}
                 </Link>
                 <span className="h-[2px] w-12 bg-brand/30" />
               </div>
@@ -130,7 +134,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
                     </div>
                     <div className="flex items-center gap-1.5">
                       <DynamicIcon name="chat" className="w-4 h-4 text-brand" />
-                      <span>{post.comments} Comments</span>
+                      <span>{post.comments} {commentsWord}</span>
                     </div>
                   </div>
                   
@@ -145,7 +149,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white">
                         <DynamicIcon name="arrow-right" className="h-4 w-4" />
                       </span>
-                      Read More
+                      {readMore}
                     </Link>
                     <span className="h-[2px] w-8 bg-brand/30" />
                   </div>

@@ -35,6 +35,7 @@ export default function AboutPage() {
               <About
                 key={index}
                 aboutData={siteData.sections.About.variants[component.variant as keyof typeof siteData.sections.About.variants]}
+                hideCTA={true}
               />
             );
           case "FeatureCards":

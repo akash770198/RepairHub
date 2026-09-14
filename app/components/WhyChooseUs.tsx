@@ -24,6 +24,11 @@ interface WhyChooseUsData {
     src: string;
     alt: string;
   };
+  badge?: {
+    count: string;
+    label: string;
+    sublabel: string;
+  };
 }
 
 interface WhyChooseUsProps {
@@ -111,10 +116,10 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ data }) => {
              <div className="text-navy flex-shrink-0 border-2 border-navy rounded-full p-2">
                <DynamicIcon name="trophy" size={32} />
              </div>
-             <div className="flex flex-col text-navy">
-               <span className="text-2xl lg:text-[26px] font-black leading-none mb-1">10,000+</span>
-               <span className="text-[14px] lg:text-[15px] font-bold leading-tight">Happy Customers</span>
-               <span className="text-[12px] opacity-90 font-medium">Trusted Repair Service</span>
+           <div className="flex flex-col text-navy">
+               <span className="text-2xl lg:text-[26px] font-black leading-none mb-1">{data.badge?.count ?? "10,000+"}</span>
+               <span className="text-[14px] lg:text-[15px] font-bold leading-tight">{data.badge?.label ?? "Happy Customers"}</span>
+               <span className="text-[12px] opacity-90 font-medium">{data.badge?.sublabel ?? "Trusted Repair Service"}</span>
              </div>
           </div>
           

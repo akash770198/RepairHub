@@ -22,6 +22,7 @@ interface TestimonialsData {
     highlight: string;
   };
   description: string;
+  repairedLabel?: string;
   testimonials: TestimonialItem[];
 }
 
@@ -146,7 +147,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonialsData }) 
                       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100">
                         <DynamicIcon name="tools" className="h-[14px] w-[14px] text-slate-700" />
                       </div>
-                      <span className="text-[15px] font-bold text-navy">Repaired:</span>
+                      <span className="text-[15px] font-bold text-navy">{testimonialsData.repairedLabel ?? "Repaired:"}</span>
                       <span className="text-[15px] font-medium text-slate-600">{testimonial.repaired}</span>
                     </div>
 

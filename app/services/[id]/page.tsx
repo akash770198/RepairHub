@@ -10,7 +10,8 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
   const siteData = data.RepairHub;
   const { id } = await params;
   
-  const allServicesRaw = siteData.sections.Services.variants.RepairHubServices1.services;
+  const servicesVariant = siteData.sections.Services.variants.RepairHubServices1;
+  const allServicesRaw = servicesVariant.services;
   
   const service = allServicesRaw.find((s: any) => s.id === id) as ExtendedServiceItem | undefined;
 
@@ -25,12 +26,20 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
     href: s.link.href,
   }));
 
-  // Create a custom banner data for the detail page
+  // Read banner title and all labels from JSON
+  const detailPage = (servicesVariant as any).detailPage;
+  const bannerTitle = detailPage?.bannerTitle ?? "Repair Service";
+  const labels = detailPage ? {
+    sidebarTitle: detailPage.sidebarTitle,
+    contactCard: detailPage.contactCard,
+    sections: detailPage.sections,
+  } : undefined;
+
   const bannerData = {
-    title: "Repair Service",
+    title: bannerTitle,
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Repair Service", href: `/services/${id}` }
+      { label: bannerTitle, href: `/services/${id}` }
     ]
   };
 
@@ -43,7 +52,7 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
       
       <PageBanner bannerData={bannerData} />
       
-      <ServiceDetail service={service} allServices={allServices} />
+      <ServiceDetail service={service} allServices={allServices} labels={labels} />
       
       <Footer
         footerData={siteData.sections.Footer.variants.RepairHubFooter1}
@@ -63,3 +72,4 @@ export function generateStaticParams() {
     id: id,
   }));
 }
+

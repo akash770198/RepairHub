@@ -41,6 +41,7 @@ interface AboutData {
 
 interface AboutProps {
   aboutData: AboutData;
+  hideCTA?: boolean;
 }
 
 const DotGrid: React.FC<{ className?: string; rows: number; cols: number }> = ({
@@ -69,7 +70,7 @@ const DotGrid: React.FC<{ className?: string; rows: number; cols: number }> = ({
   </svg>
 );
 
-export const About: React.FC<AboutProps> = ({ aboutData }) => {
+export const About: React.FC<AboutProps> = ({ aboutData, hideCTA }) => {
   const { primaryImage, secondaryImage, badgeIcon } = aboutData.media;
 
   return (
@@ -170,17 +171,19 @@ export const About: React.FC<AboutProps> = ({ aboutData }) => {
           </div>
 
           {/* CTA */}
-          <Reveal delay={120}>
-            <Link
-              href={aboutData.ctaButton.href}
-              className="group mt-8 inline-flex items-center gap-4 rounded-full bg-navy py-2 pl-7 pr-2 text-white transition-colors duration-300 hover:bg-navy-mid"
-            >
-              <span className="text-[14px] font-semibold">{aboutData.ctaButton.label}</span>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-ink transition-transform duration-300 group-hover:translate-x-1">
-                <DynamicIcon name={aboutData.ctaButton.icon} className="h-5 w-5" />
-              </span>
-            </Link>
-          </Reveal>
+          {!hideCTA && (
+            <Reveal delay={120}>
+              <Link
+                href={aboutData.ctaButton.href}
+                className="group mt-8 inline-flex items-center gap-4 rounded-full bg-navy py-2 pl-7 pr-2 text-white transition-colors duration-300 hover:bg-navy-mid"
+              >
+                <span className="text-[14px] font-semibold">{aboutData.ctaButton.label}</span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-ink transition-transform duration-300 group-hover:translate-x-1">
+                  <DynamicIcon name={aboutData.ctaButton.icon} className="h-5 w-5" />
+                </span>
+              </Link>
+            </Reveal>
+          )}
         </div>
       </div>
     </section>

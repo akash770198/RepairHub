@@ -25,12 +25,26 @@ export interface ExtendedServiceItem {
   callout?: string;
 }
 
+export interface ServiceDetailLabels {
+  sidebarTitle: string;
+  contactCard: { title: string; subtitle: string; phone?: string };
+  sections: { overview: string; keyBenefits: string; devicesWeRepair: string };
+}
+
 interface ServiceDetailProps {
   service: ExtendedServiceItem;
   allServices: { id: string; title: string; href: string }[];
+  labels?: ServiceDetailLabels;
 }
 
-export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServices }) => {
+export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServices, labels }) => {
+  const sidebarTitle = labels?.sidebarTitle ?? "Our Services";
+  const contactCardTitle = labels?.contactCard.title ?? "Let's Contact\nWith Us";
+  const contactCardSubtitle = labels?.contactCard.subtitle ?? "Need Help? Talk To Expert";
+  const contactCardPhone = labels?.contactCard.phone ?? "+91 112 – 8899";
+  const overviewLabel = labels?.sections.overview ?? "Service Overview";
+  const keyBenefitsLabel = labels?.sections.keyBenefits ?? "Key Benefits";
+  const devicesLabel = labels?.sections.devicesWeRepair ?? "Devices We Repair";
   return (
     <section className="w-full bg-slate-50 py-16 lg:py-24">
       <div className="page-gutter">
@@ -42,7 +56,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
             {/* Our Services Menu */}
             <Reveal animation="rh-fade-up" className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
               <div className="bg-navy p-6 flex justify-between items-center">
-                <h3 className="text-xl font-bold text-brand">Our Services</h3>
+                <h3 className="text-xl font-bold text-brand">{sidebarTitle}</h3>
                 <DynamicIcon name="tools" className="w-6 h-6 text-brand" />
               </div>
               <div className="flex flex-col">
@@ -68,7 +82,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
 
             {/* Contact Card */}
             <Reveal animation="rh-fade-up" delay={100} className="bg-navy rounded-xl shadow-sm overflow-hidden p-8 text-center flex flex-col items-center">
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Contact<br/>With Us</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">{contactCardTitle.split('\n').map((line, i) => <React.Fragment key={i}>{line}{i === 0 ? <br/> : null}</React.Fragment>)}</h3>
               
               <div className="w-20 h-20 rounded-full bg-transparent border-2 border-brand flex items-center justify-center mb-6 relative">
                 {/* Dashed outer ring effect */}
@@ -76,8 +90,8 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
                 <DynamicIcon name="phone" className="w-8 h-8 text-brand" />
               </div>
               
-              <p className="text-white font-medium mb-2">Need Help? Talk To Expert</p>
-              <p className="text-brand text-2xl font-bold">+91 112 – 8899</p>
+              <p className="text-white font-medium mb-2">{contactCardSubtitle}</p>
+              <p className="text-brand text-2xl font-bold">{contactCardPhone}</p>
               
               {/* Decorative background gears */}
               <div className="absolute bottom-[-20px] right-[-20px] opacity-[0.05] pointer-events-none">
@@ -116,7 +130,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
             {/* Service Overview */}
             {service.overview && (
               <Reveal animation="rh-fade-up" delay={150} className="mt-4">
-                <h2 className="text-2xl font-bold text-navy mb-4">Service Overview</h2>
+                <h2 className="text-2xl font-bold text-navy mb-4">{overviewLabel}</h2>
                 <p className="text-slate-600 type-body leading-relaxed mb-8">
                   {service.overview}
                 </p>
@@ -126,7 +140,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
             {/* Key Benefits */}
             {service.keyBenefits && service.keyBenefits.length > 0 && (
               <Reveal animation="rh-fade-up" delay={200} className="mb-10">
-                <h2 className="text-2xl font-bold text-navy mb-6">Key Benefits</h2>
+                <h2 className="text-2xl font-bold text-navy mb-6">{keyBenefitsLabel}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                   {service.keyBenefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-center gap-3">
@@ -143,7 +157,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
             {/* Devices We Repair */}
             {service.devicesRepairText && (
               <Reveal animation="rh-fade-up" delay={250} className="mb-8">
-                <h2 className="text-2xl font-bold text-navy mb-4">Devices We Repair</h2>
+                <h2 className="text-2xl font-bold text-navy mb-4">{devicesLabel}</h2>
                 <p className="text-slate-600 type-body leading-relaxed mb-6">
                   {service.devicesRepairText}
                 </p>

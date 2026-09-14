@@ -5,60 +5,48 @@ import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 
-export const PricingContent = () => {
-  const featureCards = [
-    { icon: "smartphone-repair", title: "Quality Repair Service" },
-    { icon: "expert-technician", title: "Expert Technicians" },
-    { icon: "price-tag", title: "Affordable Pricing" },
-    { icon: "shield-check", title: "Repair Warranty" },
-    { icon: "genuine-gear", title: "Genuine Parts" },
-    { icon: "five-star-satisfaction", title: "100% Satisfaction" },
-  ];
+interface FeatureCard {
+  icon: string;
+  title: string;
+}
 
-  const pricingData = [
-    {
-      icon: "smartphone",
-      service: "Screen Replacement",
-      description: "Cracked or damaged screen",
-      cost: "Starting from ₹1,499",
-    },
-    {
-      icon: "battery",
-      service: "Battery Replacement",
-      description: "Battery draining fast or not charging",
-      cost: "Starting from ₹899",
-    },
-    {
-      icon: "plug",
-      service: "Charging Port Replacement",
-      description: "Charging port loose or not working",
-      cost: "Starting from ₹599",
-    },
-    {
-      icon: "camera",
-      service: "Camera Replacement",
-      description: "Blurry or not working camera",
-      cost: "Starting from ₹999",
-    },
-    {
-      icon: "speaker",
-      service: "Speaker Replacement",
-      description: "Low or no sound issues",
-      cost: "Starting from ₹499",
-    },
-    {
-      icon: "droplet",
-      service: "Water Damage Repair",
-      description: "Water damage diagnosis & repair",
-      cost: "Starting from ₹799",
-    },
-    {
-      icon: "cpu",
-      service: "Software Issue Fixing",
-      description: "Software update, hang or lag issues",
-      cost: "Starting from ₹499",
-    },
-  ];
+interface PricingItem {
+  icon: string;
+  service: string;
+  description: string;
+  cost: string;
+}
+
+export interface PricingData {
+  eyebrow: string;
+  heading: { line1: string; highlight: string };
+  description: string;
+  image: { src: string; alt: string };
+  featureCards: FeatureCard[];
+  tableSection: { title: string; note: string };
+  pricingData: PricingItem[];
+  promoBanner: {
+    discount: string;
+    textLine1: string;
+    textLine2: string;
+    promoCode: string;
+    terms: string;
+    highlights: { icon: string; title: string }[];
+  };
+}
+
+export const PricingContent = ({ data }: { data: PricingData }) => {
+  const {
+    eyebrow,
+    heading,
+    description,
+    image,
+    featureCards,
+    tableSection,
+    pricingData,
+    promoBanner
+  } = data;
+
 
   return (
     <div className="w-full bg-slate-50 flex flex-col items-center pb-24">
@@ -67,16 +55,16 @@ export const PricingContent = () => {
         <Reveal className="w-full lg:w-1/2 flex flex-col items-start">
           <div className="flex items-center gap-3">
             <span className="h-[2px] w-8 rounded-full bg-brand" />
-            <span className="type-eyebrow text-brand font-bold uppercase tracking-wider text-sm">Repair Cost</span>
+            <span className="type-eyebrow text-brand font-bold uppercase tracking-wider text-sm">{eyebrow}</span>
             <span className="h-[2px] w-8 rounded-full bg-brand" />
           </div>
           <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-navy leading-tight">
-            Transparent Pricing,<br/>
-            <span className="text-brand">Trusted Repairs</span>
+            {heading.line1}<br/>
+            <span className="text-brand">{heading.highlight}</span>
           </h2>
           <div className="mt-4 h-1 w-16 bg-brand rounded-full"></div>
           <p className="mt-6 text-lg text-slate-600 font-medium max-w-md">
-            Quality repairs at fair prices. No hidden charges, no surprises – just complete peace of mind.
+            {description}
           </p>
         </Reveal>
 
@@ -85,8 +73,8 @@ export const PricingContent = () => {
              {/* Replace with actual parts image later if needed, using a placeholder styling for now based on the requested image */}
              <div className="w-full h-full relative rounded-xl overflow-hidden">
                 <Image
-                  src="/AboutUs/phone_repair_secondary.jpg" 
-                  alt="Phone Parts"
+                  src={image.src} 
+                  alt={image.alt}
                   fill
                   className="object-cover"
                 />
@@ -123,7 +111,7 @@ export const PricingContent = () => {
       <section className="page-gutter relative w-full flex flex-col items-center">
         <div className="flex items-center gap-4 w-full justify-center mb-10">
           <div className="h-[2px] w-12 sm:w-24 bg-slate-300"></div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-navy text-center">Popular Repair Services & Cost</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-navy text-center">{tableSection.title}</h3>
           <div className="h-[2px] w-12 sm:w-24 bg-slate-300"></div>
         </div>
 
@@ -161,7 +149,7 @@ export const PricingContent = () => {
 
         <div className="mt-6 flex items-center gap-2 text-slate-500 text-sm font-medium text-center justify-center w-full bg-slate-100/50 py-3 rounded-xl">
           <DynamicIcon name="info-circle" className="w-5 h-5 text-navy" />
-          <p>Prices may vary based on device model and condition. Final cost will be confirmed after diagnosis.</p>
+          <p>{tableSection.note}</p>
         </div>
       </section>
 
@@ -181,47 +169,35 @@ export const PricingContent = () => {
             
             <div className="flex flex-col items-start">
               <h3 className="text-2xl lg:text-4xl font-extrabold text-white leading-tight">
-                Get Flat <span className="text-brand">10% OFF</span><br/>
-                On First Repair
+                {promoBanner.textLine1}<span className="text-brand">{promoBanner.discount}</span><br/>
+                {promoBanner.textLine2}
               </h3>
               <div className="mt-4 flex items-center gap-3">
                 <span className="text-white font-medium">Use Code:</span>
-                <span className="bg-brand text-navy font-extrabold px-4 py-1.5 rounded-lg text-lg tracking-wider border-2 border-brand shadow-[0_0_15px_rgba(245,158,11,0.4)]">FIXARO10</span>
+                <span className="bg-brand text-navy font-extrabold px-4 py-1.5 rounded-lg text-lg tracking-wider border-2 border-brand shadow-[0_0_15px_rgba(245,158,11,0.4)]">{promoBanner.promoCode}</span>
               </div>
-              <p className="mt-3 text-xs text-slate-400">*T&C Apply</p>
+              <p className="mt-3 text-xs text-slate-400">{promoBanner.terms}</p>
             </div>
           </div>
 
           {/* Right: Highlights */}
           <div className="flex items-center justify-center lg:justify-end gap-6 sm:gap-12 w-full lg:w-auto z-10 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-12 flex-wrap lg:flex-nowrap">
              
-             <div className="flex flex-col items-center text-center gap-3 w-[100px]">
-                <div className="w-14 h-14 rounded-full bg-white/10 text-brand flex items-center justify-center border border-white/20">
-                   <DynamicIcon name="shield-check" className="w-7 h-7" />
-                </div>
-                <p className="text-white text-xs font-semibold leading-snug">Trusted by<br/>10K+ Customers</p>
-             </div>
-
-             <div className="flex flex-col items-center text-center gap-3 w-[100px]">
-                <div className="w-14 h-14 rounded-full bg-white/10 text-brand flex items-center justify-center border border-white/20">
-                   <DynamicIcon name="five-star-satisfaction" className="w-7 h-7" />
-                </div>
-                <p className="text-white text-xs font-semibold leading-snug">Quality<br/>Service Assured</p>
-             </div>
-
-             <div className="flex flex-col items-center text-center gap-3 w-[100px]">
-                <div className="w-14 h-14 rounded-full bg-white/10 text-brand flex items-center justify-center border border-white/20">
-                   <DynamicIcon name="shield-check" className="w-7 h-7" />
-                </div>
-                <p className="text-white text-xs font-semibold leading-snug">6 Months<br/>Warranty</p>
-             </div>
-
-             <div className="flex flex-col items-center text-center gap-3 w-[100px]">
-                <div className="w-14 h-14 rounded-full bg-white/10 text-brand flex items-center justify-center border border-white/20">
-                   <DynamicIcon name="headset" className="w-7 h-7" />
-                </div>
-                <p className="text-white text-xs font-semibold leading-snug">Quick & Reliable<br/>Support</p>
-             </div>
+             {promoBanner.highlights.map((highlight, idx) => (
+               <div key={idx} className="flex flex-col items-center text-center gap-3 w-[100px]">
+                  <div className="w-14 h-14 rounded-full bg-white/10 text-brand flex items-center justify-center border border-white/20">
+                     <DynamicIcon name={highlight.icon} className="w-7 h-7" />
+                  </div>
+                  <p className="text-white text-xs font-semibold leading-snug">
+                    {highlight.title.split('\n').map((line, i) => (
+                      <React.Fragment key={i}>
+                        {line}
+                        {i === 0 && <br/>}
+                      </React.Fragment>
+                    ))}
+                  </p>
+               </div>
+             ))}
 
           </div>
         </div>

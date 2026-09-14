@@ -480,6 +480,41 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
           <polyline points="9 18 15 12 9 6" />
         </svg>
       );
+    case "chevron-left":
+      return (
+        <svg {...defaultProps}>
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      );
+    case "zoom-in":
+      return (
+        <svg {...defaultProps}>
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          <line x1="11" y1="8" x2="11" y2="14" />
+          <line x1="8" y1="11" x2="14" y2="11" />
+        </svg>
+      );
+    case "x":
+      return (
+        <svg {...defaultProps}>
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      );
+    case "film":
+      return (
+        <svg {...defaultProps}>
+          <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+          <line x1="7" y1="2" x2="7" y2="22" />
+          <line x1="17" y1="2" x2="17" y2="22" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <line x1="2" y1="7" x2="7" y2="7" />
+          <line x1="2" y1="17" x2="7" y2="17" />
+          <line x1="17" y1="17" x2="22" y2="17" />
+          <line x1="17" y1="7" x2="22" y2="7" />
+        </svg>
+      );
     case "tag":
       return (
         <svg {...defaultProps}>

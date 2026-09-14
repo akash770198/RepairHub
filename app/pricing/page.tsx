@@ -21,7 +21,7 @@ export default function PricingPage() {
       <PageBanner bannerData={bannerData} />
       
       {/* Pricing Content */}
-      <PricingContent />
+      <PricingContent data={siteData.sections.Pricing.variants.RepairHubPricing1} />
 
       <Footer footerData={footerData} />
     </main>

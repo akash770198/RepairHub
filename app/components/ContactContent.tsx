@@ -22,6 +22,16 @@ interface ContactData {
     eyebrow: string;
     heading: string;
     button: string;
+    placeholders?: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+    };
+    successToast?: {
+      title: string;
+      subtitle: string;
+    };
     sideContent: {
       image: string;
       text: string;
@@ -118,7 +128,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                       </div>
                       <input 
                         type="text" 
-                        placeholder="Your Name"
+                        placeholder={contactData.form.placeholders?.name ?? "Your Name"}
                         required
                         className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
                       />
@@ -130,7 +140,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                       </div>
                       <input 
                         type="email" 
-                        placeholder="Your Email"
+                        placeholder={contactData.form.placeholders?.email ?? "Your Email"}
                         required
                         className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
                       />
@@ -144,7 +154,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                     </div>
                     <input 
                       type="text" 
-                      placeholder="Subject"
+                      placeholder={contactData.form.placeholders?.subject ?? "Subject"}
                       required
                       className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
                     />
@@ -156,7 +166,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                       <DynamicIcon name="message-circle" className="h-[18px] w-[18px] text-brand" />
                     </div>
                     <textarea 
-                      placeholder="Your Message"
+                      placeholder={contactData.form.placeholders?.message ?? "Your Message"}
                       required
                       rows={5}
                       className="w-full bg-transparent border border-slate-200 rounded text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none"
@@ -200,10 +210,10 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
             <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center shrink-0">
               <DynamicIcon name="check" size={24} className="text-green-600" />
             </div>
-            <div>
-              <p className="font-extrabold text-navy text-[15px]">Thank you for your response!</p>
-              <p className="text-slate-500 text-sm mt-0.5">We'll get back to you shortly.</p>
-            </div>
+              <div>
+                <p className="font-extrabold text-navy text-[15px]">{contactData.form.successToast?.title ?? "Thank you for your response!"}</p>
+                <p className="text-slate-500 text-sm mt-0.5">{contactData.form.successToast?.subtitle ?? "We'll get back to you shortly."}</p>
+              </div>
           </div>
         </div>
       )}

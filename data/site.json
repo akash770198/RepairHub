@@ -402,6 +402,20 @@
               "highlight": "Provide"
             },
             "description": "Professional repair solutions for all your devices.\nFast, reliable and affordable services.",
+            "detailPage": {
+              "bannerTitle": "Repair Service",
+              "sidebarTitle": "Our Services",
+              "contactCard": {
+                "title": "Let's Contact\nWith Us",
+                "subtitle": "Need Help? Talk To Expert",
+                "phone": "+91 98765 43210"
+              },
+              "sections": {
+                "overview": "Service Overview",
+                "keyBenefits": "Key Benefits",
+                "devicesWeRepair": "Devices We Repair"
+              }
+            },
             "services": [
               {
                 "id": "ipad-tablets",
@@ -939,6 +953,7 @@
               "highlight": "Customers Say"
             },
             "description": "Real feedback from real customers who trust us\nwith their devices.",
+            "repairedLabel": "Repaired:",
             "testimonials": [
               {
                 "id": "t1",
@@ -1469,19 +1484,19 @@
                 "socialLinks": [
                   {
                     "platform": "facebook",
-                    "url": "#"
+                    "url": "https://facebook.com/"
                   },
                   {
                     "platform": "twitter",
-                    "url": "#"
+                    "url": "https://twitter.com/"
                   },
                   {
                     "platform": "instagram",
-                    "url": "#"
+                    "url": "https://instagram.com/  "
                   },
                   {
                     "platform": "linkedin",
-                    "url": "#"
+                    "url": "https://linkedin.com/"
                   }
                 ]
               },
@@ -1534,15 +1549,15 @@
                 "socialLinks": [
                   {
                     "platform": "facebook",
-                    "url": "#"
+                    "url": "https://facebook.com/"
                   },
                   {
                     "platform": "twitter",
-                    "url": "#"
+                    "url": "https://twitter.com/"
                   },
                   {
                     "platform": "instagram",
-                    "url": "#"
+                    "url": "https://instagram.com/  "
                   },
                   {
                     "platform": "linkedin",
@@ -2399,6 +2414,11 @@
             "image": {
               "src": "/OurService/laptop_repair.jpg",
               "alt": "Expert device repair technician"
+            },
+            "badge": {
+              "count": "10,000+",
+              "label": "Happy Customers",
+              "sublabel": "Trusted Repair Service"
             }
           }
         }
@@ -2438,6 +2458,26 @@
       "Gallery": {
         "variants": {
           "RepairHubGallery1": {
+            "eyebrow": "Gallery",
+            "heading": {
+              "line1": "Photo & ",
+              "highlight": "Video Gallery"
+            },
+            "description": "Take a look at our repair work, behind-the-scenes moments, and what our happy customers have to say about us.",
+            "tabs": {
+              "photo": "PHOTO GALLERY",
+              "video": "VIDEO GALLERY"
+            },
+            "photoSection": {
+              "title": "Photo Gallery",
+              "loadMoreLabel": "Load More Photos",
+              "emptyMessage": "No photos in this category."
+            },
+            "videoSection": {
+              "title": "Video Gallery",
+              "loadMoreLabel": "Load More Videos",
+              "emptyMessage": "No videos in this category."
+            },
             "photoCategories": [
               "All Photos",
               "Our Work",
@@ -2500,50 +2540,68 @@
                 "title": "iPhone Screen Replacement",
                 "category": "Repairs",
                 "duration": "1:25",
-                "thumbnail": "/AboutUs/phone_repair_primary.jpg",
-                "videoUrl": ""
+                "thumbnail": "",
+                "videoUrl": "/Gallery_vid/mobile_repair1.mp4"
               },
               {
                 "id": 2,
                 "title": "Charging Port Repair Process",
                 "category": "Repairs",
                 "duration": "1:18",
-                "thumbnail": "/AboutUs/phone_repair_secondary.jpg",
-                "videoUrl": ""
-              },
-              {
-                "id": 3,
-                "title": "Battery Replacement Guide",
-                "category": "Repairs",
-                "duration": "0:58",
-                "thumbnail": "/Hero_Banner.png",
-                "videoUrl": ""
-              },
-              {
-                "id": 4,
-                "title": "Fixaro Shop Tour",
-                "category": "Shop Tour",
-                "duration": "2:20",
-                "thumbnail": "/AboutUs/phone_repair_primary.jpg",
-                "videoUrl": ""
-              },
-              {
-                "id": 5,
-                "title": "How We Repair Water Damage",
-                "category": "Repairs",
-                "duration": "1:32",
-                "thumbnail": "/AboutUs/phone_repair_secondary.jpg",
-                "videoUrl": ""
-              },
-              {
-                "id": 6,
-                "title": "Top 5 Mobile Care Tips",
-                "category": "Tips & Tricks",
-                "duration": "1:05",
-                "thumbnail": "/Hero_Banner.png",
-                "videoUrl": ""
+                "thumbnail": "",
+                "videoUrl": "/Gallery_vid/mobile_repair2.mp4"
               }
             ]
+          }
+        }
+      },
+      "Pricing": {
+        "variants": {
+          "RepairHubPricing1": {
+            "eyebrow": "Repair Cost",
+            "heading": {
+              "line1": "Transparent Pricing,",
+              "highlight": "Trusted Repairs"
+            },
+            "description": "Quality repairs at fair prices. No hidden charges, no surprises – just complete peace of mind.",
+            "image": {
+              "src": "/AboutUs/phone_repair_secondary.jpg",
+              "alt": "Phone Parts"
+            },
+            "featureCards": [
+              { "icon": "smartphone-repair", "title": "Quality Repair Service" },
+              { "icon": "expert-technician", "title": "Expert Technicians" },
+              { "icon": "price-tag", "title": "Affordable Pricing" },
+              { "icon": "shield-check", "title": "Repair Warranty" },
+              { "icon": "genuine-gear", "title": "Genuine Parts" },
+              { "icon": "five-star-satisfaction", "title": "100% Satisfaction" }
+            ],
+            "tableSection": {
+              "title": "Popular Repair Services & Cost",
+              "note": "Prices may vary based on device model and condition. Final cost will be confirmed after diagnosis."
+            },
+            "pricingData": [
+              { "icon": "smartphone", "service": "Screen Replacement", "description": "Cracked or damaged screen", "cost": "Starting from ₹1,499" },
+              { "icon": "battery", "service": "Battery Replacement", "description": "Battery draining fast or not charging", "cost": "Starting from ₹899" },
+              { "icon": "plug", "service": "Charging Port Replacement", "description": "Charging port loose or not working", "cost": "Starting from ₹599" },
+              { "icon": "camera", "service": "Camera Replacement", "description": "Blurry or not working camera", "cost": "Starting from ₹999" },
+              { "icon": "speaker", "service": "Speaker Replacement", "description": "Low or no sound issues", "cost": "Starting from ₹499" },
+              { "icon": "droplet", "service": "Water Damage Repair", "description": "Water damage diagnosis & repair", "cost": "Starting from ₹799" },
+              { "icon": "cpu", "service": "Software Issue Fixing", "description": "Software update, hang or lag issues", "cost": "Starting from ₹499" }
+            ],
+            "promoBanner": {
+              "discount": "10% OFF",
+              "textLine1": "Get Flat ",
+              "textLine2": "On First Repair",
+              "promoCode": "FIXARO10",
+              "terms": "*T&C Apply",
+              "highlights": [
+                { "icon": "shield-check", "title": "Trusted by\n10K+ Customers" },
+                { "icon": "five-star-satisfaction", "title": "Quality\nService Assured" },
+                { "icon": "shield-check", "title": "6 Months\nWarranty" },
+                { "icon": "headset", "title": "Quick & Reliable\nSupport" }
+              ]
+            }
           }
         }
       },
@@ -2627,13 +2685,15 @@
               "highlight": "Tips & Insights"
             },
             "description": "Expert advice, repair guides, and the latest updates from RepairHub – your trusted mobile repair partner.",
+            "readMoreLabel": "Read More",
+            "commentsLabel": "Comments",
             "posts": [
               {
                 "id": "react-outside-click",
                 "featured": true,
                 "category": "REPAIR TIPS",
                 "image": {
-                  "src": "/AboutUs/phone_repair_main.jpg",
+                  "src": "/RepairBlogs/screenDamaged.jpg",
                   "alt": "Phone screen repair at RepairHub"
                 },
                 "date": "25 Jan 2022",
@@ -2729,7 +2789,7 @@
                 "featured": false,
                 "category": "SCREEN REPAIR",
                 "image": {
-                  "src": "/AboutUs/phone_repair_main.jpg",
+                  "src": "/RepairBlogs/DisplayDamaged.jpg",
                   "alt": "Common Mobile Screen Problems & How We Fix Them"
                 },
                 "date": "May 24, 2024",
@@ -2863,7 +2923,7 @@
                 "featured": false,
                 "category": "CHARGING PORT REPAIR",
                 "image": {
-                  "src": "/OurService/laptop_repair.jpg",
+                  "src": "/RepairBlogs/PortDamaged.jpg",
                   "alt": "Charging Port Not Working? Here's What You Should Do"
                 },
                 "date": "May 24, 2024",
@@ -2930,7 +2990,7 @@
                 "featured": false,
                 "category": "SCREEN REPAIR",
                 "image": {
-                  "src": "/AboutUs/phone_repair_main.jpg",
+                  "src": "/RepairBlogs/ScreenLining.jpeg",
                   "alt": "Top 5 Mobile Screen Protectors"
                 },
                 "date": "May 25, 2024",
@@ -3036,6 +3096,16 @@
               "eyebrow": "WHAT WE DO",
               "heading": "Request A Quote For Your Work",
               "button": "Send Now",
+              "placeholders": {
+                "name": "Your Name",
+                "email": "Your Email",
+                "subject": "Subject",
+                "message": "Your Message"
+              },
+              "successToast": {
+                "title": "Thank you for your response!",
+                "subtitle": "We'll get back to you shortly."
+              },
               "sideContent": {
                 "image": "/AboutUs/phone_repair_main.jpg",
                 "text": "Complete control over products allows us to ensure our customers receive the best quality prices and service."
