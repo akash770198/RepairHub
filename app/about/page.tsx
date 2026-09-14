@@ -17,24 +17,20 @@ export default function AboutPage() {
         switch (component.key) {
           case "Header":
             return (
-              <Header
-                key={index}
-                topbarData={siteData.sections.Topbar.variants.RepairHubTopbar1}
-                headerData={siteData.sections.Header.variants[component.component as keyof typeof siteData.sections.Header.variants]}
-              />
+              <Header key={index} data={{ topbarData: siteData.sections.Topbar.variants.RepairHubTopbar1, headerData: siteData.sections.Header.variants[component.component as keyof typeof siteData.sections.Header.variants] }} />
             );
           case "PageBanner":
             return (
               <PageBanner
                 key={index}
-                bannerData={siteData.sections.PageBanner.variants[component.component as keyof typeof siteData.sections.PageBanner.variants]}
+                data={siteData.sections.PageBanner.variants[component.component as keyof typeof siteData.sections.PageBanner.variants]}
               />
             );
           case "About":
             return (
               <About
                 key={index}
-                aboutData={siteData.sections.About.variants[component.component as keyof typeof siteData.sections.About.variants]}
+                data={siteData.sections.About.variants[component.component as keyof typeof siteData.sections.About.variants]}
                 hideCTA={true}
               />
             );
@@ -56,7 +52,7 @@ export default function AboutPage() {
             return (
               <Footer
                 key={index}
-                footerData={siteData.sections.Footer.variants[component.component as keyof typeof siteData.sections.Footer.variants]}
+                data={siteData.sections.Footer.variants[component.component as keyof typeof siteData.sections.Footer.variants]}
               />
             );
           default:

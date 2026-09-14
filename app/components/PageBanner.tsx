@@ -3,25 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { Reveal } from "./Reveal";
+import { site, SectionProps } from "@/data";
 
-interface Breadcrumb {
-  label: string;
-  href: string;
-}
-
-interface PageBannerData {
-  title: string;
-  breadcrumbs: Breadcrumb[];
-  backgroundImage?: string;
-}
-
-interface PageBannerProps {
-  bannerData: PageBannerData;
-}
-
-export const PageBanner: React.FC<PageBannerProps> = ({ bannerData }) => {
+export const PageBanner: React.FC<SectionProps<any>> = ({ data: propData, className }) => {
+  const bannerData = propData || site.aboutUsBanner;
   return (
-    <section className="relative w-full bg-[#111c2d] pt-24 pb-0 overflow-hidden min-h-[300px] flex items-center">
+    <section className={`relative w-full bg-[#111c2d] pt-24 pb-0 overflow-hidden min-h-[300px] flex items-center ${className || ""}`}>
       {/* Background Image / Pattern */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -45,7 +32,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({ bannerData }) => {
       <div className="absolute bottom-0 right-0 z-30">
         <div className="bg-brand px-10 py-4 sm:px-16 sm:py-5 rounded-tl-[2rem] inline-flex items-center">
           <div className="flex items-center gap-2 text-[14px] sm:text-[15px] font-medium text-white tracking-wide">
-            {bannerData.breadcrumbs.map((crumb, index) => (
+            {bannerData.breadcrumbs.map((crumb: any, index: any) => (
               <React.Fragment key={index}>
                 {index > 0 && <span className="text-white mx-1">-</span>}
                 {index === bannerData.breadcrumbs.length - 1 ? (

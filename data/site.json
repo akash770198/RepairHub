@@ -2158,7 +2158,7 @@
                 },
                 {
                   "label": "Terms & Conditions",
-                  "href": "/terms"
+                  "href": "/privacy-policy"
                 },
                 {
                   "label": "Refund Policy",
@@ -2205,6 +2205,10 @@
                 "href": "/"
               },
               {
+                "label": "About",
+                "href": "/about"
+              },
+              {
                 "label": "About Us",
                 "href": "/about"
               }
@@ -2218,6 +2222,10 @@
                 "href": "/"
               },
               {
+                "label": "About",
+                "href": "/about"
+              },
+              {
                 "label": "Why Choose Us",
                 "href": "/why-choose-us"
               }
@@ -2229,6 +2237,10 @@
               {
                 "label": "Home",
                 "href": "/"
+              },
+              {
+                "label": "About",
+                "href": "/about"
               },
               {
                 "label": "Our Teams",
@@ -2283,6 +2295,10 @@
               {
                 "label": "Home",
                 "href": "/"
+              },
+              {
+                "label": "About",
+                "href": "/about"
               },
               {
                 "label": "Pricing",
@@ -2505,22 +2521,22 @@
             "photos": [
               {
                 "id": 1,
-                "src": "/AboutUs/phone_repair_main.jpg",
+                "src": "/Gallery_imgs/mobile_repair1.jpg",
                 "category": "Our Work"
               },
               {
                 "id": 2,
-                "src": "/AboutUs/phone_repair_secondary.jpg",
+                "src": "/Gallery_imgs/mobile_repair2.jpg",
                 "category": "Our Work"
               },
               {
                 "id": 3,
-                "src": "/Hero_Banner.png",
+                "src": "/Gallery_imgs/mobile_repair3.jpg",
                 "category": "Shop"
               },
               {
                 "id": 4,
-                "src": "/AboutUs/phone_repair_main.jpg",
+                "src": "/Gallery_imgs/mobile_repair4.jpg",
                 "category": "Our Work"
               },
               {
@@ -2530,7 +2546,7 @@
               },
               {
                 "id": 6,
-                "src": "/Hero_Banner.png",
+                "src": "/Gallery_imgs/mobile_repair6.jpg",
                 "category": "Shop"
               },
               {
@@ -2541,6 +2557,11 @@
               {
                 "id": 8,
                 "src": "/AboutUs/phone_repair_secondary.jpg",
+                "category": "Our Work"
+              },
+              {
+                "id": 9,
+                "src": "/Gallery_imgs/mobile_repair5.jpg",
                 "category": "Our Work"
               }
             ],

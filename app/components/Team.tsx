@@ -4,30 +4,10 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubTeam1Data } from "@/data";
 
-interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  image: string;
-}
-
-interface TeamData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  members: TeamMember[];
-  layoutType?: 'slider' | 'grid' | string;
-}
-
-interface TeamProps {
-  teamData: TeamData;
-}
-
-export const Team: React.FC<TeamProps> = ({ teamData }) => {
+export const Team: React.FC<SectionProps<RepairHubTeam1Data>> = ({ data, className }) => {
+  const teamData = data || site.team;
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
@@ -69,7 +49,7 @@ export const Team: React.FC<TeamProps> = ({ teamData }) => {
   };
 
   return (
-    <section id="team" className="relative w-full bg-white py-20 lg:py-24">
+    <section id="team" className={`relative w-full bg-white py-20 lg:py-24 ${className || ""}`}>
       <div className="page-gutter flex flex-col items-center">
         
         {/* Header */}
@@ -90,8 +70,8 @@ export const Team: React.FC<TeamProps> = ({ teamData }) => {
 
         {/* Team Content */}
         <div className="w-full mt-16 relative">
-          {teamData.layoutType === 'grid' ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pb-8">
+          {(teamData as any).layoutType === 'grid' ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {teamData.members.map((member, index) => (
                 <Link key={`${member.id}-${index}`} href={`/teams/${member.id}`} className="block h-full">
                   <Reveal 
@@ -136,7 +116,7 @@ export const Team: React.FC<TeamProps> = ({ teamData }) => {
               <div 
                 ref={scrollRef}
                 onScroll={handleScroll}
-                className="flex w-full overflow-x-auto snap-x snap-mandatory scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-8"
+                className="flex w-full overflow-x-auto snap-x snap-mandatory scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               >
                 {teamData.members.map((member, index) => (
                   <div 

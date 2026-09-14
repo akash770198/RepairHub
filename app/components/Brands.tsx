@@ -5,45 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubBrands1Data } from "@/data";
 
-interface BrandItem {
-  id: string;
-  name: string;
-  logo: string;
-}
-
-interface BrandsData {
-  videoBanner: {
-    image: {
-      src: string;
-      alt: string;
-    };
-    title: string;
-    button: {
-      label: string;
-      href: string;
-    };
-  };
-  brandsInfo: {
-    eyebrow: string;
-    heading: {
-      line1: string;
-      highlight: string;
-    };
-    description: string;
-    button: {
-      label: string;
-      href: string;
-    };
-  };
-  brands: BrandItem[];
-}
-
-interface BrandsProps {
-  brandsData: BrandsData;
-}
-
-export const Brands: React.FC<BrandsProps> = ({ brandsData }) => {
+export const Brands: React.FC<SectionProps<RepairHubBrands1Data>> = ({ data, className }) => {
+  const brandsData = data || site.brands;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -75,7 +40,7 @@ export const Brands: React.FC<BrandsProps> = ({ brandsData }) => {
   };
 
   return (
-    <section className="relative w-full bg-navy py-20 lg:py-24 overflow-hidden">
+    <section className={`relative w-full bg-navy py-20 lg:py-24 overflow-hidden ${className || ""}`}>
       {/* Decorative diagonal stripe line behind the video banner */}
       <div 
         className="absolute left-0 w-full h-[8px] top-40 lg:top-56 z-0" 

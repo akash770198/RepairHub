@@ -17,13 +17,13 @@ export default function PricingPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      <PageBanner bannerData={bannerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      <PageBanner data={bannerData} />
       
       {/* Pricing Content */}
       <PricingContent data={siteData.sections.Pricing.variants.RepairHubPricing1} />
 
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

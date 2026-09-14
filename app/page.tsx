@@ -32,39 +32,39 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-navy text-white selection:bg-brand-light selection:text-ink">
       {/* Dynamic Header & Topbar */}
-      <Header topbarData={topbarVariant} headerData={headerVariant} />
+      <Header data={{ topbarData: topbarVariant, headerData: headerVariant }} />
 
       {/* Dynamic Hero Section with Custom SVG and Floating Feature Cards */}
       <main className="flex-1">
-        <Hero bannerData={bannerVariant} featuresData={featuresVariant} />
+        <Hero data={{ bannerData: bannerVariant, featuresData: featuresVariant }} />
 
         {/* Dynamic About Us Section */}
-        <About aboutData={aboutVariant} />
+        <About data={aboutVariant} />
 
         {/* Dynamic Services Section */}
-        <Services servicesData={servicesVariant} />
+        <Services data={servicesVariant} />
 
         {/* Dynamic Brands Section */}
-        <Brands brandsData={brandsVariant} />
+        <Brands data={brandsVariant} />
 
         {/* Dynamic Testimonials Section */}
-        <Testimonials testimonialsData={testimonialsVariant} />
+        <Testimonials data={testimonialsVariant} />
 
         {/* Dynamic Stats Section */}
-        <Stats statsData={statsVariant} />
+        <Stats data={statsVariant} />
 
         {/* Dynamic Team Section */}
-        <Team teamData={teamVariant} />
+        <Team data={teamVariant} />
         
         {/* Dynamic Blog Section */}
-        <Blog blogData={blogVariant} />
+        <Blog data={blogVariant} />
 
         {/* Dynamic FAQ Section */}
-        <FAQ faqData={faqVariant} />
+        <FAQ data={faqVariant} />
       </main>
 
       {/* Dynamic Footer Section */}
-      <Footer footerData={footerVariant} />
+      <Footer data={footerVariant} />
     </div>
   );
 }

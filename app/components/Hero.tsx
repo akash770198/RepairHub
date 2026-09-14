@@ -2,58 +2,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
-
-interface BannerData {
-  tagline: {
-    icon: string;
-    text: string;
-  };
-  heading: {
-    line1: string;
-    line2: string;
-    line3: string;
-  };
-  description: {
-    text: string;
-    highlight: string;
-  };
-  ctaButton: {
-    label: string;
-    href: string;
-    iconLeft: string;
-    iconRight: string;
-  };
-  heroImage: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
-}
-
-interface FeatureItem {
-  id: string;
-  titleLine1: string;
-  titleLine2: string;
-  icon: string;
-  accentColor?: string;
-}
-
-interface FeaturesData {
-  features: FeatureItem[];
-}
-
-interface HeroProps {
-  bannerData: BannerData;
-  featuresData: FeaturesData;
-}
+import { site, SectionProps, RepairHubBanner1Data, RepairHubFeatures1Data } from "@/data";
 
 // Diagonal cut on the left edge of the hero photo
 const PHOTO_CLIP = "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)";
 
-export const Hero: React.FC<HeroProps> = ({ bannerData, featuresData }) => {
+export const Hero: React.FC<SectionProps<{ bannerData: RepairHubBanner1Data; featuresData: RepairHubFeatures1Data }>> = ({ data, className }) => {
+  const bannerData = data?.bannerData || site.banner;
+  const featuresData = data?.featuresData || site.features;
   return (
-    <div className="w-full">
+    <div className={`w-full ${className || ""}`}>
       {/* 1. FULL-WIDTH DARK HERO */}
       <section className="relative w-full overflow-hidden bg-navy text-white">
         {/* Ambient glows + circuit traces */}

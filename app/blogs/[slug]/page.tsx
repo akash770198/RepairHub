@@ -39,12 +39,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      {bannerData && <PageBanner bannerData={bannerData} />}
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      {bannerData && <PageBanner data={bannerData} />}
       
       <BlogDetailContent post={post} allPosts={allPosts} />
 
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

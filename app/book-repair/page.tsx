@@ -21,14 +21,14 @@ export default function BookRepairPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      <PageBanner bannerData={bannerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      <PageBanner data={bannerData} />
       
       {/* Book Repair Form Section */}
       <BookRepairContent />
 
-      <Testimonials testimonialsData={testimonialsData} />
-      <Footer footerData={footerData} />
+      <Testimonials data={testimonialsData} />
+      <Footer data={footerData} />
     </main>
   );
 }

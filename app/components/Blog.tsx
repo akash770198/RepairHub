@@ -5,37 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubBlogs1Data } from "@/data";
 
-interface BlogPost {
-  id: string;
-  category: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  date: string;
-  comments: number;
-  title: string;
-  link: string;
-}
-
-interface BlogData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  readMoreLabel?: string;
-  commentsLabel?: string;
-  posts: BlogPost[];
-}
-
-interface BlogProps {
-  blogData: BlogData;
-}
-
-export const Blog: React.FC<BlogProps> = ({ blogData }) => {
+export const Blog: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propData, className }) => {
+  const blogData = (propData || site.blogs) as any;
   if (!blogData || !blogData.posts || blogData.posts.length === 0) return null;
 
   const mainPost = blogData.posts[0];
@@ -44,7 +17,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
   const commentsWord = blogData.commentsLabel ?? "Comments";
 
   return (
-    <section id="blog" className="py-20 lg:py-24 bg-white">
+    <section id="blog" className={`py-20 lg:py-24 bg-[#f8fbff] ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <Reveal className="flex flex-col items-center text-center mb-16">
@@ -112,7 +85,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
 
           {/* Side Posts (Right) */}
           <div className="flex flex-col gap-8">
-            {sidePosts.map((post, index) => (
+            {sidePosts.map((post: any, index: any) => (
               <Reveal key={post.id} delay={200 + index * 100} className="group flex flex-col sm:flex-row rounded-[20px] bg-white border border-slate-200 shadow-md overflow-hidden transition-all hover:shadow-xl">
                 <div className="relative aspect-[4/3] sm:aspect-square sm:w-2/5 overflow-hidden">
                   <Image

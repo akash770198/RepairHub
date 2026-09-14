@@ -4,44 +4,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubFAQ1Data } from "@/data";
 
-interface Question {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-interface SupportInfo {
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  phone: string;
-  whatsapp: string;
-  email: string;
-  button: {
-    label: string;
-    href: string;
-  };
-}
-
-interface FAQData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  questions: Question[];
-  support: SupportInfo;
-}
-
-interface FAQProps {
-  faqData: FAQData;
-}
-
-export const FAQ: React.FC<FAQProps> = ({ faqData }) => {
+export const FAQ: React.FC<SectionProps<RepairHubFAQ1Data>> = ({ data, className }) => {
+  const faqData = data || site.fAQ;
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   const toggleAccordion = (index: number) => {
@@ -49,7 +15,7 @@ export const FAQ: React.FC<FAQProps> = ({ faqData }) => {
   };
 
   return (
-    <section id="faq" className="relative w-full bg-[#081c3c] py-20 lg:py-24 border-t border-slate-800">
+    <section id="faq" className={`relative w-full bg-[#081c3c] py-20 lg:py-24 border-t border-slate-800 ${className || ""}`}>
       <div className="page-gutter flex flex-col">
         
         {/* Header */}

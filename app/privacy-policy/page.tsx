@@ -22,10 +22,10 @@ export default function PrivacyPolicyPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      <PageBanner bannerData={bannerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      <PageBanner data={bannerData} />
       <PrivacyPolicyContent />
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

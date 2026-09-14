@@ -21,14 +21,14 @@ export default function TestimonialsPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      {bannerData && <PageBanner bannerData={bannerData} />}
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      {bannerData && <PageBanner data={bannerData} />}
       
       <div className="bg-slate-50">
-        <Testimonials testimonialsData={testimonialsData} />
+        <Testimonials data={testimonialsData} />
       </div>
 
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

@@ -3,46 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
-
-interface AboutImage {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-}
-
-interface AboutHighlight {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-interface AboutData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    line2: string;
-    line2Highlight: string;
-  };
-  description: string;
-  media: {
-    primaryImage: AboutImage;
-    secondaryImage: AboutImage;
-    badgeIcon: string;
-  };
-  highlights: AboutHighlight[];
-  ctaButton: {
-    label: string;
-    href: string;
-    icon: string;
-  };
-}
-
-interface AboutProps {
-  aboutData: AboutData;
-  hideCTA?: boolean;
-}
+import { site, SectionProps, RepairHubAbout1Data } from "@/data";
 
 const DotGrid: React.FC<{ className?: string; rows: number; cols: number }> = ({
   className = "",
@@ -70,7 +31,8 @@ const DotGrid: React.FC<{ className?: string; rows: number; cols: number }> = ({
   </svg>
 );
 
-export const About: React.FC<AboutProps> = ({ aboutData, hideCTA }) => {
+export const About: React.FC<SectionProps<RepairHubAbout1Data> & { hideCTA?: boolean }> = ({ data, className, hideCTA }) => {
+  const aboutData = data || site.about;
   const { primaryImage, secondaryImage, badgeIcon } = aboutData.media;
 
   return (

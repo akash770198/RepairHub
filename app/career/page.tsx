@@ -17,13 +17,13 @@ export default function CareerPage() {
 
   return (
     <main className="min-h-screen flex flex-col bg-slate-50">
-      <Header topbarData={topbarData} headerData={headerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
       
-      <PageBanner bannerData={careerData.banner} />
+      <PageBanner data={careerData.banner} />
       
-      <CareerContent careerData={careerData} />
+      <CareerContent data={careerData} />
       
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

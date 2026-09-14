@@ -21,9 +21,9 @@ export default function NotFound() {
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
-      <Header topbarData={topbarData} headerData={headerData} />
-      <NotFoundContent notFoundData={notFoundData} />
-      <Footer footerData={footerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      <NotFoundContent data={notFoundData} />
+      <Footer data={footerData} />
     </main>
   );
 }

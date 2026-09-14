@@ -3,25 +3,14 @@
 import React from "react";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, FeatureCards1Data } from "@/data";
 
-interface FeatureCard {
-  icon: string;
-  title: string;
-}
-
-interface FeatureCardsData {
-  cards: FeatureCard[];
-}
-
-interface FeatureCardsProps {
-  data: FeatureCardsData;
-}
-
-export const FeatureCards: React.FC<FeatureCardsProps> = ({ data }) => {
+export const FeatureCards: React.FC<SectionProps<FeatureCards1Data>> = ({ data: propData, className }) => {
+  const data = propData || site.featureCards;
   if (!data?.cards?.length) return null;
 
   return (
-    <section className="relative w-full bg-white py-0 z-20">
+    <section className={`relative w-full bg-white pt-0 pb-20 lg:pb-24 z-20 ${className || ""}`}>
       <div className="page-gutter relative">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           {data.cards.map((card, idx) => (

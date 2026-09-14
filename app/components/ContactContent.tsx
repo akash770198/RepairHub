@@ -4,42 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubContact1Data } from "@/data";
 
-interface InfoCard {
-  icon: string;
-  title: string;
-  details: string[];
-}
-
-interface ContactData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  infoCards: InfoCard[];
-  form: {
-    eyebrow: string;
-    heading: string;
-    button: string;
-    placeholders?: {
-      name: string;
-      email: string;
-      subject: string;
-      message: string;
-    };
-    successToast?: {
-      title: string;
-      subtitle: string;
-    };
-    sideContent: {
-      image: string;
-      text: string;
-    };
-  };
-}
-
-export const ContactContent = ({ contactData }: { contactData: ContactData }) => {
+export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ data: propData, className }) => {
+  const contactData = (propData || site.contact) as any;
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -51,7 +19,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
   };
 
   return (
-    <section className="w-full bg-white relative">
+    <section className={`w-full bg-white relative ${className || ""}`}>
       
       {/* Top Section: Info Cards */}
       <div className="page-gutter py-20 lg:py-24">
@@ -69,7 +37,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
 
         {/* Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 lg:gap-10 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-          {contactData.infoCards.map((card, idx) => (
+          {contactData.infoCards.map((card: any, idx: any) => (
             <Reveal key={idx} delay={idx * 100} className="flex flex-col sm:flex-row gap-6 pt-10 md:pt-0 px-4 lg:px-8 first:pt-0">
               {/* Massive yellow icon */}
               <div className="flex-shrink-0">
@@ -81,7 +49,7 @@ export const ContactContent = ({ contactData }: { contactData: ContactData }) =>
                   {card.title}
                 </h3>
                 <div className="flex flex-col gap-1 text-[15px] text-slate-600 font-medium">
-                  {card.details.map((detail, dIdx) => (
+                  {card.details.map((detail: any, dIdx: any) => (
                     <span key={dIdx}>{detail}</span>
                   ))}
                 </div>

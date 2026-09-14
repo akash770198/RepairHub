@@ -4,43 +4,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubFaqs1Data } from "@/data";
 
-interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-interface ContactItem {
-  icon: string;
-  label: string;
-  value: string;
-}
-
-interface SidebarData {
-  title: string;
-  titleHighlight: string;
-  description: string;
-  icon: string;
-  contacts: ContactItem[];
-  button: {
-    label: string;
-    href: string;
-  };
-}
-
-interface FaqData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  questions: FaqItem[];
-  sidebar: SidebarData;
-}
-
-export const FaqContent = ({ faqData }: { faqData: FaqData }) => {
+export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: propData, className }) => {
+  const faqData = (propData || site.faqs) as any;
   const [openId, setOpenId] = useState<string | null>(faqData.questions[0]?.id || null);
 
   const toggleFaq = (id: string) => {
@@ -48,7 +15,7 @@ export const FaqContent = ({ faqData }: { faqData: FaqData }) => {
   };
 
   return (
-    <section className="bg-slate-50 py-16 lg:py-24">
+    <section className={`bg-slate-50 py-16 lg:py-24 ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -69,7 +36,7 @@ export const FaqContent = ({ faqData }: { faqData: FaqData }) => {
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-16">
           {/* Left Column: Accordion */}
           <div className="flex-1 flex flex-col gap-4">
-            {faqData.questions.map((faq, idx) => {
+            {faqData.questions.map((faq: any, idx: any) => {
               const isOpen = openId === faq.id;
               return (
                 <Reveal key={faq.id} delay={idx * 50} className="w-full">
@@ -134,7 +101,7 @@ export const FaqContent = ({ faqData }: { faqData: FaqData }) => {
               </p>
 
               <div className="w-full flex flex-col gap-6 text-left mb-8">
-                {faqData.sidebar.contacts.map((contact, i) => (
+                {faqData.sidebar.contacts.map((contact: any, i: any) => (
                   <div key={i} className="flex items-center gap-4 group">
                     <span className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-50 border border-slate-100 text-navy group-hover:bg-brand group-hover:border-brand transition-colors duration-300 shadow-sm shrink-0">
                       <DynamicIcon name={contact.icon} className="w-5 h-5" />

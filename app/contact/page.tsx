@@ -21,12 +21,12 @@ export default function ContactPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      {bannerData && <PageBanner bannerData={bannerData} />}
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      {bannerData && <PageBanner data={bannerData} />}
       
-      <ContactContent contactData={contactData} />
+      <ContactContent data={contactData} />
 
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

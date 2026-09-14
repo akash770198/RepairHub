@@ -4,33 +4,10 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubTestimonials1Data } from "@/data";
 
-interface TestimonialItem {
-  id: string;
-  name: string;
-  location: string;
-  text: string;
-  repaired: string;
-  rating: number;
-  avatar: string;
-}
-
-interface TestimonialsData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  repairedLabel?: string;
-  testimonials: TestimonialItem[];
-}
-
-interface TestimonialsProps {
-  testimonialsData: TestimonialsData;
-}
-
-export const Testimonials: React.FC<TestimonialsProps> = ({ testimonialsData }) => {
+export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = ({ data, className }) => {
+  const testimonialsData = data || site.testimonials;
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -88,7 +65,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonialsData }) 
   }, [testimonialsData.testimonials.length]);
 
   return (
-    <section className="relative w-full bg-slate-50 py-20 lg:py-24 overflow-hidden">
+    <section className={`relative w-full bg-slate-50 py-20 lg:py-24 overflow-hidden ${className || ""}`}>
       <div className="page-gutter relative z-10 flex flex-col items-center">
         
         {/* Header */}

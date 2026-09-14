@@ -16,38 +16,34 @@ export default function TeamsPage() {
         switch (component.key) {
           case "Header":
             return (
-              <Header
-                key={index}
-                topbarData={siteData.sections.Topbar.variants.RepairHubTopbar1}
-                headerData={siteData.sections.Header.variants[component.component as keyof typeof siteData.sections.Header.variants]}
-              />
+              <Header key={index} data={{ topbarData: siteData.sections.Topbar.variants.RepairHubTopbar1, headerData: siteData.sections.Header.variants[component.component as keyof typeof siteData.sections.Header.variants] }} />
             );
           case "PageBanner":
             return (
               <PageBanner
                 key={index}
-                bannerData={siteData.sections.PageBanner.variants[component.component as keyof typeof siteData.sections.PageBanner.variants]}
+                data={siteData.sections.PageBanner.variants[component.component as keyof typeof siteData.sections.PageBanner.variants]}
               />
             );
           case "Team":
             return (
               <Team
                 key={index}
-                teamData={siteData.sections.Team.variants[component.component as keyof typeof siteData.sections.Team.variants]}
+                data={siteData.sections.Team.variants[component.component as keyof typeof siteData.sections.Team.variants]}
               />
             );
           case "Stats":
             return (
               <Stats
                 key={index}
-                statsData={siteData.sections.Stats.variants[component.component as keyof typeof siteData.sections.Stats.variants]}
+                data={siteData.sections.Stats.variants[component.component as keyof typeof siteData.sections.Stats.variants]}
               />
             );
           case "Footer":
             return (
               <Footer
                 key={index}
-                footerData={siteData.sections.Footer.variants[component.component as keyof typeof siteData.sections.Footer.variants]}
+                data={siteData.sections.Footer.variants[component.component as keyof typeof siteData.sections.Footer.variants]}
               />
             );
           default:

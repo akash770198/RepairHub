@@ -26,8 +26,8 @@ export default function BrandsPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      <PageBanner bannerData={bannerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      <PageBanner data={bannerData} />
       
       {/* Brands Section */}
       <section className="relative w-full bg-white py-20 lg:py-24 overflow-hidden">
@@ -68,8 +68,8 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      <Testimonials testimonialsData={testimonialsData} />
-      <Footer footerData={footerData} />
+      <Testimonials data={testimonialsData} />
+      <Footer data={footerData} />
     </main>
   );
 }

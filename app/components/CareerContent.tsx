@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubCareer1Data } from "@/data";
 
-interface CareerContentProps {
-  careerData: any;
-}
 
-export const CareerContent: React.FC<CareerContentProps> = ({ careerData }) => {
+
+export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ data, className }) => {
+  const careerData = data || site.career;
   const { intro, positions, whyJoin, cta } = careerData;
 
   return (

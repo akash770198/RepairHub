@@ -4,40 +4,12 @@ import React from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, WhyChooseUs1Data } from "@/data";
 
-interface Feature {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface WhyChooseUsData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-    line2?: string;
-  };
-  description: string;
-  features: Feature[];
-  image: {
-    src: string;
-    alt: string;
-  };
-  badge?: {
-    count: string;
-    label: string;
-    sublabel: string;
-  };
-}
-
-interface WhyChooseUsProps {
-  data: WhyChooseUsData;
-}
-
-export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ data }) => {
+export const WhyChooseUs: React.FC<SectionProps<WhyChooseUs1Data>> = ({ data: propData, className }) => {
+  const data = propData || site.whyChooseUs;
   return (
-    <section className="relative w-full bg-white py-20 lg:py-24 overflow-hidden">
+    <section className={`relative w-full bg-white py-20 lg:py-24 overflow-hidden ${className || ""}`}>
       <div className="page-gutter relative grid lg:grid-cols-2 gap-16 lg:gap-2 items-center">
         
         {/* Content Side (Left) */}
@@ -53,7 +25,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ data }) => {
             
             <h2 className="text-4xl lg:text-[42px] font-extrabold text-navy leading-[1.15] mb-6">
               {data.heading.line1} <br className="hidden sm:block" />
-              <span className="text-brand">{data.heading.highlight}</span> {data.heading.line2}
+              <span className="text-brand">{data.heading.highlight}</span> {(data.heading as any).line2}
             </h2>
             
             <p className="text-[16px] text-slate-600 mb-10 leading-relaxed max-w-lg">

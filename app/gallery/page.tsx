@@ -19,12 +19,12 @@ export default function GalleryPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      {bannerData && <PageBanner bannerData={bannerData} />}
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      {bannerData && <PageBanner data={bannerData} />}
       
-      <GalleryContent galleryData={galleryData} />
+      <GalleryContent data={galleryData} />
 
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

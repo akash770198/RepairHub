@@ -5,54 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DynamicIcon } from "./Icons";
+import { site, SectionProps, RepairHubTopbar1Data, RepairHubHeader1Data } from "@/data";
 
-interface TopbarData {
-  email: string;
-  emailIcon: string;
-  openHoursPrefix: string;
-  openHoursValue: string;
-  openHoursIcon: string;
-  socialLinks: Array<{
-    label: string;
-    href: string;
-    icon: string;
-  }>;
-}
-
-interface HeaderData {
-  logo: {
-    src?: string;
-    alt?: string;
-    width?: number;
-    height?: number;
-    titlePart1?: string;
-    titlePart2?: string;
-    tagline?: string;
-    href: string;
-  };
-  menu: Array<{
-    label: string;
-    href: string;
-    active?: boolean;
-    hasDropdown?: boolean;
-    dropdownItems?: Array<{
-      label: string;
-      href: string;
-    }>;
-  }>;
-  buttons: Array<{
-    label: string;
-    href: string;
-    icon: string;
-  }>;
-}
-
-interface HeaderProps {
-  topbarData: TopbarData;
-  headerData: HeaderData;
-}
-
-export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
+export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; headerData: RepairHubHeader1Data }>> = ({ data, className }) => {
+  const topbarData = data?.topbarData || site.topbar;
+  const headerData = data?.headerData || site.header;
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const cta = headerData.buttons[0];
@@ -63,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#081c3c] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)] flex flex-col">
+    <header className={`sticky top-0 z-50 w-full bg-[#081c3c] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)] flex flex-col ${className || ""}`}>
       {/* MOBILE TOP BAR (Only visible on small screens) */}
       <div className="md:hidden w-full border-b border-white/10 bg-[#06152d]">
         <div className="page-gutter flex h-10 items-center justify-between gap-4">
@@ -113,8 +70,8 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
               />
             ) : (
               <span className="font-heading text-3xl font-black leading-none tracking-tight sm:text-4xl">
-                <span className="text-white">{headerData.logo.titlePart1}</span>
-                <span className="text-brand">{headerData.logo.titlePart2}</span>
+                <span className="text-white">{(headerData.logo as any).titlePart1}</span>
+                <span className="text-brand">{(headerData.logo as any).titlePart2}</span>
               </span>
             )}
           </Link>

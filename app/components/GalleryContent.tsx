@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubGallery1Data } from "@/data";
 
 interface Photo {
   id: number;
@@ -17,19 +18,6 @@ interface Video {
   duration: string;
   thumbnail: string;
   videoUrl: string;
-}
-
-interface GalleryData {
-  eyebrow: string;
-  heading: { line1: string; highlight: string };
-  description: string;
-  tabs: { photo: string; video: string };
-  photoSection: { title: string; loadMoreLabel: string; emptyMessage: string };
-  videoSection: { title: string; loadMoreLabel?: string; emptyMessage: string };
-  photoCategories: string[];
-  videoCategories: string[];
-  photos: Photo[];
-  videos: Video[];
 }
 
 const PHOTOS_PER_PAGE = 8;
@@ -125,7 +113,7 @@ const Lightbox = ({
         className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 px-4 overflow-x-auto max-w-[90vw] pb-1"
         onClick={(e) => e.stopPropagation()}
       >
-        {photos.map((p, idx) => (
+        {photos.map((p: any, idx: any) => (
           <button
             key={p.id}
             onClick={() => onGoTo(idx)}
@@ -199,7 +187,8 @@ const VideoModal = ({
 };
 
 
-export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) => {
+export const GalleryContent: React.FC<SectionProps<RepairHubGallery1Data>> = ({ data: propData, className }) => {
+  const galleryData = (propData || site.gallery) as any;
   const { eyebrow, heading, description, tabs, photoSection, videoSection, photoCategories, videoCategories, photos, videos } = galleryData;
 
   const [activeTab, setActiveTab] = useState<"photo" | "video">("photo");
@@ -217,8 +206,8 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
   const [visibleCount, setVisibleCount] = useState(PHOTOS_PER_PAGE);
   const [visibleVideoCount, setVisibleVideoCount] = useState(VIDEOS_PER_PAGE);
 
-  const filteredPhotos = photos.filter((p) => activePhotoCat === "All Photos" || p.category === activePhotoCat);
-  const filteredVideos = videos.filter((v) => activeVideoCat === "All Videos" || v.category === activeVideoCat);
+  const filteredPhotos = photos.filter((p: any) => activePhotoCat === "All Photos" || p.category === activePhotoCat);
+  const filteredVideos = videos.filter((v: any) => activeVideoCat === "All Videos" || v.category === activeVideoCat);
 
   // Reset visible count when category changes
   useEffect(() => { setVisibleCount(PHOTOS_PER_PAGE); }, [activePhotoCat]);
@@ -261,7 +250,7 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
       {activeVideo && (
         <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
       )}
-      <section className="bg-white py-16 lg:py-24">
+      <section className={`bg-white py-16 lg:py-24 ${className || ""}`}>
         <div className="page-gutter">
           {/* Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -314,7 +303,7 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
               </div>
               {/* Photo Filters */}
               <div className="flex flex-wrap items-center gap-3">
-                {photoCategories.map((cat) => (
+                {photoCategories.map((cat: any) => (
                   <button
                     key={cat}
                     onClick={() => setActivePhotoCat(cat)}
@@ -331,7 +320,7 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {visiblePhotos.map((photo, i) => (
+              {visiblePhotos.map((photo: any, i: any) => (
                 <Reveal
                   key={photo.id}
                   delay={i * 50}
@@ -358,14 +347,26 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
             </div>
 
             {/* Load More Photos — functional */}
-            {hasMore && (
+            {hasMore ? (
               <div className="mt-12 text-center">
                 <button
+                  type="button"
                   onClick={() => setVisibleCount((prev) => prev + PHOTOS_PER_PAGE)}
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-line text-navy font-semibold hover:border-brand hover:text-brand transition-colors"
                 >
                   {photoSection.loadMoreLabel}
                   <DynamicIcon name="chevron-down" className="w-4 h-4" />
+                </button>
+              </div>
+            ) : filteredPhotos.length > PHOTOS_PER_PAGE && (
+              <div className="mt-12 text-center">
+                <button
+                  type="button"
+                  onClick={() => setVisibleCount(PHOTOS_PER_PAGE)}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-line text-navy font-semibold hover:border-brand hover:text-brand transition-colors"
+                >
+                  Show Less
+                  <DynamicIcon name="chevron-up" className="w-4 h-4" />
                 </button>
               </div>
             )}
@@ -386,7 +387,7 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
               </div>
               {/* Video Filters */}
               <div className="flex flex-wrap items-center gap-3">
-                {videoCategories.map((cat) => (
+                {videoCategories.map((cat: any) => (
                   <button
                     key={cat}
                     onClick={() => setActiveVideoCat(cat)}
@@ -403,7 +404,7 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visibleVideos.map((video, i) => {
+              {visibleVideos.map((video: any, i: any) => {
                 const isPlayable = !!video.videoUrl;
                 return (
                   <Reveal key={video.id} delay={i * 50} className="group">
@@ -467,14 +468,26 @@ export const GalleryContent = ({ galleryData }: { galleryData: GalleryData }) =>
             </div>
 
             {/* Load More Videos */}
-            {hasMoreVideos && (
+            {hasMoreVideos ? (
               <div className="mt-12 text-center">
                 <button
+                  type="button"
                   onClick={() => setVisibleVideoCount((prev) => prev + VIDEOS_PER_PAGE)}
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-line text-navy font-semibold hover:border-brand hover:text-brand transition-colors"
                 >
                   {videoSection.loadMoreLabel ?? "Load More Videos"}
                   <DynamicIcon name="chevron-down" className="w-4 h-4" />
+                </button>
+              </div>
+            ) : filteredVideos.length > VIDEOS_PER_PAGE && (
+              <div className="mt-12 text-center">
+                <button
+                  type="button"
+                  onClick={() => setVisibleVideoCount(VIDEOS_PER_PAGE)}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-line text-navy font-semibold hover:border-brand hover:text-brand transition-colors"
+                >
+                  Show Less
+                  <DynamicIcon name="chevron-up" className="w-4 h-4" />
                 </button>
               </div>
             )}

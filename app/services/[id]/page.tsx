@@ -45,18 +45,13 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header
-        topbarData={siteData.sections.Topbar.variants.RepairHubTopbar1}
-        headerData={siteData.sections.Header.variants.RepairHubHeader1}
-      />
+      <Header data={{ topbarData: siteData.sections.Topbar.variants.RepairHubTopbar1, headerData: siteData.sections.Header.variants.RepairHubHeader1 }} />
       
-      <PageBanner bannerData={bannerData} />
+      <PageBanner data={bannerData} />
       
       <ServiceDetail service={service} allServices={allServices} labels={labels} />
       
-      <Footer
-        footerData={siteData.sections.Footer.variants.RepairHubFooter1}
-      />
+      <Footer data={siteData.sections.Footer.variants.RepairHubFooter1} />
     </main>
   );
 }

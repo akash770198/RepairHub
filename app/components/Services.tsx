@@ -5,36 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubServices1Data } from "@/data";
 
-interface ServiceItem {
-  id: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  title: string;
-  link: {
-    label: string;
-    href: string;
-  };
-}
-
-interface ServicesData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  services: ServiceItem[];
-  layoutType?: 'slider' | 'grid' | string;
-}
-
-interface ServicesProps {
-  servicesData: ServicesData;
-}
-
-export const Services: React.FC<ServicesProps> = ({ servicesData }) => {
+export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data, className }) => {
+  const servicesData = data || site.services;
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -49,9 +23,9 @@ export const Services: React.FC<ServicesProps> = ({ servicesData }) => {
     }
   };
 
-  if (servicesData.layoutType === 'grid') {
+  if ((servicesData as any).layoutType === 'grid') {
     return (
-      <section id="services" className="relative w-full bg-white py-20 lg:py-24">
+      <section id="services" className={`relative w-full bg-white py-20 lg:py-24 ${className || ""}`}>
         <div className="page-gutter flex flex-col items-center">
           {/* Header */}
           <Reveal animation="rh-fade-up" className="flex flex-col items-center text-center max-w-2xl mb-16">
@@ -117,7 +91,7 @@ export const Services: React.FC<ServicesProps> = ({ servicesData }) => {
   }
 
   return (
-    <section id="services" className="relative w-full bg-white pb-20 lg:pb-24">
+    <section id="services" className={`relative w-full bg-white pb-20 lg:pb-24 ${className || ""}`}>
       {/* Top Dark Background Section */}
       <div className="relative bg-navy pt-20 pb-40 lg:pt-24 lg:pb-56">
         {/* Optional background pattern overlay could go here */}

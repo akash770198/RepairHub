@@ -3,68 +3,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import siteData from "@/data/site.json";
+import { site, siteData, SectionProps, RepairHubFooter1Data } from "@/data";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
-
-interface ContactInfo {
-  icon: string;
-  label: string;
-  value?: string;
-}
-
-interface FooterLink {
-  label: string;
-  href: string;
-}
 
 interface Post {
   image: string;
   title: string;
   date: string;
   href: string;
-}
-
-interface FooterData {
-  logo: {
-    src: string;
-    alt: string;
-  };
-  description: string;
-  contact: ContactInfo[];
-  linksColumn: {
-    title: string;
-    links: FooterLink[];
-  };
-  postsColumn: {
-    title: string;
-    posts: Post[];
-    button: {
-      label: string;
-      href: string;
-    };
-  };
-  estimateColumn: {
-    title: string;
-    phone: string;
-    description: string;
-    button: {
-      label: string;
-      href: string;
-    };
-  };
-  bottomBar: {
-    copyright: string;
-    policies: FooterLink[];
-    social: {
-      icon: string;
-      href: string;
-    }[];
-  };
-}
-
-interface FooterProps {
-  footerData: FooterData;
 }
 
 function resolveFooterPosts(posts: Post[]): Post[] {
@@ -94,11 +41,12 @@ function resolveFooterPosts(posts: Post[]): Post[] {
   });
 }
 
-export const Footer: React.FC<FooterProps> = ({ footerData }) => {
-  const recentPosts = resolveFooterPosts(footerData.postsColumn.posts);
+export const Footer: React.FC<SectionProps<RepairHubFooter1Data>> = ({ data, className }) => {
+  const footerData = data || site.footer;
+  const recentPosts = resolveFooterPosts(footerData.postsColumn.posts as any);
 
   return (
-    <footer className="w-full bg-[#081c3c] border-t-4 border-brand text-slate-300">
+    <footer className={`w-full bg-[#081c3c] border-t-4 border-brand text-slate-300 ${className || ""}`}>
       <div className="page-gutter py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           

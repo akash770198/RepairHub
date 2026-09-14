@@ -34,18 +34,13 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ id:
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header
-        topbarData={siteData.sections.Topbar.variants.RepairHubTopbar1}
-        headerData={siteData.sections.Header.variants.RepairHubHeader1}
-      />
+      <Header data={{ topbarData: siteData.sections.Topbar.variants.RepairHubTopbar1, headerData: siteData.sections.Header.variants.RepairHubHeader1 }} />
       
-      <PageBanner bannerData={bannerData} />
+      <PageBanner data={bannerData} />
       
       <TeamMemberDetail member={member} />
       
-      <Footer
-        footerData={siteData.sections.Footer.variants.RepairHubFooter1}
-      />
+      <Footer data={siteData.sections.Footer.variants.RepairHubFooter1} />
     </main>
   );
 }

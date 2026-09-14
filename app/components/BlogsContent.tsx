@@ -5,34 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
+import { site, SectionProps, RepairHubBlogs1Data } from "@/data";
 
-interface BlogPost {
-  id: string;
-  featured: boolean;
-  category: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  date: string;
-  comments: number;
-  title: string;
-  link: string;
-}
-
-interface BlogsData {
-  eyebrow: string;
-  heading: {
-    line1: string;
-    highlight: string;
-  };
-  description: string;
-  posts: BlogPost[];
-}
-
-export const BlogsContent = ({ blogsData }: { blogsData: BlogsData }) => {
+export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propData, className }) => {
+  const blogsData = (propData || site.blogs) as any;
   return (
-    <section className="bg-slate-50 py-16 lg:py-24">
+    <section className={`bg-slate-50 py-16 lg:py-24 ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -51,7 +29,7 @@ export const BlogsContent = ({ blogsData }: { blogsData: BlogsData }) => {
 
         {/* Masonry Grid via CSS Columns */}
         <div className="columns-1 lg:columns-2 gap-8 lg:gap-10">
-          {blogsData.posts.map((post, idx) => (
+          {blogsData.posts.map((post: any, idx: any) => (
             <Reveal key={post.id} delay={idx * 50} className="w-full break-inside-avoid mb-8 lg:mb-10">
               <div className={`bg-white rounded-[24px] border border-line shadow-sm hover:shadow-md transition-shadow overflow-hidden group flex ${post.featured ? 'flex-col sm:h-[552px] lg:h-[560px]' : 'flex-col sm:flex-row h-auto sm:h-[260px]'}`}>
                 

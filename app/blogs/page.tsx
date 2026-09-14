@@ -21,12 +21,12 @@ export default function BlogsPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header topbarData={topbarData} headerData={headerData} />
-      {bannerData && <PageBanner bannerData={bannerData} />}
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
+      {bannerData && <PageBanner data={bannerData} />}
       
-      <BlogsContent blogsData={blogsData} />
+      <BlogsContent data={blogsData} />
 
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }

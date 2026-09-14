@@ -39,9 +39,9 @@ export default async function CareerDetailPage({ params }: { params: { slug: str
 
   return (
     <main className="min-h-screen flex flex-col bg-slate-50">
-      <Header topbarData={topbarData} headerData={headerData} />
+      <Header data={{ topbarData: topbarData, headerData: headerData }} />
       
-      <PageBanner bannerData={bannerData} />
+      <PageBanner data={bannerData} />
       
       <CareerDetailContent 
         job={job} 
@@ -49,7 +49,7 @@ export default async function CareerDetailPage({ params }: { params: { slug: str
         otherJobs={otherJobs} 
       />
       
-      <Footer footerData={footerData} />
+      <Footer data={footerData} />
     </main>
   );
 }
