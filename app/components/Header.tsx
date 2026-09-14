@@ -63,9 +63,39 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#081c3c] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)]">
+    <header className="sticky top-0 z-50 w-full bg-[#081c3c] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)] flex flex-col">
+      {/* MOBILE TOP BAR (Only visible on small screens) */}
+      <div className="md:hidden w-full border-b border-white/10 bg-[#06152d]">
+        <div className="page-gutter flex h-10 items-center justify-between gap-4">
+          <a
+            href={`mailto:${topbarData.email}`}
+            className="flex min-w-0 items-center gap-2 text-muted transition-colors hover:text-brand-light"
+          >
+            <DynamicIcon
+              name={topbarData.emailIcon}
+              className="h-4 w-4 shrink-0 text-brand"
+            />
+            <span className="text-[12px] sm:text-[13px] whitespace-nowrap">{topbarData.email}</span>
+          </a>
+          <div className="flex shrink-0 items-center gap-4">
+            {topbarData.socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                aria-label={social.label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-brand-light"
+              >
+                <DynamicIcon name={social.icon} className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Height is pinned so the logo can't outgrow the topbar + nav rows */}
-      <div className="page-gutter flex h-[5.5rem] w-full items-stretch sm:h-[6.5rem]">
+      <div className="page-gutter flex h-[4.5rem] md:h-[5.5rem] w-full items-stretch sm:h-[6.5rem]">
         {/* BRAND BLOCK — fills header height with almost no extra padding */}
         <div className="rh-fade-left flex shrink-0 self-stretch py-2">
           <Link
@@ -101,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
         {/* RIGHT SIDE: TOP BAR ROW + NAV ROW */}
         <div className="flex min-w-0 flex-1 flex-col">
           {/* 1. TOP CONTACT & SOCIAL BAR */}
-          <div className="rh-fade-in type-topbar flex h-9 items-center justify-between gap-4 sm:h-10">
+          <div className="rh-fade-in type-topbar hidden md:flex h-9 items-center justify-between gap-4 sm:h-10">
             <div className="flex min-w-0 items-center gap-3 lg:gap-5">
               <a
                 href={`mailto:${topbarData.email}`}
@@ -111,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
                   name={topbarData.emailIcon}
                   className="h-4 w-4 shrink-0 text-brand"
                 />
-                <span className="truncate">{topbarData.email}</span>
+                <span className="text-[11px] sm:text-[13px] md:text-sm whitespace-nowrap">{topbarData.email}</span>
               </a>
 
               <span className="hidden h-4 w-px bg-white/20 md:block" />
@@ -145,7 +175,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
           </div>
 
           {/* 2. MAIN NAVIGATION ROW */}
-          <div className="flex h-[2.5rem] flex-1 items-stretch justify-between sm:h-16">
+          <div className="flex h-full md:h-[2.5rem] flex-1 items-center justify-end md:items-stretch md:justify-between sm:h-16">
             <nav className="type-nav hidden items-center gap-4 lg:flex xl:gap-6 2xl:gap-8">
               {headerData.menu.map((item, index) => (
                 <div
@@ -232,7 +262,7 @@ export const Header: React.FC<HeaderProps> = ({ topbarData, headerData }) => {
             {cta && (
               <Link
                 href={cta.href}
-                className="bleed-right rh-fade-in type-cta group ml-4 flex shrink-0 items-center gap-2.5 bg-brand pl-9 text-ink transition-colors duration-300 hover:bg-brand-light sm:pl-10 xl:pl-12"
+                className="bleed-right rh-fade-in type-cta group ml-4 hidden shrink-0 items-center gap-2.5 bg-brand pl-9 text-ink transition-colors duration-300 hover:bg-brand-light md:flex sm:pl-10 xl:pl-12"
                 style={{
                   clipPath: "polygon(30px 0, 100% 0, 100% 100%, 0% 100%)",
                   animationDelay: "300ms",

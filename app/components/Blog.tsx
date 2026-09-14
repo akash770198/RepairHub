@@ -67,7 +67,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Main Post (Left) */}
-          <Reveal delay={100} className="group flex flex-col rounded-[20px] bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] h-full">
+          <Reveal delay={100} className="group flex flex-col rounded-[20px] bg-white border border-slate-200 shadow-md overflow-hidden transition-all hover:shadow-xl h-full">
             <div className="relative flex-1 min-h-[250px] w-full overflow-hidden">
               <Image
                 src={mainPost.image.src}
@@ -80,7 +80,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
                 {mainPost.category}
               </div>
             </div>
-            <div className="p-8 flex flex-col flex-1">
+            <div className="p-6 sm:p-8 flex flex-col shrink-0 bg-white">
               <div className="flex items-center gap-6 text-slate-500 text-sm mb-4">
                 <div className="flex items-center gap-2">
                   <DynamicIcon name="calendar" className="w-4 h-4 text-brand" />
@@ -113,7 +113,7 @@ export const Blog: React.FC<BlogProps> = ({ blogData }) => {
           {/* Side Posts (Right) */}
           <div className="flex flex-col gap-8">
             {sidePosts.map((post, index) => (
-              <Reveal key={post.id} delay={200 + index * 100} className="group flex flex-col sm:flex-row rounded-[20px] bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+              <Reveal key={post.id} delay={200 + index * 100} className="group flex flex-col sm:flex-row rounded-[20px] bg-white border border-slate-200 shadow-md overflow-hidden transition-all hover:shadow-xl">
                 <div className="relative aspect-[4/3] sm:aspect-square sm:w-2/5 overflow-hidden">
                   <Image
                     src={post.image.src}

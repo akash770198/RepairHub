@@ -12,42 +12,42 @@ export default function WhyChooseUsPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      {layout.map((component: any, index: number) => {
-        switch (component.section) {
+      {layout.components.map((component: any, index: number) => {
+        switch (component.key) {
           case "Header":
             return (
               <Header
                 key={index}
                 topbarData={siteData.sections.Topbar.variants.RepairHubTopbar1}
-                headerData={siteData.sections.Header.variants[component.variant as keyof typeof siteData.sections.Header.variants]}
+                headerData={siteData.sections.Header.variants[component.component as keyof typeof siteData.sections.Header.variants]}
               />
             );
           case "PageBanner":
             return (
               <PageBanner
                 key={index}
-                bannerData={siteData.sections.PageBanner.variants[component.variant as keyof typeof siteData.sections.PageBanner.variants]}
+                bannerData={siteData.sections.PageBanner.variants[component.component as keyof typeof siteData.sections.PageBanner.variants]}
               />
             );
           case "WhyChooseUs":
             return (
               <WhyChooseUs
                 key={index}
-                data={siteData.sections.WhyChooseUs.variants[component.variant as keyof typeof siteData.sections.WhyChooseUs.variants]}
+                data={siteData.sections.WhyChooseUs.variants[component.component as keyof typeof siteData.sections.WhyChooseUs.variants]}
               />
             );
           case "FeatureCards":
             return (
               <FeatureCards
                 key={index}
-                data={siteData.sections.FeatureCards.variants[component.variant as keyof typeof siteData.sections.FeatureCards.variants]}
+                data={siteData.sections.FeatureCards.variants[component.component as keyof typeof siteData.sections.FeatureCards.variants]}
               />
             );
           case "Footer":
             return (
               <Footer
                 key={index}
-                footerData={siteData.sections.Footer.variants[component.variant as keyof typeof siteData.sections.Footer.variants]}
+                footerData={siteData.sections.Footer.variants[component.component as keyof typeof siteData.sections.Footer.variants]}
               />
             );
           default:

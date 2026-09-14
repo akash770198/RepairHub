@@ -40,112 +40,122 @@
               }
             ]
           },
-          "about": [
-            {
-              "section": "Header",
-              "variant": "RepairHubHeader1"
-            },
-            {
-              "section": "PageBanner",
-              "variant": "AboutUsBanner"
-            },
-            {
-              "section": "About",
-              "variant": "RepairHubAbout1"
-            },
-            {
-              "section": "FeatureCards",
-              "variant": "FeatureCards1"
-            },
-            {
-              "section": "WhyChooseUs",
-              "variant": "WhyChooseUs1"
-            },
-            {
-              "section": "Footer",
-              "variant": "RepairHubFooter1"
-            }
-          ],
-          "why-choose-us": [
-            {
-              "section": "Header",
-              "variant": "RepairHubHeader1"
-            },
-            {
-              "section": "PageBanner",
-              "variant": "WhyChooseUsBanner"
-            },
-            {
-              "section": "WhyChooseUs",
-              "variant": "WhyChooseUs1"
-            },
-            {
-              "section": "FeatureCards",
-              "variant": "FeatureCards1"
-            },
-            {
-              "section": "Footer",
-              "variant": "RepairHubFooter1"
-            }
-          ],
-          "teams": [
-            {
-              "section": "Header",
-              "variant": "RepairHubHeader1"
-            },
-            {
-              "section": "PageBanner",
-              "variant": "TeamsBanner"
-            },
-            {
-              "section": "Team",
-              "variant": "RepairHubTeamGrid"
-            },
-            {
-              "section": "Stats",
-              "variant": "RepairHubStatsInline"
-            },
-            {
-              "section": "Footer",
-              "variant": "RepairHubFooter1"
-            }
-          ],
-          "services": [
-            {
-              "section": "Header",
-              "variant": "RepairHubHeader1"
-            },
-            {
-              "section": "PageBanner",
-              "variant": "RepairServiceBanner"
-            },
-            {
-              "section": "Services",
-              "variant": "RepairHubServicesGrid"
-            },
-            {
-              "section": "Footer",
-              "variant": "RepairHubFooter1"
-            }
-          ],
-          "service": [
-            {
-              "section": "Header",
-              "variant": "RepairHubHeader1"
-            },
-            {
-              "section": "PageBanner",
-              "variant": "RepairServiceBanner"
-            },
-            {
-              "section": "Services",
-              "variant": "RepairHubServicesGrid"
-            },
-            {
-              "section": "Footer",
-              "variant": "RepairHubFooter1"
-            }
-          ]
+          "about": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "RepairHubHeader1"
+              },
+              {
+                "key": "PageBanner",
+                "component": "AboutUsBanner"
+              },
+              {
+                "key": "About",
+                "component": "RepairHubAbout1"
+              },
+              {
+                "key": "FeatureCards",
+                "component": "FeatureCards1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "WhyChooseUs1"
+              },
+              {
+                "key": "Footer",
+                "component": "RepairHubFooter1"
+              }
+            ]
+          },
+          "why-choose-us": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "RepairHubHeader1"
+              },
+              {
+                "key": "PageBanner",
+                "component": "WhyChooseUsBanner"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "WhyChooseUs1"
+              },
+              {
+                "key": "FeatureCards",
+                "component": "FeatureCards1"
+              },
+              {
+                "key": "Footer",
+                "component": "RepairHubFooter1"
+              }
+            ]
+          },
+          "teams": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "RepairHubHeader1"
+              },
+              {
+                "key": "PageBanner",
+                "component": "TeamsBanner"
+              },
+              {
+                "key": "Team",
+                "component": "RepairHubTeamGrid"
+              },
+              {
+                "key": "Stats",
+                "component": "RepairHubStatsInline"
+              },
+              {
+                "key": "Footer",
+                "component": "RepairHubFooter1"
+              }
+            ]
+          },
+          "services": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "RepairHubHeader1"
+              },
+              {
+                "key": "PageBanner",
+                "component": "RepairServiceBanner"
+              },
+              {
+                "key": "Services",
+                "component": "RepairHubServicesGrid"
+              },
+              {
+                "key": "Footer",
+                "component": "RepairHubFooter1"
+              }
+            ]
+          },
+          "service": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "RepairHubHeader1"
+              },
+              {
+                "key": "PageBanner",
+                "component": "RepairServiceBanner"
+              },
+              {
+                "key": "Services",
+                "component": "RepairHubServicesGrid"
+              },
+              {
+                "key": "Footer",
+                "component": "RepairHubFooter1"
+              }
+            ]
+          }
         }
       }
     },
@@ -2569,25 +2579,78 @@
               "alt": "Phone Parts"
             },
             "featureCards": [
-              { "icon": "smartphone-repair", "title": "Quality Repair Service" },
-              { "icon": "expert-technician", "title": "Expert Technicians" },
-              { "icon": "price-tag", "title": "Affordable Pricing" },
-              { "icon": "shield-check", "title": "Repair Warranty" },
-              { "icon": "genuine-gear", "title": "Genuine Parts" },
-              { "icon": "five-star-satisfaction", "title": "100% Satisfaction" }
+              {
+                "icon": "smartphone-repair",
+                "title": "Quality Repair Service"
+              },
+              {
+                "icon": "expert-technician",
+                "title": "Expert Technicians"
+              },
+              {
+                "icon": "price-tag",
+                "title": "Affordable Pricing"
+              },
+              {
+                "icon": "shield-check",
+                "title": "Repair Warranty"
+              },
+              {
+                "icon": "genuine-gear",
+                "title": "Genuine Parts"
+              },
+              {
+                "icon": "five-star-satisfaction",
+                "title": "100% Satisfaction"
+              }
             ],
             "tableSection": {
               "title": "Popular Repair Services & Cost",
               "note": "Prices may vary based on device model and condition. Final cost will be confirmed after diagnosis."
             },
             "pricingData": [
-              { "icon": "smartphone", "service": "Screen Replacement", "description": "Cracked or damaged screen", "cost": "Starting from ₹1,499" },
-              { "icon": "battery", "service": "Battery Replacement", "description": "Battery draining fast or not charging", "cost": "Starting from ₹899" },
-              { "icon": "plug", "service": "Charging Port Replacement", "description": "Charging port loose or not working", "cost": "Starting from ₹599" },
-              { "icon": "camera", "service": "Camera Replacement", "description": "Blurry or not working camera", "cost": "Starting from ₹999" },
-              { "icon": "speaker", "service": "Speaker Replacement", "description": "Low or no sound issues", "cost": "Starting from ₹499" },
-              { "icon": "droplet", "service": "Water Damage Repair", "description": "Water damage diagnosis & repair", "cost": "Starting from ₹799" },
-              { "icon": "cpu", "service": "Software Issue Fixing", "description": "Software update, hang or lag issues", "cost": "Starting from ₹499" }
+              {
+                "icon": "smartphone",
+                "service": "Screen Replacement",
+                "description": "Cracked or damaged screen",
+                "cost": "Starting from ₹1,499"
+              },
+              {
+                "icon": "battery",
+                "service": "Battery Replacement",
+                "description": "Battery draining fast or not charging",
+                "cost": "Starting from ₹899"
+              },
+              {
+                "icon": "plug",
+                "service": "Charging Port Replacement",
+                "description": "Charging port loose or not working",
+                "cost": "Starting from ₹599"
+              },
+              {
+                "icon": "camera",
+                "service": "Camera Replacement",
+                "description": "Blurry or not working camera",
+                "cost": "Starting from ₹999"
+              },
+              {
+                "icon": "speaker",
+                "service": "Speaker Replacement",
+                "description": "Low or no sound issues",
+                "cost": "Starting from ₹499"
+              },
+              {
+                "icon": "droplet",
+                "service": "Water Damage Repair",
+                "description": "Water damage diagnosis & repair",
+                "cost": "Starting from ₹799"
+              },
+              {
+                "icon": "cpu",
+                "service": "Software Issue Fixing",
+                "description": "Software update, hang or lag issues",
+                "cost": "Starting from ₹499"
+              }
             ],
             "promoBanner": {
               "discount": "10% OFF",
@@ -2596,10 +2659,22 @@
               "promoCode": "FIXARO10",
               "terms": "*T&C Apply",
               "highlights": [
-                { "icon": "shield-check", "title": "Trusted by\n10K+ Customers" },
-                { "icon": "five-star-satisfaction", "title": "Quality\nService Assured" },
-                { "icon": "shield-check", "title": "6 Months\nWarranty" },
-                { "icon": "headset", "title": "Quick & Reliable\nSupport" }
+                {
+                  "icon": "shield-check",
+                  "title": "Trusted by\n10K+ Customers"
+                },
+                {
+                  "icon": "five-star-satisfaction",
+                  "title": "Quality\nService Assured"
+                },
+                {
+                  "icon": "shield-check",
+                  "title": "6 Months\nWarranty"
+                },
+                {
+                  "icon": "headset",
+                  "title": "Quick & Reliable\nSupport"
+                }
               ]
             }
           }
