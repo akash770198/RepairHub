@@ -36,7 +36,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({ job, s
   };
 
   return (
-    <div className="w-full bg-[#f8fafc] text-navy font-sans py-16 lg:py-24 relative">
+    <div className="w-full bg-[#f8fafc] text-navy font-sans py-16 relative">
       <div className="page-gutter">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 relative items-start">
           

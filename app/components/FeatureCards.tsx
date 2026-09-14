@@ -10,7 +10,7 @@ export const FeatureCards: React.FC<SectionProps<FeatureCards1Data>> = ({ data: 
   if (!data?.cards?.length) return null;
 
   return (
-    <section className={`relative w-full bg-white pt-0 pb-20 lg:pb-24 z-20 ${className || ""}`}>
+    <section className={`relative w-full bg-white pt-0 pb-16 z-20 ${className || ""}`}>
       <div className="page-gutter relative">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           {data.cards.map((card, idx) => (

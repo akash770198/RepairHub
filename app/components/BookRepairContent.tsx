@@ -29,7 +29,7 @@ export const BookRepairContent = () => {
   };
 
   return (
-    <section className="relative w-full bg-slate-50 py-16 lg:py-24">
+    <section className="relative w-full bg-slate-50 py-16">
       <div className="page-gutter relative z-10">
         {/* Top Headings */}
         <div className="flex flex-col items-start mb-12 lg:mb-16">

@@ -51,7 +51,7 @@ export const PricingContent = ({ data }: { data: PricingData }) => {
   return (
     <div className="w-full bg-slate-50 flex flex-col items-center pb-24">
       {/* Top Intro Section */}
-      <section className="page-gutter relative w-full pt-16 lg:pt-24 pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <section className="page-gutter relative w-full pt-16 pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <Reveal className="w-full lg:w-1/2 flex flex-col items-start">
           <div className="flex items-center gap-3">
             <span className="h-[2px] w-8 rounded-full bg-brand" />

@@ -17,7 +17,7 @@ export const Blog: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propDa
   const commentsWord = blogData.commentsLabel ?? "Comments";
 
   return (
-    <section id="blog" className={`py-20 lg:py-24 bg-[#f8fbff] ${className || ""}`}>
+    <section id="blog" className={`py-16 bg-[#f8fbff] ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <Reveal className="flex flex-col items-center text-center mb-16">

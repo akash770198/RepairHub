@@ -40,7 +40,7 @@ export const Brands: React.FC<SectionProps<RepairHubBrands1Data>> = ({ data, cla
   };
 
   return (
-    <section className={`relative w-full bg-navy py-20 lg:py-24 overflow-hidden ${className || ""}`}>
+    <section className={`relative w-full bg-navy py-16 overflow-hidden ${className || ""}`}>
       {/* Decorative diagonal stripe line behind the video banner */}
       <div 
         className="absolute left-0 w-full h-[8px] top-40 lg:top-56 z-0" 

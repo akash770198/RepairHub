@@ -15,7 +15,7 @@ export const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ post, allP
   const recentPosts = allPosts.filter(p => p.id !== post.id).slice(0, 5);
   
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-16">
       <div className="page-gutter">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           

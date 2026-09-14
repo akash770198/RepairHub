@@ -11,7 +11,7 @@ export const NotFoundContent: React.FC<SectionProps<RepairHubNotFound1Data>> = (
   const notFoundData = (propData || site.notFound) as any;
   return (
     <section className={`w-full bg-white ${className || ""}`}>
-      <div className="page-gutter py-16 sm:py-20 lg:py-24">
+      <div className="page-gutter py-16 sm:py-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8 xl:gap-16">
           <Reveal className="flex flex-col items-start">
             <p className="text-[92px] font-black leading-[0.85] tracking-tight text-brand sm:text-[120px] lg:text-[140px] xl:text-[160px]">

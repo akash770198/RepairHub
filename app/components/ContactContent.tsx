@@ -22,7 +22,7 @@ export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ 
     <section className={`w-full bg-white relative ${className || ""}`}>
       
       {/* Top Section: Info Cards */}
-      <div className="page-gutter py-20 lg:py-24">
+      <div className="page-gutter py-16">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">

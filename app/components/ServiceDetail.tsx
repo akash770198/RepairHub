@@ -46,7 +46,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
   const keyBenefitsLabel = labels?.sections.keyBenefits ?? "Key Benefits";
   const devicesLabel = labels?.sections.devicesWeRepair ?? "Devices We Repair";
   return (
-    <section className="w-full bg-slate-50 py-16 lg:py-24">
+    <section className="w-full bg-slate-50 py-16">
       <div className="page-gutter">
         <div className="flex flex-col lg:flex-row gap-10">
           

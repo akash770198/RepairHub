@@ -15,7 +15,7 @@ export const FAQ: React.FC<SectionProps<RepairHubFAQ1Data>> = ({ data, className
   };
 
   return (
-    <section id="faq" className={`relative w-full bg-[#081c3c] py-20 lg:py-24 border-t border-slate-800 ${className || ""}`}>
+    <section id="faq" className={`relative w-full bg-[#081c3c] py-16 border-t border-slate-800 ${className || ""}`}>
       <div className="page-gutter flex flex-col">
         
         {/* Header */}

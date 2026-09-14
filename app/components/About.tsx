@@ -36,7 +36,7 @@ export const About: React.FC<SectionProps<RepairHubAbout1Data> & { hideCTA?: boo
   const { primaryImage, secondaryImage, badgeIcon } = aboutData.media;
 
   return (
-    <section id="about" className="relative w-full overflow-clip bg-white py-20 lg:py-24">
+    <section id="about" className="relative w-full overflow-clip bg-white py-16">
       <div className="page-gutter relative grid items-center gap-12 lg:grid-cols-2 lg:gap-10 xl:gap-12">
         {/* Decorative dot grids, kept inside the page gutter */}
         <DotGrid

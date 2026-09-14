@@ -65,7 +65,7 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
   }, [testimonialsData.testimonials.length]);
 
   return (
-    <section className={`relative w-full bg-slate-50 py-20 lg:py-24 overflow-hidden ${className || ""}`}>
+    <section className={`relative w-full bg-slate-50 py-16 overflow-hidden ${className || ""}`}>
       <div className="page-gutter relative z-10 flex flex-col items-center">
         
         {/* Header */}

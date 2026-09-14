@@ -49,7 +49,7 @@ export const Team: React.FC<SectionProps<RepairHubTeam1Data>> = ({ data, classNa
   };
 
   return (
-    <section id="team" className={`relative w-full bg-white py-20 lg:py-24 ${className || ""}`}>
+    <section id="team" className={`relative w-full bg-white py-16 ${className || ""}`}>
       <div className="page-gutter flex flex-col items-center">
         
         {/* Header */}

@@ -143,7 +143,7 @@ const sections: PolicySection[] = [
 
 export const PrivacyPolicyContent: React.FC = () => {
   return (
-    <section className="w-full bg-white py-20 lg:py-24">
+    <section className="w-full bg-white py-16">
       <div className="page-gutter">
         <div className="max-w-5xl mx-auto">
           {/* Page intro */}

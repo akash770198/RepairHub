@@ -186,7 +186,7 @@ export const Hero: React.FC<SectionProps<{ bannerData: RepairHubBanner1Data; fea
       </section>
 
       {/* 2. FEATURE CARDS OVERLAPPING THE HERO */}
-      <div className="flow-root w-full bg-white pb-14 sm:pb-20">
+      <div className="flow-root w-full bg-white pb-16">
         <div className="page-gutter relative z-20 -mt-24 lg:-mt-28">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
             {featuresData.features.map((item, index) => (

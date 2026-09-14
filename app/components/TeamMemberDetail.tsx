@@ -31,7 +31,7 @@ interface TeamMemberDetailProps {
 
 export const TeamMemberDetail: React.FC<TeamMemberDetailProps> = ({ member }) => {
   return (
-    <section className="w-full bg-slate-50 py-16 lg:py-24">
+    <section className="w-full bg-slate-50 py-16">
       <div className="page-gutter">
         <div className="flex flex-col lg:flex-row gap-10">
           

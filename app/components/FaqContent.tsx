@@ -15,7 +15,7 @@ export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: p
   };
 
   return (
-    <section className={`bg-slate-50 py-16 lg:py-24 ${className || ""}`}>
+    <section className={`bg-slate-50 py-16 ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">

@@ -25,7 +25,7 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
 
   if ((servicesData as any).layoutType === 'grid') {
     return (
-      <section id="services" className={`relative w-full bg-white py-20 lg:py-24 ${className || ""}`}>
+      <section id="services" className={`relative w-full bg-white py-16 ${className || ""}`}>
         <div className="page-gutter flex flex-col items-center">
           {/* Header */}
           <Reveal animation="rh-fade-up" className="flex flex-col items-center text-center max-w-2xl mb-16">
@@ -91,9 +91,9 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
   }
 
   return (
-    <section id="services" className={`relative w-full bg-white pb-20 lg:pb-24 ${className || ""}`}>
+    <section id="services" className={`relative w-full bg-white pb-16 ${className || ""}`}>
       {/* Top Dark Background Section */}
-      <div className="relative bg-navy pt-20 pb-40 lg:pt-24 lg:pb-56">
+      <div className="relative bg-navy pt-16 pb-40 lg:pb-56">
         {/* Optional background pattern overlay could go here */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('/pattern.svg')] bg-repeat" />
 

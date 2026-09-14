@@ -115,7 +115,7 @@ const sections: SitemapSection[] = [
 
 export const SitemapContent: React.FC = () => {
   return (
-    <section className="w-full bg-white py-20 lg:py-24">
+    <section className="w-full bg-white py-16">
       <div className="page-gutter">
         {/* Logo / Page Header */}
         <Reveal animation="rh-fade-up">

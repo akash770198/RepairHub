@@ -9,7 +9,7 @@ import { site, SectionProps, WhyChooseUs1Data } from "@/data";
 export const WhyChooseUs: React.FC<SectionProps<WhyChooseUs1Data>> = ({ data: propData, className }) => {
   const data = propData || site.whyChooseUs;
   return (
-    <section className={`relative w-full bg-white py-20 lg:py-24 overflow-hidden ${className || ""}`}>
+    <section className={`relative w-full bg-white py-16 overflow-hidden ${className || ""}`}>
       <div className="page-gutter relative grid lg:grid-cols-2 gap-16 lg:gap-2 items-center">
         
         {/* Content Side (Left) */}

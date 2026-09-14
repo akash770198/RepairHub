@@ -10,7 +10,7 @@ import { site, SectionProps, RepairHubBlogs1Data } from "@/data";
 export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propData, className }) => {
   const blogsData = (propData || site.blogs) as any;
   return (
-    <section className={`bg-slate-50 py-16 lg:py-24 ${className || ""}`}>
+    <section className={`bg-slate-50 py-16 ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">

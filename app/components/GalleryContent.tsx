@@ -250,7 +250,7 @@ export const GalleryContent: React.FC<SectionProps<RepairHubGallery1Data>> = ({ 
       {activeVideo && (
         <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
       )}
-      <section className={`bg-white py-16 lg:py-24 ${className || ""}`}>
+      <section className={`bg-white py-16 ${className || ""}`}>
         <div className="page-gutter">
           {/* Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-12">

@@ -17,7 +17,7 @@ export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ da
     <div className="w-full bg-white text-navy font-sans">
       
       {/* Intro Section */}
-      <section className="py-20 lg:py-24 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         <div className="page-gutter max-w-5xl mx-auto flex flex-col items-center text-center">
           
           <Reveal animation="rh-fade-up">
@@ -60,7 +60,7 @@ export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ da
       </section>
 
       {/* Open Positions Section */}
-      <section className="py-20 lg:py-24 bg-[#f8fafc]">
+      <section className="py-16 bg-[#f8fafc]">
         <div className="page-gutter">
           <div className="text-center mb-16">
             <Reveal animation="rh-fade-up">
@@ -118,7 +118,7 @@ export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ da
       </section>
 
       {/* Why Join Section */}
-      <section className="py-20 lg:py-24">
+      <section className="py-16">
         <div className="page-gutter">
           <div className="text-center mb-16">
             <Reveal animation="rh-fade-up">
@@ -151,7 +151,7 @@ export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ da
       </section>
 
       {/* CTA Section */}
-      <section className="pb-20 lg:pb-24">
+      <section className="pb-16">
         <div className="page-gutter max-w-5xl mx-auto">
           <Reveal animation="rh-fade-up">
             <div className="bg-[#f8fafc] border border-slate-200 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 relative overflow-hidden">
