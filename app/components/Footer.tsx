@@ -52,7 +52,7 @@ export const Footer: React.FC<SectionProps<RepairHubFooter1Data>> = ({ data, cla
           
           {/* Column 1: About & Contact */}
           <Reveal animation="rh-fade-up" delay={0} className="flex flex-col">
-            <Link href="/" className="inline-block w-64 md:w-[270px] mb-6">
+            <Link href="/" className="inline-block w-64 md:w-[270px] mb-6 -mt-8">
               <Image 
                 src={footerData.logo.src} 
                 alt={footerData.logo.alt} 

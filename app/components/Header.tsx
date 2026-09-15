@@ -54,7 +54,7 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
       {/* Height is pinned so the logo can't outgrow the topbar + nav rows */}
       <div className="page-gutter flex h-[4.5rem] md:h-[5.5rem] w-full items-stretch sm:h-[6.5rem]">
         {/* BRAND BLOCK — fills header height with almost no extra padding */}
-        <div className="rh-fade-left flex shrink-0 self-stretch py-2">
+        <div className="rh-fade-left flex shrink-0 self-stretch items-center">
           <Link
             href={headerData.logo.href}
             className="flex h-full items-center transition-transform duration-300 hover:scale-[1.03]"

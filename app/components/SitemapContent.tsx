@@ -105,12 +105,7 @@ const sections: SitemapSection[] = [
     icon: "shield",
     links: [{ label: "Refund Policy", href: "/refund-policy" }],
   },
-  {
-    number: "14",
-    title: "Sitemap",
-    icon: "map",
-    links: [{ label: "Sitemap", href: "/sitemap" }],
-  },
+
 ];
 
 export const SitemapContent: React.FC = () => {

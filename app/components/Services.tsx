@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
@@ -10,18 +10,36 @@ import { site, SectionProps, RepairHubServices1Data } from "@/data";
 export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data, className }) => {
   const servicesData = data || site.services;
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current && scrollRef.current.firstElementChild) {
       const cardWidth = (scrollRef.current.firstElementChild as HTMLElement).offsetWidth;
       const scrollAmount = cardWidth + 24; // 24px is the gap-6 size
-      const { scrollLeft } = scrollRef.current;
-      scrollRef.current.scrollTo({
-        left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
-        behavior: 'smooth'
-      });
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      
+      if (direction === 'right' && scrollLeft + clientWidth >= scrollWidth - 10) {
+        // Loop back to start
+        scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollRef.current.scrollTo({
+          left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+          behavior: 'smooth'
+        });
+      }
     }
   };
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if ((servicesData as any).layoutType === 'grid' || isPaused) return;
+
+    const intervalId = setInterval(() => {
+      scroll('right');
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(intervalId);
+  }, [servicesData, isPaused]);
 
   if ((servicesData as any).layoutType === 'grid') {
     return (
@@ -139,6 +157,8 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
       <div className="page-gutter relative z-20 -mt-28 lg:-mt-40">
         <div 
           ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
           className="grid w-full grid-flow-col auto-cols-[100%] sm:auto-cols-[calc(50%-12px)] lg:auto-cols-[calc(25%-18px)] gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {servicesData.services.map((service, index) => (
