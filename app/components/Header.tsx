@@ -52,7 +52,7 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
       </div>
 
       {/* Height is pinned so the logo can't outgrow the topbar + nav rows */}
-      <div className="page-gutter flex h-[4.5rem] md:h-[5.5rem] w-full items-stretch sm:h-[6.5rem]">
+      <div className="page-gutter flex h-[5.25rem] w-full items-stretch overflow-visible py-2 sm:h-[7.25rem] md:h-[6.5rem]">
         {/* BRAND BLOCK — fills header height with almost no extra padding */}
         <div className="rh-fade-left flex shrink-0 self-stretch items-center">
           <Link
@@ -78,17 +78,32 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
         </div>
 
         {/* DIAGONAL YELLOW SLASH DIVIDER */}
-        <div className="relative mx-3 hidden w-6 shrink-0 sm:block lg:mx-5 lg:w-7 xl:mx-7 xl:w-8">
+        <div className="relative mx-3 hidden w-5 shrink-0 self-stretch overflow-visible sm:block lg:mx-5 lg:w-5 xl:mx-7 xl:w-6">
           <div
-            className="rh-fade-in absolute inset-y-0 left-0 w-full skew-x-[-15deg] bg-brand"
-            style={{ animationDelay: "150ms" }}
+            className="rh-fade-in absolute left-1/2 z-10 w-[10px] -translate-x-1/2 skew-x-[-15deg] bg-brand lg:w-[11px]"
+            style={{
+              animationDelay: "150ms",
+              top: "-0.5rem",
+              bottom: "-0.5rem",
+            }}
+          />
+          <div
+            className="rh-fade-in absolute z-0 bg-brand"
+            style={{
+              animationDelay: "150ms",
+              left: "6px",
+              top: "-1.15rem",
+              width: "20px",
+              height: "20px",
+              rotate: "-50deg",
+            }}
           />
         </div>
 
         {/* RIGHT SIDE: TOP BAR ROW + NAV ROW */}
         <div className="flex min-w-0 flex-1 flex-col">
           {/* 1. TOP CONTACT & SOCIAL BAR */}
-          <div className="rh-fade-in type-topbar hidden md:flex h-9 items-center justify-between gap-4 sm:h-10">
+          <div className="rh-fade-in type-topbar hidden md:flex min-h-9 items-center justify-between gap-4 border-b-2 border-white/15 pb-2 sm:min-h-10">
             <div className="flex min-w-0 items-center gap-3 lg:gap-5">
               <a
                 href={`mailto:${topbarData.email}`}
@@ -115,7 +130,7 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
               </div>
             </div>
 
-            <div className="flex shrink-0 items-center gap-4">
+            <div className="flex shrink-0 items-center gap-4 pb-0.5">
               {topbarData.socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -132,7 +147,7 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
           </div>
 
           {/* 2. MAIN NAVIGATION ROW */}
-          <div className="flex h-full md:h-[2.5rem] flex-1 items-center justify-end md:items-stretch md:justify-between sm:h-16">
+          <div className="flex h-full flex-1 items-center justify-end md:h-[3rem] md:items-stretch md:justify-between sm:h-16">
             <nav className="type-nav hidden items-center gap-4 lg:flex xl:gap-6 2xl:gap-8">
               {headerData.menu.map((item, index) => (
                 <div
@@ -215,13 +230,16 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
               </svg>
             </button>
 
-            {/* Angled booking CTA, flush with the right screen edge */}
+            {/* Booking CTA */}
             {cta && (
               <Link
                 href={cta.href}
-                className="bleed-right rh-fade-in type-cta group ml-4 hidden shrink-0 items-center gap-2.5 bg-brand pl-9 text-ink transition-colors duration-300 hover:bg-brand-light md:flex sm:pl-10 xl:pl-12"
+                className="rh-fade-in type-cta group ml-4 hidden shrink-0 items-center gap-2.5 self-start bg-brand text-ink transition-colors duration-300 hover:bg-brand-light md:flex"
                 style={{
-                  clipPath: "polygon(30px 0, 100% 0, 100% 100%, 0% 100%)",
+                  borderBottom: "9px solid #e1aa07",
+                  padding: "12px 44px",
+                  borderRadius: "26px 0",
+                  overflow: "hidden",
                   animationDelay: "300ms",
                 }}
               >
