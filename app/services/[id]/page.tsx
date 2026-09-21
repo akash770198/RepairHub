@@ -26,9 +26,9 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
     href: s.link.href,
   }));
 
-  // Read banner title and all labels from JSON
+  // Read labels from JSON; banner/breadcrumb use this service's title
   const detailPage = (servicesVariant as any).detailPage;
-  const bannerTitle = detailPage?.bannerTitle ?? "Repair Service";
+  const servicesCrumbLabel = detailPage?.bannerTitle ?? "Services";
   const labels = detailPage ? {
     sidebarTitle: detailPage.sidebarTitle,
     contactCard: detailPage.contactCard,
@@ -36,11 +36,12 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
   } : undefined;
 
   const bannerData = {
-    title: bannerTitle,
+    title: service.title,
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: bannerTitle, href: `/services/${id}` }
-    ]
+      { label: servicesCrumbLabel, href: "/services" },
+      { label: service.title, href: service.link?.href ?? `/services/${id}` },
+    ],
   };
 
   return (
