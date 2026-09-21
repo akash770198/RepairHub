@@ -964,6 +964,10 @@
             },
             "description": "Real feedback from real customers who trust us\nwith their devices.",
             "repairedLabel": "Repaired:",
+            "cardImage": {
+              "src": "/Testimonials/Card_Temp.png",
+              "alt": "Testimonial card"
+            },
             "testimonials": [
               {
                 "id": "t1",

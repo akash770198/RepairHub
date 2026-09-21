@@ -237,7 +237,7 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
                 className="rh-fade-in type-cta group ml-4 hidden shrink-0 items-center gap-2.5 self-start bg-brand text-ink transition-colors duration-300 hover:bg-brand-light md:flex"
                 style={{
                   borderBottom: "9px solid #e1aa07",
-                  padding: "12px 44px",
+                  padding: "12px 28px 12px 28px",
                   borderRadius: "26px 0",
                   overflow: "hidden",
                   animationDelay: "300ms",
