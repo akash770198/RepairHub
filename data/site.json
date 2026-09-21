@@ -2071,23 +2071,23 @@
               "links": [
                 {
                   "label": "Home",
-                  "href": "#home"
+                  "href": "/"
                 },
                 {
                   "label": "About Us",
-                  "href": "#about"
+                  "href": "/about"
                 },
                 {
                   "label": "Services",
-                  "href": "#services"
+                  "href": "/service"
                 },
                 {
                   "label": "Pricing / Repair Cost",
-                  "href": "#pricing"
+                  "href": "/pricing"
                 },
                 {
                   "label": "Brands We Repair",
-                  "href": "#brands"
+                  "href": "/brands"
                 },
                 {
                   "label": "Book a Repair",
@@ -2111,7 +2111,7 @@
                 },
                 {
                   "label": "FAQ",
-                  "href": "/faq"
+                  "href": "/faqs"
                 },
                 {
                   "label": "Careers",
@@ -2119,7 +2119,7 @@
                 },
                 {
                   "label": "Contact Us",
-                  "href": "#contact"
+                  "href": "/contact"
                 }
               ]
             },
