@@ -76,7 +76,8 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
                 key={testimonial.id}
                 className="relative w-full flex-shrink-0 snap-center px-4 sm:snap-start md:w-[50%] md:px-6"
               >
-                <div className="relative mx-auto w-full max-w-[540px] pb-12">
+                {/* Desktop: exact original. Mobile: narrower + room for lower avatar */}
+                <div className="@container relative mx-auto w-full max-w-[540px] pb-12 max-md:max-w-[340px] max-md:pb-[22%]">
                   {/* Card_Temp.png speech-bubble frame */}
                   <div className="relative w-full aspect-[1277/1232]">
                     <Image
@@ -87,26 +88,26 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
 
-                    {/* Text content */}
-                    <div className="absolute left-[9%] right-[13%] top-[12%] bottom-[28%] flex flex-col sm:left-[10%] sm:right-[14%] sm:top-[13%] sm:bottom-[30%]">
-                      <h3 className="text-[20px] font-bold leading-tight text-navy sm:text-[22px]">
+                    {/* Text content — original desktop classes untouched */}
+                    <div className="absolute left-[9%] right-[13%] top-[12%] bottom-[28%] flex flex-col sm:left-[10%] sm:right-[14%] sm:top-[13%] sm:bottom-[30%] max-md:overflow-hidden max-md:text-[clamp(11px,3.6cqw,15px)]">
+                      <h3 className="text-[20px] font-bold leading-tight text-navy sm:text-[22px] max-md:text-[1.35em]">
                         {testimonial.name}
                       </h3>
 
-                      <div className="mt-2 flex items-center gap-2 text-[14px] font-medium text-[#4B70F5] sm:text-[15px]">
-                        <DynamicIcon name="map-pin" className="h-4 w-4 shrink-0 sm:h-[18px] sm:w-[18px]" />
-                        <span>{testimonial.location}</span>
+                      <div className="mt-2 flex items-center gap-2 text-[14px] font-medium text-[#4B70F5] sm:text-[15px] max-md:mt-[0.45em] max-md:gap-[0.4em] max-md:text-[0.95em]">
+                        <DynamicIcon name="map-pin" className="h-4 w-4 shrink-0 sm:h-[18px] sm:w-[18px] max-md:h-[1.1em] max-md:w-[1.1em]" />
+                        <span className="max-md:truncate">{testimonial.location}</span>
                       </div>
 
-                      <p className="mt-5 text-[14px] leading-relaxed text-slate-600 sm:mt-6 sm:text-[16px]">
+                      <p className="mt-5 text-[14px] leading-relaxed text-slate-600 sm:mt-6 sm:text-[16px] max-md:mt-[0.85em] max-md:line-clamp-5 max-md:text-[0.95em]">
                         {testimonial.text}
                       </p>
 
-                      <div className="mt-7 flex items-center gap-2.5 sm:mt-8 sm:gap-3">
-                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 sm:h-8 sm:w-8">
-                          <DynamicIcon name="tools" className="h-3 w-3 text-slate-700 sm:h-[14px] sm:w-[14px]" />
+                      <div className="mt-7 flex items-center gap-2.5 sm:mt-8 sm:gap-3 max-md:mt-[1.4em] max-md:items-start max-md:gap-[0.5em]">
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 sm:h-8 sm:w-8 max-md:mt-[0.1em] max-md:h-[1.7em] max-md:w-[1.7em]">
+                          <DynamicIcon name="tools" className="h-3 w-3 text-slate-700 sm:h-[14px] sm:w-[14px] max-md:h-[0.85em] max-md:w-[0.85em]" />
                         </div>
-                        <p className="text-[13px] leading-snug sm:text-[15px]">
+                        <p className="text-[13px] leading-snug sm:text-[15px] max-md:min-w-0 max-md:text-[0.9em]">
                           <span className="font-bold text-navy">
                             {testimonialsData.repairedLabel ?? "Repaired:"}
                           </span>{" "}
@@ -114,12 +115,12 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
                         </p>
                       </div>
 
-                      <div className="mt-5 flex items-center gap-1.5 sm:mt-6">
+                      <div className="mt-5 flex items-center gap-1.5 sm:mt-6 max-md:mt-[0.85em] max-md:gap-[0.3em]">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <DynamicIcon
                             key={i}
                             name="star"
-                            className={`h-[18px] w-[18px] sm:h-[22px] sm:w-[22px] ${
+                            className={`h-[18px] w-[18px] sm:h-[22px] sm:w-[22px] max-md:h-[1.25em] max-md:w-[1.25em] ${
                               i < testimonial.rating ? "text-[#f59e0b]" : "text-slate-200"
                             }`}
                           />
@@ -127,10 +128,9 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
                       </div>
                     </div>
 
-                    {/* Avatar — slightly below the card body */}
+                    {/* Avatar — desktop original; mobile slightly lower + smaller */}
                     <div
-                      className="absolute left-1/2 z-20 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand p-[5px] sm:h-[88px] sm:w-[88px]"
-                      style={{ top: "88%" }}
+                      className="absolute left-1/2 top-[88%] z-20 h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand p-[5px] sm:h-[88px] sm:w-[88px] max-md:top-[90%] max-md:h-[clamp(56px,16cqw,72px)] max-md:w-[clamp(56px,16cqw,72px)] max-md:p-[clamp(3px,1cqw,4px)]"
                     >
                       <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-100">
                         <Image
