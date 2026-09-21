@@ -1,7 +1,5 @@
 import React from "react";
 import data from "@/data/site.json";
-import { Header } from "@/app/components/Header";
-import { Footer } from "@/app/components/Footer";
 import { PageBanner } from "@/app/components/PageBanner";
 import { ServiceDetail, ExtendedServiceItem } from "@/app/components/ServiceDetail";
 import { notFound } from "next/navigation";
@@ -46,13 +44,9 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header data={{ topbarData: siteData.sections.Topbar.variants.RepairHubTopbar1, headerData: siteData.sections.Header.variants.RepairHubHeader1 }} />
-      
       <PageBanner data={bannerData} />
       
       <ServiceDetail service={service} allServices={allServices} labels={labels} />
-      
-      <Footer data={siteData.sections.Footer.variants.RepairHubFooter1} />
     </main>
   );
 }
@@ -68,4 +62,3 @@ export function generateStaticParams() {
     id: id,
   }));
 }
-

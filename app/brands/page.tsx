@@ -1,18 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import data from "@/data/site.json";
-import { Header } from "@/app/components/Header";
-import { Footer } from "@/app/components/Footer";
 import { PageBanner } from "@/app/components/PageBanner";
 import { Testimonials } from "@/app/components/Testimonials";
 
 export default function BrandsPage() {
   const siteData = data.RepairHub;
-  
-  // Data for header and footer
-  const headerData = siteData.sections.Header.variants.RepairHubHeader1;
-  const topbarData = siteData.sections.Topbar.variants.RepairHubTopbar1;
-  const footerData = siteData.sections.Footer.variants.RepairHubFooter1;
   
   // Data for Brands
   const brandsData = siteData.sections.Brands.variants.RepairHubBrands1;
@@ -26,7 +19,6 @@ export default function BrandsPage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header data={{ topbarData: topbarData, headerData: headerData }} />
       <PageBanner data={bannerData} />
       
       {/* Brands Section */}
@@ -69,7 +61,6 @@ export default function BrandsPage() {
       </section>
 
       <Testimonials data={testimonialsData} />
-      <Footer data={footerData} />
     </main>
   );
 }

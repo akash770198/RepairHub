@@ -1,7 +1,5 @@
 import React from "react";
 import data from "@/data/site.json";
-import { Header } from "@/app/components/Header";
-import { Footer } from "@/app/components/Footer";
 import { PageBanner } from "@/app/components/PageBanner";
 import { TeamMemberDetail, ExtendedTeamMember } from "@/app/components/TeamMemberDetail";
 import { notFound } from "next/navigation";
@@ -34,13 +32,9 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ id:
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Header data={{ topbarData: siteData.sections.Topbar.variants.RepairHubTopbar1, headerData: siteData.sections.Header.variants.RepairHubHeader1 }} />
-      
       <PageBanner data={bannerData} />
       
       <TeamMemberDetail member={member} />
-      
-      <Footer data={siteData.sections.Footer.variants.RepairHubFooter1} />
     </main>
   );
 }
