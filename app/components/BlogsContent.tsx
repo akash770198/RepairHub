@@ -19,8 +19,10 @@ export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data
             <span className="text-brand font-bold uppercase tracking-wider text-sm">{blogsData.eyebrow}</span>
             <span className="h-[2px] w-8 bg-brand rounded-full" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-navy mb-6">
-            {blogsData.heading.line1}<span className="text-brand">{blogsData.heading.highlight}</span>
+          <h2 className="mb-6 text-4xl font-extrabold leading-snug text-navy lg:text-5xl lg:leading-snug">
+            {blogsData.heading.line1.trim()}
+            <br />
+            <span className="text-brand">{blogsData.heading.highlight}</span>
           </h2>
           <p className="text-ink-soft text-[17px]">
             {blogsData.description}
@@ -34,7 +36,7 @@ export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data
               <div className={`bg-white rounded-[24px] border border-line shadow-sm hover:shadow-md transition-shadow overflow-hidden group flex ${post.featured ? 'flex-col sm:h-[552px] lg:h-[560px]' : 'flex-col sm:flex-row h-auto sm:h-[260px]'}`}>
                 
                 {/* Image Section */}
-                <div className={`relative shrink-0 overflow-hidden ${post.featured ? 'w-full h-1/2 sm:h-[55%]' : 'w-full sm:w-[45%] h-64 sm:h-full'}`}>
+                <div className={`relative shrink-0 overflow-hidden ${post.featured ? 'w-full h-[220px] sm:h-[48%]' : 'w-full sm:w-[45%] h-64 sm:h-full'}`}>
                   <Image 
                     src={post.image?.src || ""} 
                     alt={post.image?.alt || post.title} 
@@ -48,9 +50,9 @@ export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data
                 </div>
 
                 {/* Content Section */}
-                <div className={`flex-1 flex flex-col justify-center ${post.featured ? 'p-8 sm:p-10' : 'p-6 sm:p-8'}`}>
+                <div className={`flex min-h-0 flex-1 flex-col ${post.featured ? 'justify-between p-8 sm:p-10' : 'justify-center p-6 sm:p-8'}`}>
                   {/* Meta row */}
-                  <div className={`flex items-center gap-4 sm:gap-6 text-slate-500 font-medium ${post.featured ? 'text-sm mb-6' : 'text-xs mb-3'}`}>
+                  <div className={`flex items-center gap-4 sm:gap-6 text-slate-500 font-medium ${post.featured ? 'text-sm mb-4' : 'text-xs mb-3'}`}>
                     <div className="flex items-center gap-2">
                       <DynamicIcon name="calendar" className="w-[18px] h-[18px] text-brand" />
                       {post.date}
@@ -62,14 +64,14 @@ export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data
                   </div>
 
                   {/* Title */}
-                  <h3 className={`font-extrabold text-navy leading-snug mb-6 group-hover:text-brand transition-colors ${post.featured ? 'text-3xl sm:text-[34px] xl:text-[38px]' : 'text-xl sm:text-[22px]'}`}>
+                  <h3 className={`font-extrabold text-navy leading-snug group-hover:text-brand transition-colors ${post.featured ? 'mb-4 text-2xl sm:text-[28px] xl:text-[32px] line-clamp-3' : 'mb-6 text-xl sm:text-[22px]'}`}>
                     <Link href={post.link}>
                       {post.title}
                     </Link>
                   </h3>
 
                   {/* Read More Button Area */}
-                  <div className="mt-auto pt-2 flex items-center justify-between">
+                  <div className="mt-auto flex items-center justify-between pt-2">
                     <Link href={post.link} className={`inline-flex items-center gap-3 text-navy font-bold group/btn ${post.featured ? 'text-[16px]' : 'text-[14px]'}`}>
                       <span className={`rounded-full bg-brand flex items-center justify-center transition-transform duration-300 group-hover/btn:scale-110 shadow-sm shrink-0 ${post.featured ? 'w-12 h-12' : 'w-9 h-9'}`}>
                         <DynamicIcon name="arrow-right" className={`${post.featured ? 'w-6 h-6' : 'w-4 h-4'} text-navy`} />

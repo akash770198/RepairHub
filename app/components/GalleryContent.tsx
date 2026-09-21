@@ -259,8 +259,10 @@ export const GalleryContent: React.FC<SectionProps<RepairHubGallery1Data>> = ({ 
               <span className="text-brand font-bold uppercase tracking-wider text-sm">{eyebrow}</span>
               <span className="h-[2px] w-8 bg-brand rounded-full" />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-navy mb-6">
-              {heading.line1}<span className="text-brand">{heading.highlight}</span>
+            <h2 className="mb-6 text-4xl font-extrabold leading-snug text-navy lg:text-5xl lg:leading-snug">
+              {heading.line1.trim()}
+              <br />
+              <span className="text-brand">{heading.highlight}</span>
             </h2>
             <p className="text-ink-soft text-lg">{description}</p>
             <span className="block h-[3px] w-16 bg-brand mx-auto mt-6 rounded-full" />

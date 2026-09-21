@@ -2170,7 +2170,7 @@
                 },
                 {
                   "label": "Warranty Policy",
-                  "href": "/warranty"
+                  "href": "/refund-policy"
                 },
                 {
                   "label": "Sitemap",
@@ -3195,7 +3195,14 @@
             "form": {
               "eyebrow": "WHAT WE DO",
               "heading": "Request A Quote For Your Work",
+              "intro": "Tell us about your device issue and we'll get back with a clear quote and next steps.",
               "button": "Send Now",
+              "fieldLabels": {
+                "name": "Name",
+                "email": "Email",
+                "subject": "Subject",
+                "message": "Message"
+              },
               "placeholders": {
                 "name": "Your Name",
                 "email": "Your Email",
@@ -3207,8 +3214,12 @@
                 "subtitle": "We'll get back to you shortly."
               },
               "sideContent": {
+                "badge": "Fast Response",
+                "title": "Expert repair help,",
+                "titleHighlight": "one message away",
                 "image": "/AboutUs/phone_repair_main.jpg",
-                "text": "Complete control over products allows us to ensure our customers receive the best quality prices and service."
+                "text": "Complete control over products allows us to ensure our customers receive the best quality prices and service.",
+                "note": "Usually reply within a few hours"
               }
             }
           }

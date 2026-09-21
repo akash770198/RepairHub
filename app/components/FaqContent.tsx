@@ -24,8 +24,10 @@ export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: p
             <span className="text-brand font-bold uppercase tracking-wider text-sm">{faqData.eyebrow}</span>
             <span className="h-[2px] w-8 bg-brand rounded-full" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-navy mb-6">
-            {faqData.heading.line1}<span className="text-brand">{faqData.heading.highlight}</span>
+          <h2 className="mb-6 text-4xl font-extrabold leading-snug text-navy lg:text-5xl lg:leading-snug">
+            {faqData.heading.line1.trim()}
+            <br />
+            <span className="text-brand">{faqData.heading.highlight}</span>
           </h2>
           <p className="text-ink-soft text-lg">
             {faqData.description}

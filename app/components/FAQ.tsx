@@ -25,8 +25,9 @@ export const FAQ: React.FC<SectionProps<RepairHubFAQ1Data>> = ({ data, className
             <span className="type-eyebrow text-brand">{faqData.eyebrow}</span>
             <span className="h-[2px] w-8 bg-brand" />
           </div>
-          <h2 className="type-heading mt-4 text-white">
-            {faqData.heading.line1}
+          <h2 className="type-heading mt-4 text-white leading-snug">
+            {faqData.heading.line1.trim()}
+            <br />
             <span className="text-brand">{faqData.heading.highlight}</span>
           </h2>
           <p className="type-body mt-5 text-slate-400">
