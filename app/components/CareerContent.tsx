@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
@@ -9,7 +8,7 @@ import { site, SectionProps, RepairHubCareer1Data } from "@/data";
 
 
 
-export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ data, className }) => {
+export function CareerContent({ data, className }: SectionProps<RepairHubCareer1Data> = {}) {
   const careerData = data || site.career;
   const { intro, positions, whyJoin, cta } = careerData;
 
@@ -185,4 +184,4 @@ export const CareerContent: React.FC<SectionProps<RepairHubCareer1Data>> = ({ da
 
     </div>
   );
-};
+}

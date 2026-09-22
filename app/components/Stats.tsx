@@ -1,11 +1,10 @@
-import React from "react";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
-import { site, SectionProps, RepairHubStats1Data } from "@/data";
+import { site, SectionProps, RepairHubStatsData } from "@/data";
 
-export const Stats: React.FC<SectionProps<RepairHubStats1Data>> = ({ data, className }) => {
+export function Stats({ data, className }: SectionProps<RepairHubStatsData> = {}) {
   const statsData = data || site.stats;
-  const isInline = (statsData as { layoutType?: string }).layoutType === "inline";
+  const isInline = "layoutType" in statsData && statsData.layoutType === "inline";
 
   return (
     <section
@@ -57,4 +56,4 @@ export const Stats: React.FC<SectionProps<RepairHubStats1Data>> = ({ data, class
       </div>
     </section>
   );
-};
+}

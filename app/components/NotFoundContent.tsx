@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubNotFound1Data } from "@/data";
 
-export const NotFoundContent: React.FC<SectionProps<RepairHubNotFound1Data>> = ({ data: propData, className }) => {
-  const notFoundData = (propData || site.notFound) as any;
+export function NotFoundContent({ data: propData, className }: SectionProps<RepairHubNotFound1Data> = {}) {
+  const notFoundData = propData || site.notFound;
   return (
     <section className={`w-full bg-white ${className || ""}`}>
       <div className="page-gutter py-16 sm:py-16">
@@ -51,4 +50,4 @@ export const NotFoundContent: React.FC<SectionProps<RepairHubNotFound1Data>> = (
       </div>
     </section>
   );
-};
+}

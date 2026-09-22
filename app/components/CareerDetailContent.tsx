@@ -12,14 +12,14 @@ interface CareerDetailContentProps {
   otherJobs: any[];
 }
 
-export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({ job, sidebar, otherJobs }) => {
+export function CareerDetailContent({ job, sidebar, otherJobs }: CareerDetailContentProps) {
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleApplyClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setShowApplyModal(true);
-  };
+  }
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({ job, s
     setTimeout(() => {
       setShowSuccessMessage(false);
     }, 4000);
-  };
+  }
 
   return (
     <div className="w-full bg-[#f8fafc] text-navy font-sans py-16 relative">
@@ -363,4 +363,4 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({ job, s
       )}
     </div>
   );
-};
+}

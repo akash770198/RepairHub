@@ -302,42 +302,42 @@
                 "id": "quality-service",
                 "titleLine1": "Quality",
                 "titleLine2": "Repair Service",
-                "icon": "smartphone-repair",
+                "icon": "/icons/smartphone.png",
                 "accentColor": "#f59e0b"
               },
               {
                 "id": "expert-technicians",
                 "titleLine1": "Expert",
                 "titleLine2": "Technicians",
-                "icon": "expert-technician",
+                "icon": "/icons/technician.png",
                 "accentColor": "#f59e0b"
               },
               {
                 "id": "affordable-pricing",
                 "titleLine1": "Affordable",
                 "titleLine2": "Pricing",
-                "icon": "price-tag",
+                "icon": "/icons/estimate.png",
                 "accentColor": "#f59e0b"
               },
               {
                 "id": "repair-warranty",
                 "titleLine1": "Repair",
                 "titleLine2": "Warranty",
-                "icon": "shield-check",
+                "icon": "/icons/warranty.png",
                 "accentColor": "#f59e0b"
               },
               {
                 "id": "genuine-parts",
                 "titleLine1": "Genuine",
                 "titleLine2": "Parts",
-                "icon": "genuine-gear",
+                "icon": "/icons/setting.png",
                 "accentColor": "#f59e0b"
               },
               {
                 "id": "satisfaction",
                 "titleLine1": "100%",
                 "titleLine2": "Satisfaction",
-                "icon": "five-star-satisfaction",
+                "icon": "/icons/thumb.png",
                 "accentColor": "#f59e0b"
               }
             ]
@@ -367,7 +367,7 @@
                 "width": 848,
                 "height": 1264
               },
-              "badgeIcon": "gear-house"
+              "badgeIcon": "/icons/setting.png"
             },
             "highlights": [
               {
@@ -2458,27 +2458,27 @@
           "FeatureCards1": {
             "cards": [
               {
-                "icon": "smartphone-repair",
+                "icon": "/icons/smartphone.png",
                 "title": "Quality Repair Service"
               },
               {
-                "icon": "expert-technician",
+                "icon": "/icons/technician.png",
                 "title": "Expert Technicians"
               },
               {
-                "icon": "price-tag",
+                "icon": "/icons/estimate.png",
                 "title": "Affordable Pricing"
               },
               {
-                "icon": "shield-check",
+                "icon": "/icons/warranty.png",
                 "title": "Repair Warranty"
               },
               {
-                "icon": "genuine-gear",
+                "icon": "/icons/setting.png",
                 "title": "Genuine Parts"
               },
               {
-                "icon": "five-star-satisfaction",
+                "icon": "/icons/thumb.png",
                 "title": "100% Satisfaction"
               }
             ]
@@ -2605,27 +2605,27 @@
             },
             "featureCards": [
               {
-                "icon": "smartphone-repair",
+                "icon": "/icons/smartphone.png",
                 "title": "Quality Repair Service"
               },
               {
-                "icon": "expert-technician",
+                "icon": "/icons/technician.png",
                 "title": "Expert Technicians"
               },
               {
-                "icon": "price-tag",
+                "icon": "/icons/estimate.png",
                 "title": "Affordable Pricing"
               },
               {
-                "icon": "shield-check",
+                "icon": "/icons/warranty.png",
                 "title": "Repair Warranty"
               },
               {
-                "icon": "genuine-gear",
+                "icon": "/icons/setting.png",
                 "title": "Genuine Parts"
               },
               {
-                "icon": "five-star-satisfaction",
+                "icon": "/icons/thumb.png",
                 "title": "100% Satisfaction"
               }
             ],

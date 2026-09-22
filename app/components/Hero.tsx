@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
@@ -7,7 +6,7 @@ import { site, SectionProps, RepairHubBanner1Data, RepairHubFeatures1Data } from
 // Diagonal cut on the left edge of the hero photo
 const PHOTO_CLIP = "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)";
 
-export const Hero: React.FC<SectionProps<{ bannerData: RepairHubBanner1Data; featuresData: RepairHubFeatures1Data }>> = ({ data, className }) => {
+export function Hero({ data, className }: SectionProps<{ bannerData: RepairHubBanner1Data; featuresData: RepairHubFeatures1Data }> = {}) {
   const bannerData = data?.bannerData || site.banner;
   const featuresData = data?.featuresData || site.features;
   return (
@@ -216,4 +215,4 @@ export const Hero: React.FC<SectionProps<{ bannerData: RepairHubBanner1Data; fea
       </div>
     </div>
   );
-};
+}

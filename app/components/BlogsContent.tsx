@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubBlogs1Data } from "@/data";
 
-export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propData, className }) => {
-  const blogsData = (propData || site.blogs) as any;
+export function BlogsContent({ data: propData, className }: SectionProps<RepairHubBlogs1Data> = {}) {
+  const blogsData = propData || site.blogs;
   return (
     <section className={`bg-slate-50 py-16 ${className || ""}`}>
       <div className="page-gutter">
@@ -31,7 +30,7 @@ export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data
 
         {/* Masonry Grid via CSS Columns */}
         <div className="columns-1 lg:columns-2 gap-8 lg:gap-10">
-          {blogsData.posts.map((post: any, idx: any) => (
+          {blogsData.posts.map((post, idx) => (
             <Reveal key={post.id} delay={idx * 50} className="w-full break-inside-avoid mb-8 lg:mb-10">
               <div className={`bg-white rounded-[24px] border border-line shadow-sm hover:shadow-md transition-shadow overflow-hidden group flex ${post.featured ? 'flex-col sm:h-[552px] lg:h-[560px]' : 'flex-col sm:flex-row h-auto sm:h-[260px]'}`}>
                 
@@ -90,4 +89,4 @@ export const BlogsContent: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data
       </div>
     </section>
   );
-};
+}

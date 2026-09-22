@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
@@ -11,7 +10,7 @@ interface BlogDetailContentProps {
   allPosts: any[];
 }
 
-export const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ post, allPosts }) => {
+export function BlogDetailContent({ post, allPosts }: BlogDetailContentProps) {
   const recentPosts = allPosts.filter(p => p.id !== post.id).slice(0, 5);
   
   return (
@@ -203,4 +202,4 @@ export const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ post, allP
       </div>
     </section>
   );
-};
+}

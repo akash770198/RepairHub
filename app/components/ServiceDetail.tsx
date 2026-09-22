@@ -37,7 +37,7 @@ interface ServiceDetailProps {
   labels?: ServiceDetailLabels;
 }
 
-export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServices, labels }) => {
+export function ServiceDetail({ service, allServices, labels }: ServiceDetailProps) {
   const sidebarTitle = labels?.sidebarTitle ?? "Our Services";
   const contactCardTitle = labels?.contactCard.title ?? "Let's Contact\nWith Us";
   const contactCardSubtitle = labels?.contactCard.subtitle ?? "Need Help? Talk To Expert";
@@ -196,4 +196,4 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, allServic
       </div>
     </section>
   );
-};
+}

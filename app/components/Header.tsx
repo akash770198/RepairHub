@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DynamicIcon } from "./Icons";
-import { site, SectionProps, RepairHubTopbar1Data, RepairHubHeader1Data } from "@/data";
+import { site, SectionProps, RepairHubHeaderBundle } from "@/data";
 
-export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; headerData: RepairHubHeader1Data }>> = ({ data, className }) => {
+export function Header({ data, className }: SectionProps<RepairHubHeaderBundle> = {}) {
   const topbarData = data?.topbarData || site.topbar;
   const headerData = data?.headerData || site.header;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,7 +17,7 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(href + "/");
-  };
+  }
 
   return (
     <header className={`sticky top-0 z-50 w-full bg-[#081c3c] text-white shadow-[0_12px_30px_-20px_rgba(2,6,23,0.9)] flex flex-col ${className || ""}`}>
@@ -291,4 +291,4 @@ export const Header: React.FC<SectionProps<{ topbarData: RepairHubTopbar1Data; h
       )}
     </header>
   );
-};
+}

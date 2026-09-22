@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
-import { site, SectionProps, RepairHubServices1Data } from "@/data";
+import { site, SectionProps, RepairHubServicesData } from "@/data";
 
-export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data, className }) => {
+export function Services({ data, className }: SectionProps<RepairHubServicesData> = {}) {
   const servicesData = data || site.services;
+  const isGrid = "layoutType" in servicesData && servicesData.layoutType === "grid";
   const scrollRef = useRef<HTMLDivElement>(null);
   const isJumpingRef = useRef(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -93,12 +94,12 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
     return () => {
       cancelAnimationFrame(rafId);
       if (timeoutId) window.clearTimeout(timeoutId);
-    };
+    }
   }, [servicesData]);
 
   // Auto-scroll — only after ready, infinite via duplicated track
   useEffect(() => {
-    if ((servicesData as { layoutType?: string }).layoutType === "grid" || isPaused || !ready) {
+    if (isGrid || isPaused || !ready) {
       return;
     }
 
@@ -107,7 +108,7 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, [servicesData, isPaused, ready, scroll]);
+  }, [isGrid, isPaused, ready, scroll]);
 
   // Snap loop position after smooth scroll ends
   useEffect(() => {
@@ -122,16 +123,16 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
       settleTimer = window.setTimeout(() => {
         normalizeLoop();
       }, 120);
-    };
+    }
 
     el.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       el.removeEventListener("scroll", onScroll);
       window.clearTimeout(settleTimer);
-    };
+    }
   }, [normalizeLoop]);
 
-  if ((servicesData as { layoutType?: string }).layoutType === "grid") {
+  if (isGrid) {
     return (
       <section id="services" className={`relative w-full bg-white py-16 ${className || ""}`}>
         <div className="page-gutter flex flex-col items-center">
@@ -284,4 +285,4 @@ export const Services: React.FC<SectionProps<RepairHubServices1Data>> = ({ data,
       </div>
     </section>
   );
-};
+}

@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubBrands1Data } from "@/data";
 
-export const Brands: React.FC<SectionProps<RepairHubBrands1Data>> = ({ data, className }) => {
+export function Brands({ data, className }: SectionProps<RepairHubBrands1Data> = {}) {
   const brandsData = data || site.brands;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -26,7 +26,7 @@ export const Brands: React.FC<SectionProps<RepairHubBrands1Data>> = ({ data, cla
     return () => {
       video.removeEventListener("play", handlePlay);
       video.removeEventListener("pause", handlePause);
-    };
+    }
   }, []);
 
   const togglePlay = () => {
@@ -173,4 +173,4 @@ export const Brands: React.FC<SectionProps<RepairHubBrands1Data>> = ({ data, cla
       </div>
     </section>
   );
-};
+}

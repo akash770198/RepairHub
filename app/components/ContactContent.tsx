@@ -9,8 +9,8 @@ import { site, SectionProps, RepairHubContact1Data } from "@/data";
 const fieldClass =
   "w-full rounded-xl border border-slate-200 bg-slate-50 text-[15px] font-medium py-4 pl-12 pr-4 text-navy placeholder:text-slate-400 outline-none transition-all duration-300 hover:border-slate-300 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/15";
 
-export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ data: propData, className }) => {
-  const contactData = (propData || site.contact) as any;
+export function ContactContent({ data: propData, className }: SectionProps<RepairHubContact1Data> = {}) {
+  const contactData = propData || site.contact;
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,7 +19,7 @@ export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ 
     form.reset();
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 4000);
-  };
+  }
 
   return (
     <section className={`relative w-full bg-white ${className || ""}`}>
@@ -41,7 +41,7 @@ export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ 
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-5 lg:gap-8">
-          {contactData.infoCards.map((card: any, idx: any) => (
+          {contactData.infoCards.map((card, idx) => (
             <Reveal
               key={idx}
               delay={idx * 100}
@@ -53,7 +53,7 @@ export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ 
               <div className="flex flex-col">
                 <h3 className="mb-3 text-lg font-bold text-navy lg:text-xl">{card.title}</h3>
                 <div className="flex flex-col gap-1 text-[15px] font-medium text-slate-600">
-                  {card.details.map((detail: any, dIdx: any) => (
+                  {card.details.map((detail, dIdx) => (
                     <span key={dIdx}>{detail}</span>
                   ))}
                 </div>
@@ -258,4 +258,4 @@ export const ContactContent: React.FC<SectionProps<RepairHubContact1Data>> = ({ 
       )}
     </section>
   );
-};
+}

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { DynamicIcon } from "./Icons";
@@ -29,7 +28,7 @@ interface TeamMemberDetailProps {
   member: ExtendedTeamMember;
 }
 
-export const TeamMemberDetail: React.FC<TeamMemberDetailProps> = ({ member }) => {
+export function TeamMemberDetail({ member }: TeamMemberDetailProps) {
   return (
     <section className="w-full bg-slate-50 py-16">
       <div className="page-gutter">
@@ -239,4 +238,4 @@ export const TeamMemberDetail: React.FC<TeamMemberDetailProps> = ({ member }) =>
       </div>
     </section>
   );
-};
+}

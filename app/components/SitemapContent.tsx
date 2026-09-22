@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
@@ -108,7 +107,7 @@ const sections: SitemapSection[] = [
 
 ];
 
-export const SitemapContent: React.FC = () => {
+export function SitemapContent() {
   return (
     <section className="w-full bg-white py-16">
       <div className="page-gutter">
@@ -161,4 +160,4 @@ export const SitemapContent: React.FC = () => {
       </div>
     </section>
   );
-};
+}

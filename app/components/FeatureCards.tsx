@@ -5,7 +5,7 @@ import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, FeatureCards1Data } from "@/data";
 
-export const FeatureCards: React.FC<SectionProps<FeatureCards1Data>> = ({ data: propData, className }) => {
+export function FeatureCards({ data: propData, className }: SectionProps<FeatureCards1Data> = {}) {
   const data = propData || site.featureCards;
   if (!data?.cards?.length) return null;
 
@@ -15,10 +15,12 @@ export const FeatureCards: React.FC<SectionProps<FeatureCards1Data>> = ({ data: 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           {data.cards.map((card, idx) => (
             <Reveal key={idx} delay={idx * 50} className="flex flex-col items-center justify-center p-6 bg-white border border-slate-100 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 transition-transform text-center h-full">
-              <div className="w-20 h-20 rounded-full bg-navy text-brand flex items-center justify-center mb-5 flex-shrink-0">
-                <div className="scale-[1.7]">
-                  <DynamicIcon name={card.icon} size={64} />
-                </div>
+              <div className="mb-5 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-navy sm:h-[70px] sm:w-[70px]">
+                <DynamicIcon
+                  name={card.icon}
+                  className="h-9 w-9 sm:h-10 sm:w-10"
+                  size={40}
+                />
               </div>
               <h4 className="text-[15px] font-bold text-navy leading-tight mb-3">
                 {card.title.split(' ').map((word, i, arr) => (
@@ -35,4 +37,4 @@ export const FeatureCards: React.FC<SectionProps<FeatureCards1Data>> = ({ data: 
       </div>
     </section>
   );
-};
+}

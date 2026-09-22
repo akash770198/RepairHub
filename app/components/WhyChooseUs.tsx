@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, WhyChooseUs1Data } from "@/data";
 
-export const WhyChooseUs: React.FC<SectionProps<WhyChooseUs1Data>> = ({ data: propData, className }) => {
+export function WhyChooseUs({ data: propData, className }: SectionProps<WhyChooseUs1Data> = {}) {
   const data = propData || site.whyChooseUs;
   return (
     <section className={`relative w-full bg-white py-16 overflow-hidden ${className || ""}`}>
@@ -25,7 +24,7 @@ export const WhyChooseUs: React.FC<SectionProps<WhyChooseUs1Data>> = ({ data: pr
             
             <h2 className="text-4xl lg:text-[42px] font-extrabold text-navy leading-[1.15] mb-6">
               {data.heading.line1} <br className="hidden sm:block" />
-              <span className="text-brand">{data.heading.highlight}</span> {(data.heading as any).line2}
+              <span className="text-brand">{data.heading.highlight}</span>
             </h2>
             
             <p className="text-[16px] text-slate-600 mb-10 leading-relaxed max-w-lg">
@@ -100,4 +99,4 @@ export const WhyChooseUs: React.FC<SectionProps<WhyChooseUs1Data>> = ({ data: pr
 
     </section>
   );
-};
+}

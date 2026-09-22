@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubBlogs1Data } from "@/data";
 
-export const Blog: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propData, className }) => {
-  const blogData = (propData || site.blogs) as any;
+export function Blog({ data: propData, className }: SectionProps<RepairHubBlogs1Data> = {}) {
+  const blogData = propData || site.blogs;
   if (!blogData || !blogData.posts || blogData.posts.length === 0) return null;
 
   const mainPost = blogData.posts[0];
@@ -17,22 +16,22 @@ export const Blog: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propDa
   const commentsWord = blogData.commentsLabel ?? "Comments";
 
   return (
-    <section id="blog" className={`py-16 bg-[#f8fbff] ${className || ""}`}>
+    <section id="blog" className={`py-16 bg-navy ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <Reveal className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 justify-center mb-4">
             <span className="h-[3px] w-9 rounded-full bg-brand" />
-            <span className="type-eyebrow text-navy">{blogData.eyebrow}</span>
+            <span className="type-eyebrow text-brand">{blogData.eyebrow}</span>
             <span className="h-[3px] w-9 rounded-full bg-brand" />
           </div>
           
-          <h2 className="type-heading text-navy mb-4">
+          <h2 className="type-heading text-white mb-4">
             {blogData.heading.line1}
             <span className="text-brand">{blogData.heading.highlight}</span>
           </h2>
           
-          <p className="type-body text-slate-500 max-w-2xl mx-auto whitespace-pre-line">
+          <p className="type-body text-slate-400 max-w-2xl mx-auto whitespace-pre-line">
             {blogData.description}
           </p>
         </Reveal>
@@ -85,7 +84,7 @@ export const Blog: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propDa
 
           {/* Side Posts (Right) */}
           <div className="flex flex-col gap-8">
-            {sidePosts.map((post: any, index: any) => (
+            {sidePosts.map((post, index) => (
               <Reveal key={post.id} delay={200 + index * 100} className="group flex flex-col sm:flex-row rounded-[20px] bg-white border border-slate-200 shadow-md overflow-hidden transition-all hover:shadow-xl">
                 <div className="relative aspect-[4/3] sm:aspect-square sm:w-2/5 overflow-hidden">
                   <Image
@@ -134,4 +133,4 @@ export const Blog: React.FC<SectionProps<RepairHubBlogs1Data>> = ({ data: propDa
       </div>
     </section>
   );
-};
+}

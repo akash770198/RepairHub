@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
@@ -64,7 +63,7 @@ const sections: PolicySection[] = [
   },
 ];
 
-export const RefundPolicyContent: React.FC = () => {
+export function RefundPolicyContent() {
   return (
     <section className="w-full bg-white py-16">
       <div className="page-gutter">
@@ -196,4 +195,4 @@ export const RefundPolicyContent: React.FC = () => {
       </div>
     </section>
   );
-};
+}

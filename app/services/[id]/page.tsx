@@ -1,37 +1,54 @@
-import React from "react";
-import data from "@/data/site.json";
-import { PageBanner } from "@/app/components/PageBanner";
-import { ServiceDetail, ExtendedServiceItem } from "@/app/components/ServiceDetail";
 import { notFound } from "next/navigation";
+import { site } from "@/data";
+import { PageBanner } from "@/app/components/PageBanner";
+import {
+  ServiceDetail,
+  ExtendedServiceItem,
+  ServiceDetailLabels,
+} from "@/app/components/ServiceDetail";
 
-export default async function ServicePage({ params }: { params: Promise<{ id: string }> }) {
-  const siteData = data.RepairHub;
+export default async function ServicePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
-  
-  const servicesVariant = siteData.sections.Services.variants.RepairHubServices1;
+  const servicesVariant = site.services;
   const allServicesRaw = servicesVariant.services;
-  
-  const service = allServicesRaw.find((s: any) => s.id === id) as ExtendedServiceItem | undefined;
+
+  const service = allServicesRaw.find((s) => s.id === id) as
+    | ExtendedServiceItem
+    | undefined;
 
   if (!service) {
     notFound();
   }
 
-  // Create a list of all services for the sidebar menu
-  const allServices = allServicesRaw.map((s: any) => ({
+  const allServices = allServicesRaw.map((s) => ({
     id: s.id,
     title: s.title,
     href: s.link.href,
   }));
 
-  // Read labels from JSON; banner/breadcrumb use this service's title
-  const detailPage = (servicesVariant as any).detailPage;
+  const detailPage = (
+    servicesVariant as typeof servicesVariant & {
+      detailPage?: {
+        bannerTitle?: string;
+        sidebarTitle: string;
+        contactCard: ServiceDetailLabels["contactCard"];
+        sections: ServiceDetailLabels["sections"];
+      };
+    }
+  ).detailPage;
+
   const servicesCrumbLabel = detailPage?.bannerTitle ?? "Services";
-  const labels = detailPage ? {
-    sidebarTitle: detailPage.sidebarTitle,
-    contactCard: detailPage.contactCard,
-    sections: detailPage.sections,
-  } : undefined;
+  const labels: ServiceDetailLabels | undefined = detailPage
+    ? {
+        sidebarTitle: detailPage.sidebarTitle,
+        contactCard: detailPage.contactCard,
+        sections: detailPage.sections,
+      }
+    : undefined;
 
   const bannerData = {
     title: service.title,
@@ -45,20 +62,15 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
   return (
     <main className="flex min-h-screen flex-col">
       <PageBanner data={bannerData} />
-      
       <ServiceDetail service={service} allServices={allServices} labels={labels} />
     </main>
   );
 }
 
-// Generate static params for all services
 export function generateStaticParams() {
-  const siteData = data.RepairHub;
-  const services = siteData.sections.Services.variants.RepairHubServices1.services;
-  
-  const uniqueIds = Array.from(new Set(services.map((s: any) => s.id)));
-  
-  return uniqueIds.map((id) => ({
-    id: id,
-  }));
+  const uniqueIds = Array.from(
+    new Set(site.services.services.map((s) => s.id))
+  );
+
+  return uniqueIds.map((id) => ({ id }));
 }

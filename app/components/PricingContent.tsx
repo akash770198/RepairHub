@@ -5,37 +5,10 @@ import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 
-interface FeatureCard {
-  icon: string;
-  title: string;
-}
+import { site, SectionProps, RepairHubPricing1Data } from "@/data";
 
-interface PricingItem {
-  icon: string;
-  service: string;
-  description: string;
-  cost: string;
-}
-
-export interface PricingData {
-  eyebrow: string;
-  heading: { line1: string; highlight: string };
-  description: string;
-  image: { src: string; alt: string };
-  featureCards: FeatureCard[];
-  tableSection: { title: string; note: string };
-  pricingData: PricingItem[];
-  promoBanner: {
-    discount: string;
-    textLine1: string;
-    textLine2: string;
-    promoCode: string;
-    terms: string;
-    highlights: { icon: string; title: string }[];
-  };
-}
-
-export const PricingContent = ({ data }: { data: PricingData }) => {
+export function PricingContent({ data: propData, className }: SectionProps<RepairHubPricing1Data> = {}) {
+  const data = propData || site.pricing;
   const {
     eyebrow,
     heading,
@@ -49,7 +22,7 @@ export const PricingContent = ({ data }: { data: PricingData }) => {
 
 
   return (
-    <div className="w-full bg-slate-50 flex flex-col items-center pb-24">
+    <div className={`w-full bg-slate-50 flex flex-col items-center pb-24 ${className || ""}`}>
       {/* Top Intro Section */}
       <section className="page-gutter relative w-full pt-16 pb-12 lg:pb-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <Reveal className="w-full lg:w-1/2 flex flex-col items-start">
@@ -84,7 +57,7 @@ export const PricingContent = ({ data }: { data: PricingData }) => {
       </section>
 
       {/* Feature Cards Grid (overlapping or just placed below) */}
-      <section className="page-gutter relative w-full mb-16 lg:mb-24 z-10 -mt-6">
+      {/* <section className="page-gutter relative w-full mb-16 lg:mb-24 z-10 -mt-6">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           {featureCards.map((card, idx) => (
             <Reveal key={idx} delay={idx * 50} className="flex flex-col items-center justify-center p-6 bg-white border border-slate-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 transition-transform text-center h-full">
@@ -105,7 +78,7 @@ export const PricingContent = ({ data }: { data: PricingData }) => {
             </Reveal>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Pricing Table Section */}
       <section className="page-gutter relative w-full flex flex-col items-center">
@@ -205,4 +178,4 @@ export const PricingContent = ({ data }: { data: PricingData }) => {
 
     </div>
   );
-};
+}

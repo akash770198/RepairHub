@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
@@ -46,7 +46,7 @@ const Lightbox = ({
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") onPrev();
       if (e.key === "ArrowRight") onNext();
-    };
+    }
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [onClose, onPrev, onNext]);
@@ -129,7 +129,7 @@ const Lightbox = ({
       </div>
     </div>
   );
-};
+}
 
 // ── Video Modal ───────────────────────────────────────────────────────────────
 const VideoModal = ({
@@ -184,11 +184,11 @@ const VideoModal = ({
       </div>
     </div>
   );
-};
+}
 
 
-export const GalleryContent: React.FC<SectionProps<RepairHubGallery1Data>> = ({ data: propData, className }) => {
-  const galleryData = (propData || site.gallery) as any;
+export function GalleryContent({ data: propData, className }: SectionProps<RepairHubGallery1Data> = {}) {
+  const galleryData = propData || site.gallery;
   const { eyebrow, heading, description, tabs, photoSection, videoSection, photoCategories, videoCategories, photos, videos } = galleryData;
 
   const [activeTab, setActiveTab] = useState<"photo" | "video">("photo");
@@ -503,4 +503,4 @@ export const GalleryContent: React.FC<SectionProps<RepairHubGallery1Data>> = ({ 
       </section>
     </>
   );
-};
+}

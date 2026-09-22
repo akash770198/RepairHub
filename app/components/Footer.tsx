@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { site, siteData, SectionProps, RepairHubFooter1Data } from "@/data";
+import { site, SectionProps, RepairHubFooter1Data } from "@/data";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 
@@ -15,8 +15,7 @@ interface Post {
 }
 
 function resolveFooterPosts(posts: Post[]): Post[] {
-  const blogPosts =
-    siteData.RepairHub.sections.Blogs?.variants?.RepairHubBlogs1?.posts || [];
+  const blogPosts = site.blogs.posts || [];
 
   return posts.map((item) => {
     const slug = item.href.split("/").filter(Boolean).pop();
@@ -41,9 +40,16 @@ function resolveFooterPosts(posts: Post[]): Post[] {
   });
 }
 
-export const Footer: React.FC<SectionProps<RepairHubFooter1Data>> = ({ data, className }) => {
+export function Footer({ data, className }: SectionProps<RepairHubFooter1Data> = {}) {
   const footerData = data || site.footer;
-  const recentPosts = resolveFooterPosts(footerData.postsColumn.posts as any);
+  const recentPosts = resolveFooterPosts(
+    footerData.postsColumn.posts.map((p) => ({
+      image: p.image,
+      title: p.title,
+      date: p.date,
+      href: p.href,
+    }))
+  );
 
   return (
     <footer className={`w-full bg-[#081c3c] border-t-4 border-brand text-slate-300 ${className || ""}`}>
@@ -210,4 +216,4 @@ export const Footer: React.FC<SectionProps<RepairHubFooter1Data>> = ({ data, cla
       </div>
     </footer>
   );
-};
+}

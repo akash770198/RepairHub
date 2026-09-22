@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubFAQ1Data } from "@/data";
 
-export const FAQ: React.FC<SectionProps<RepairHubFAQ1Data>> = ({ data, className }) => {
-  const faqData = data || site.fAQ;
+export function FAQ({ data, className }: SectionProps<RepairHubFAQ1Data> = {}) {
+  const faqData = data || site.faq;
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex((current) => (current === index ? -1 : index));
-  };
+  }
 
   return (
     <section id="faq" className={`relative w-full bg-[#081c3c] py-16 border-t border-slate-800 ${className || ""}`}>
@@ -98,8 +98,8 @@ export const FAQ: React.FC<SectionProps<RepairHubFAQ1Data>> = ({ data, className
             <div className="rounded-xl border border-slate-700 bg-[#031c46] p-8 lg:p-10 flex flex-col items-center text-center sticky top-24">
               
               {/* Icon */}
-              <div className="flex items-center justify-center w-[72px] h-[72px] rounded-full border border-slate-600 text-brand mb-6">
-                <DynamicIcon name="headset" size={32} />
+              <div className="flex items-center justify-center w-[80px] h-[80px] rounded-full border border-slate-600 text-brand mb-6">
+                <DynamicIcon name="headset" className="h-10 w-10" />
               </div>
               
               {/* Heading */}
@@ -175,4 +175,4 @@ export const FAQ: React.FC<SectionProps<RepairHubFAQ1Data>> = ({ data, className
       </div>
     </section>
   );
-};
+}

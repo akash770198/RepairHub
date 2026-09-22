@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "./Reveal";
-import { site, SectionProps, RepairHubTeam1Data } from "@/data";
+import { site, SectionProps, RepairHubTeamData } from "@/data";
 
-export const Team: React.FC<SectionProps<RepairHubTeam1Data>> = ({ data, className }) => {
+export function Team({ data, className }: SectionProps<RepairHubTeamData> = {}) {
   const teamData = data || site.team;
+  const isGrid = "layoutType" in teamData && teamData.layoutType === "grid";
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
@@ -18,7 +19,7 @@ export const Team: React.FC<SectionProps<RepairHubTeam1Data>> = ({ data, classNa
       const isTablet = window.innerWidth >= 640;
       const visibleCards = isDesktop ? 4 : (isTablet ? 2 : 1);
       setMaxIndex(Math.max(0, teamData.members.length - visibleCards));
-    };
+    }
 
     calculateMaxIndex();
     window.addEventListener('resize', calculateMaxIndex);
@@ -70,7 +71,7 @@ export const Team: React.FC<SectionProps<RepairHubTeam1Data>> = ({ data, classNa
 
         {/* Team Content */}
         <div className="w-full mt-16 relative">
-          {(teamData as any).layoutType === 'grid' ? (
+          {isGrid ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {teamData.members.map((member, index) => (
                 <Link key={`${member.id}-${index}`} href={`/teams/${member.id}`} className="block h-full">
@@ -188,4 +189,4 @@ export const Team: React.FC<SectionProps<RepairHubTeam1Data>> = ({ data, classNa
       </div>
     </section>
   );
-};
+}

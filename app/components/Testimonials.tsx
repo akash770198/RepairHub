@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubTestimonials1Data } from "@/data";
 
-export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = ({ data, className }) => {
+export function Testimonials({ data, className }: SectionProps<RepairHubTestimonials1Data> = {}) {
   const testimonialsData = data || site.testimonials;
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -19,7 +19,7 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
       const index = Math.round(scrollLeft / cardWidth);
       setActiveIndex(Math.min(index, testimonialsData.testimonials.length - 1));
     }
-  };
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -170,4 +170,4 @@ export const Testimonials: React.FC<SectionProps<RepairHubTestimonials1Data>> = 
       </div>
     </section>
   );
-};
+}

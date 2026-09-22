@@ -1,19 +1,16 @@
-import React from "react";
 import type { Metadata } from "next";
-import data from "@/data/site.json";
+import { site } from "@/data";
 import { NotFoundContent } from "@/app/components/NotFoundContent";
 
-const notFoundData = data.RepairHub.sections.NotFound.variants.RepairHubNotFound1;
-
 export const metadata: Metadata = {
-  title: notFoundData.meta.title,
-  description: notFoundData.meta.description,
+  title: site.notFound.meta.title,
+  description: site.notFound.meta.description,
 };
 
 export default function NotFound() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
-      <NotFoundContent data={notFoundData} />
+      <NotFoundContent data={site.notFound} />
     </main>
   );
 }

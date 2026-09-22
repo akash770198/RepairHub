@@ -1,37 +1,42 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubAbout1Data } from "@/data";
 
-const DotGrid: React.FC<{ className?: string; rows: number; cols: number }> = ({
+function DotGrid({
   className = "",
   rows,
   cols,
-}) => (
-  <svg
-    aria-hidden
-    className={className}
-    width={cols * 14}
-    height={rows * 14}
-    fill="none"
-  >
-    {Array.from({ length: rows }).map((_, row) =>
-      Array.from({ length: cols }).map((_, col) => (
-        <circle
-          key={`${row}-${col}`}
-          cx={col * 14 + 3}
-          cy={row * 14 + 3}
-          r="2.5"
-          fill="currentColor"
-        />
-      ))
-    )}
-  </svg>
-);
+}: {
+  className?: string;
+  rows: number;
+  cols: number;
+}) {
+  return (
+    <svg
+      aria-hidden
+      className={className}
+      width={cols * 14}
+      height={rows * 14}
+      fill="none"
+    >
+      {Array.from({ length: rows }).map((_, row) =>
+        Array.from({ length: cols }).map((_, col) => (
+          <circle
+            key={`${row}-${col}`}
+            cx={col * 14 + 3}
+            cy={row * 14 + 3}
+            r="2.5"
+            fill="currentColor"
+          />
+        ))
+      )}
+    </svg>
+  );
+}
 
-export const About: React.FC<SectionProps<RepairHubAbout1Data> & { hideCTA?: boolean }> = ({ data, className, hideCTA }) => {
+export function About({ data, className, hideCTA }: SectionProps<RepairHubAbout1Data> & { hideCTA?: boolean } = {}) {
   const aboutData = data || site.about;
   const { primaryImage, secondaryImage, badgeIcon } = aboutData.media;
 
@@ -83,8 +88,12 @@ export const About: React.FC<SectionProps<RepairHubAbout1Data> & { hideCTA?: boo
 
           {/* Centre emblem straddling both photos */}
           <span className="absolute left-[60%] top-[61%] z-30 flex aspect-square w-[22%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-navy shadow-[0_14px_30px_-10px_rgba(2,6,23,0.6)]">
-            <span className="absolute inset-[7%] rounded-full border-2 border-dashed border-brand animate-[spin_8s_linear_infinite]" />
-            <DynamicIcon name={badgeIcon} className="h-[45%] w-[45%] text-brand" size={40} />
+            <span className="absolute inset-[7%] rounded-full border-2 border-dashed border-brand" />
+            <DynamicIcon
+              name={badgeIcon}
+              className="h-[55%] w-[55%] animate-[spin_8s_linear_infinite]"
+              size={48}
+            />
           </span>
         </Reveal>
 
@@ -150,4 +159,4 @@ export const About: React.FC<SectionProps<RepairHubAbout1Data> & { hideCTA?: boo
       </div>
     </section>
   );
-};
+}

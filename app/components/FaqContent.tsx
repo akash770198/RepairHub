@@ -1,21 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { DynamicIcon } from "./Icons";
 import { Reveal } from "./Reveal";
 import { site, SectionProps, RepairHubFaqs1Data } from "@/data";
 
-export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: propData, className }) => {
-  const faqData = (propData || site.faqs) as any;
+export function FaqContent({ data: propData, className }: SectionProps<RepairHubFaqs1Data> = {}) {
+  const faqData = propData || site.faqs;
   const [openId, setOpenId] = useState<string | null>(faqData.questions[0]?.id || null);
 
   const toggleFaq = (id: string) => {
     setOpenId(openId === id ? null : id);
-  };
+  }
 
   return (
-    <section className={`bg-slate-50 py-16 ${className || ""}`}>
+    <section className={`bg-white py-16 ${className || ""}`}>
       <div className="page-gutter">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -38,7 +38,7 @@ export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: p
         <div className="flex flex-col lg:flex-row gap-10 xl:gap-16">
           {/* Left Column: Accordion */}
           <div className="flex-1 flex flex-col gap-4">
-            {faqData.questions.map((faq: any, idx: any) => {
+            {faqData.questions.map((faq, idx) => {
               const isOpen = openId === faq.id;
               return (
                 <Reveal key={faq.id} delay={idx * 50} className="w-full">
@@ -103,7 +103,7 @@ export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: p
               </p>
 
               <div className="w-full flex flex-col gap-6 text-left mb-8">
-                {faqData.sidebar.contacts.map((contact: any, i: any) => (
+                {faqData.sidebar.contacts.map((contact, i) => (
                   <div key={i} className="flex items-center gap-4 group">
                     <span className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-50 border border-slate-100 text-navy group-hover:bg-brand group-hover:border-brand transition-colors duration-300 shadow-sm shrink-0">
                       <DynamicIcon name={contact.icon} className="w-5 h-5" />
@@ -129,4 +129,4 @@ export const FaqContent: React.FC<SectionProps<RepairHubFaqs1Data>> = ({ data: p
       </div>
     </section>
   );
-};
+}

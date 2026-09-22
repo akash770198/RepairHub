@@ -1,12 +1,25 @@
-import React from "react";
-
 interface IconProps {
   name: string;
   className?: string;
   size?: number;
 }
 
-export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", size = 24 }) => {
+export function DynamicIcon({ name, className = "w-5 h-5", size = 24 }: IconProps) {
+  if (name.startsWith("/") || /\.(png|jpe?g|svg|webp|gif)$/i.test(name)) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={name}
+        alt=""
+        width={size}
+        height={size}
+        className={className}
+        style={{ width: size, height: size, objectFit: "contain" }}
+        aria-hidden
+      />
+    );
+  }
+
   const defaultProps = {
     width: size,
     height: size,
@@ -535,4 +548,4 @@ export const DynamicIcon: React.FC<IconProps> = ({ name, className = "w-5 h-5", 
     default:
       return null;
   }
-};
+}

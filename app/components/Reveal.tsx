@@ -14,12 +14,12 @@ interface RevealProps {
  * Plays an entrance animation when the element scrolls into view.
  * Renders visible on the server, so the content is still readable without JS.
  */
-export const Reveal: React.FC<RevealProps> = ({
+export function Reveal({
   children,
   className = "",
   animation = "rh-fade-up",
   delay = 0,
-}) => {
+}: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<"static" | "hidden" | "playing">("static");
 
@@ -62,4 +62,4 @@ export const Reveal: React.FC<RevealProps> = ({
       {children}
     </div>
   );
-};
+}
