@@ -148,7 +148,7 @@ export function Header({ data, className }: SectionProps<RepairHubHeaderBundle> 
 
           {/* 2. MAIN NAVIGATION ROW */}
           <div className="flex h-full flex-1 items-center justify-end md:h-[3rem] md:items-stretch md:justify-between sm:h-16">
-            <nav className="type-nav hidden items-center gap-4 lg:flex xl:gap-6 2xl:gap-8">
+            <nav className="type-nav hidden items-center gap-5 lg:flex xl:gap-7 2xl:gap-9">
               {headerData.menu.map((item, index) => (
                 <div
                   key={item.label}

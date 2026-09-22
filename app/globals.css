@@ -70,7 +70,7 @@
   --page-gutter: 1.25rem;
 
   --text-topbar: 13px;
-  --text-nav: 13.5px;
+  --text-nav: 12.75px;
   --text-eyebrow: 12px;
   --text-display: 40px;
   --text-heading: 30px;
@@ -105,7 +105,7 @@
 @media (min-width: 1280px) {
   :root {
     --page-gutter: 4rem;
-    --text-nav: 15px;
+    --text-nav: 14px;
     --text-cta: 15px;
     --text-display: 70px;
     --text-heading: 42px;

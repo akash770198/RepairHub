@@ -177,7 +177,7 @@ export function Footer({ data, className }: SectionProps<RepairHubFooter1Data> =
       <div className="w-full bg-[#010a1a] py-6 border-t border-slate-800">
         <div className="page-gutter flex flex-col md:flex-row items-center justify-between gap-6">
           
-          <div className="text-[14px]">
+          <div className="text-[13px]">
             {footerData.bottomBar.copyright.split('RepairHub').map((part, i, arr) => (
               <React.Fragment key={i}>
                 {part}
@@ -186,7 +186,7 @@ export function Footer({ data, className }: SectionProps<RepairHubFooter1Data> =
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[14px]">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[13px]">
             {footerData.bottomBar.policies.map((policy, index) => (
               <React.Fragment key={index}>
                 <Link href={policy.href} className="hover:text-brand transition-colors">
@@ -199,7 +199,7 @@ export function Footer({ data, className }: SectionProps<RepairHubFooter1Data> =
             ))}
           </div>
 
-          <div className="flex items-center gap-3 text-[14px]">
+          <div className="flex items-center gap-3 text-[13px]">
             <span className="mr-2">Follow Us</span>
             {footerData.bottomBar.social.map((social, index) => (
               <a 
