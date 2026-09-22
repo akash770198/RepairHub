@@ -23,9 +23,9 @@ export function PageBanner({ data: propData, className }: SectionProps<PageBanne
       {/* Bottom border line */}
       <div className="absolute left-0 w-full h-[1px] bottom-0 bg-white/10 z-10" />
 
-      <div className="page-gutter relative z-20 w-full h-full flex flex-col justify-end pt-12 pb-20">
+      <div className="page-gutter relative z-20 w-full h-full flex flex-col justify-end pt-12 pb-28 md:pb-20">
         <Reveal className="flex flex-col items-start w-full">
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-white tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-white tracking-tight max-md:pb-2">
             {bannerData.title}
           </h1>
         </Reveal>
