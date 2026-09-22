@@ -200,7 +200,6 @@ export function Footer({ data, className }: SectionProps<RepairHubFooter1Data> =
           </div>
 
           <div className="flex items-center gap-3 text-[13px]">
-            <span className="mr-2">Follow Us</span>
             {footerData.bottomBar.social.map((social, index) => (
               <a 
                 key={index} 
